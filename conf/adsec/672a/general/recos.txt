@@ -1,0 +1,60 @@
+;;+& 20110101_010101 &-;;
+;+
+; HISTORY
+;  11 Feb 2005, DZ
+;    new structore for reconstructor
+;  04 Aug 2005, A. Riccardi (AR)
+;    double quotes added in the name_ns_var string content 
+;  Mar 2006 DZ added wfs params
+;-
+
+name_ns_var         string      "BCU50NSLOPES"
+name_dls_var	    string      "BCU50SLDL"
+name_dlm_var	    string      "BCU50MDL"
+wfs_freq            float       1000             ;wavefront sensor frequency 
+
+n_slope             int         1600            ;1600      ;number of slopes
+n_slope_delay       int         1               ;number of previous slope steps to use in the temporal filter
+n_modes_delay       int         2               ;number of previous command steps to use in the temporal filter
+n_modes2correct     int         672             ;number of modes to correct
+max_n_slope	    int	        1600            ;max number of slopes managed
+block               byte        0               ;block memory used 
+
+diag_len            int         80              ;fast diagnostic data len (byte)
+diag_shm_fields     int	        13              ;fields filled in the fast diagnostic shared memory
+diag_shm_head	    int	        16                  ;words to skip (header) in the shared memory frame to find diagnostic data
+
+disturb_len         int         4000      ;len of disturb buffer (ca 5000 max, 4952 for temporal history)
+
+enable_master_diag          long      0 
+bcu_decimation_master       long      0 
+switch_decimation_master    long      0 
+bcu_decimation_save         long      0 
+switch_decimation_save      long      0 
+bcu_remote_mac_address          array
+    string   6 
+        00:0c:6E:D2:B1:60
+        00:0c:6E:D2:B1:60
+        00:0c:6E:D2:B1:60
+        00:0c:6E:D2:B1:60
+        00:0c:6E:D2:B1:60
+        00:0c:6E:D2:B1:60
+    end
+bcu_remote_ip_address           array ; (MSW) 0x00038017 (LSW) len 32 bit 
+    string   6
+        192.168.0.60
+        192.168.0.60
+        192.168.0.60
+        192.168.0.60
+        192.168.0.60
+        192.168.0.60
+    end
+bcu_remote_udp_port         array
+    int 6     
+        8001 8002 8003 8004 8005 8006 ; (MSW) len 16 bit
+    end
+switch_remote_ip_address    string   "192.168.0.60"
+switch_remote_mac_address   string   "00:0c:6E:D2:B1:60"
+switch_remote_udp_port      int      8007 ; (MSW) len 16 bit
+oversampling_time           float    1e-3
+

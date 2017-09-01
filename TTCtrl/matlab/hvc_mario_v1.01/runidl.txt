@@ -1,0 +1,3 @@
+.r cloop_routines_fits_lbt.pro
+generate_masks_fits, 80, 80, inprefix='/home/aosup/adopt/current/calib/wfs/current/ccd39/LUTs/bin3/', outprefix='/home/aosup/adopt/current/calib/wfs/current/ccd39/LUTs/bin3/', BINNING=3
+exit

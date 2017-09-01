@@ -1,0 +1,56 @@
+;;+& 20110101_010101 &-;;
+
+
+
+
+
+
+
+
+
+template    array
+    int 3
+    1 -1  1
+end
+
+ovs                 float   0.008;   oversampling time (s)
+dec_factor          int     6    ; dec_factor * ovs=trigger period
+offset              int     5    ; trigger offset >0 (num of ovs frames to be applied before rising the fiber trigger; was 1  was4 20110311
+nstep               int     66    ;number of subset, each subset contains fix(nmodes/nstep)
+nmodes              int     654   ;total number of modes to acquire
+start_mod           int     0
+to_mod              int     641
+ini_zeros           int     20   ;number of empty OPD before applying the tre-foil trigger
+end_zeros           int     5    ;  "           "    after the tre-foil trigger
+trigmode_amp        float   8e-06;3.83308e-06   ; amplitude of tre-foil trigger (m)
+mode_amp            float   150e-9              ; m RMS, rescaled automatically
+folder4d            string  Zcopy/
+file4d              string  track.txt   ; this file contains the tracknum of the measurement. to be read by 4D to generate the data folder
+flat4d              string  img4d
+foldh5              string  hdf5
+log4d               string  if4d.txt
+conf4d              string  configuration.ini
+
+
+
+;this file contains
+
+;template    array
+;    int 3
+;    1 -1  1
+;end
+
+;ovs                 float   0.008
+;dec_factor          int     5
+;offset              int     1
+;nstep               int     3
+;nmodes              int     600
+;start_mod           int     0
+;to_mod              int     641
+;ini_zeros           int     20
+;end_zeros           int     5
+;trigmode_amp        float   8e-06;3.83308e-06   ; m
+;mode_amp            float   150e-9              ; m RMS, rescaled automatically
+;file4d              string  Zcopy/track.txt
+;flat4d              string  Zcopy/img4d/hdf5
+

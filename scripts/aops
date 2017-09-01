@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+from AdOpt.processControl import *
+import os
+
+ids=[]
+for p in processes:
+	ids.append( getProcessID(p))
+
+
+command = "/bin/ps axww"
+pipe = os.popen(command)
+str = pipe.read()
+pipe.close()
+
+for line in str.splitlines():
+	tokens = line.split()
+	if tokens[0] in ids:
+		print line
+
+

@@ -1,0 +1,70 @@
+#############################################
+#    HOWTO USE DIAGNLIB
+######################################
+
+
+A diagnostic application (DiagnApp) like housekeeper and fastdiagn performs the following tasks:
+1)  Retrieve "raw" diagnostic data.
+2)  Convert "raw" data into the diagnostic quantities of interest (DiagnVar)
+3)  Check that the DiagnVar's value is inside the acceptable range. Raise Warning or Alarms otherwise.
+
+------------------------- DiagnVar ---------------------------------
+A DiagnVar object represents a scalar quantity of interest for the diagnostic application. 
+It is identified by a "family" name and an "index" integer key: so for instance the position measured by the 
+573-th capacitive sensor will have family name "ChDistAverage" and index=573.
+A DiagnVar has a set of properties (see DiagnParam.h) that are read from a config file (housekeeper.param) 
+and can be modified at run time as well.
+
+
+DiagnVar properties can be accessed by a Supervisor application through a dedicated library called "diagnlib"
+The file diagnlib.h (at the moment in the DiagnApp directory, possibly will be moved in lib) describes the interface
+of the diagnlib.
+
+GetDiagnValue is the function to retrieve the value of a set of DiagnVar.
+
+ValueDict  GetDiagnValue(
+        char*               diagnapp, //@P{diagnapp}: DiagnApp's name
+        const DiagnWhich &  which,    //@P{which}: DiagnVar's filter.
+        int                 tmout=-1  //@P{tmout}: Timeout in milliseconds, to wait for acknowledgement. 
+                                      // If 0, wait forever. 
+        );                            // @R:  ValueDict containing the DiagnValue object for each DiagnVar matched in which.
+
+An example of use is the following: the values of the variables "ChDistAverage" from 0 to 9 of the diagnapp called "HOUSEKPR00" are retrieved.
+
+    char *diagnapp = "HOUSEKPR00";
+    char *family = "ChDistAverage";
+    int   from = 0;
+    int   to   = 9;
+    int   timeout = 1000; // timeout in ms;
+    ValueDict dict;
+
+    try{
+        DiagnWhich which(family, from, to);
+        dict = GetDiagnValue( diagnapp,which, tmout);
+    } catch (AOException &e) { 
+        _logger->log(Logger::LOG_LEV_ERROR, e.what());
+        return e._errcode;
+    }
+
+   //Iterate over the dictionary of the retrieved DiagnVars. 
+   for (ValueDict::iterator it = dict.begin(); it != dict.end();  it++,i++){
+        DiagnWhich wh = (*it).first;
+        DiagnValue va = (*it).second;
+
+        //DiagnVar name & index
+        wh.Family();   // DiagnVar name.
+        wh.From();     // DiagnVar index
+
+        // Values
+        va.Mean();     // DiagnVar value (average of a running mean)
+        va.Stddev();   // Stddev of the running mean
+        va.Last();     // Instantaneuos value (last value inserted in the running mean)
+        va.Time();     // Time (average of the time stamp of the values in the running mean)
+        va.Status();   // Status: 0=OK, 1=Warning, 2=Error
+
+        _logger->log(Logger::LOG_LEV_DEBUG, "[GetDiagnValue] %s  %s --- %s [%s:%d]",
+                diagnapp, wh.str().c_str(), va.str().c_str(), __FILE__,__LINE__);
+    }
+ 
+
+

@@ -1,0 +1,17 @@
+
+pisces 5
+
+savegain
+gainzero
+lamp off
+wait 10
+
+piscesdark 5
+lamp on
+wait 5
+restoregain
+
+
+
+
+

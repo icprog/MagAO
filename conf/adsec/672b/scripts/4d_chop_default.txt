@@ -1,0 +1,18 @@
+;this file contains information for the sampling of a chopping history with the 4D interferometry
+
+ovs                 float   0.002;   oversampling time (s)
+dec_factor          int     50    ; dec_factor * ovs=trigger period
+offset              int     48    ; trigger offset >0 (num of ovs frames to be applied before rising the fiber trigger; was 1
+nframes             int     100  ; n of 4D frames to be sampled
+
+chop_a              string  "";flat/20110315_122208/flattening_result.sav
+chop_b              string  "";flat/20110315_123153/flattening_result.sav
+
+folder4d            string  Zcopy/
+file4d              string  track.txt   ; this file contains the tracknum of the measurement. to be read by 4D to generate the data folder
+flat4d              string  img4d
+foldh5              string  hdf5
+log4d               string  if4d.txt
+conf4d              string  configuration.ini
+
+

@@ -1,0 +1,24 @@
+#
+#
+# Log interval is in seconds. Set it to Inf or comment the line for disabling the telemetry of the corresponding family      
+#
+# FamilyName                               Log interval (s)
+
+AdamFrameCounter                     60
+AdamMainPower                        60
+AdamWatchdogExp                      60
+AdamTSSDisable                       60
+AdamDriverEnable                     60
+AdamFPGAClearN                       60
+AdamBootSelectN                      60
+AdamSysResetN                        60
+AdamTSSPowerFaultN0                  60
+AdamTSSPowerFaultN1                  60
+AdamTSSFaultN                        60
+AdamTCSSysFault                      60
+AdamTCSPowerFaultN0                  60
+AdamTCSPowerFaultN1                  60
+AdamTCSPowerFaultN2                  60
+
+
+

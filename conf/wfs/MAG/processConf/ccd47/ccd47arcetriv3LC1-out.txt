@@ -1,0 +1,866 @@
+Pattern RAM Entries
+
+No     Type               Name           Cycles   Duration
+----------------------------------------------------------
+ 0 - Function        shift_array_start 5105/5120 102.10 us
+ 5 - Function       shift_array_middle  480/1024   9.60 us
+ 6 - Function          shift_array_end  560/1024  11.20 us
+ 7 - Function       shift_a_line_start   55/1024   1.10 us
+ 8 - Function      shift_a_line_middle 2375/3072  47.50 us
+11 - Function         shift_a_line_end  100/1024   2.00 us
+12 - Function           read_64_pixels 1280/2048  25.60 us
+14 - Function         shift_4_pixels80 2496/3072  49.92 us
+17 - Function           shift_n_pixels  580/1024  11.60 us
+
+18 - Function          shift_16_pixels  320/1024   6.40 us
+19 - Function           read_16_pixels  320/1024   6.40 us
+
+20 - Function        read_32_pixels250 6400/7168 128.00 us
+27 - Function        shift_4_pixels250  800/1024  16.00 us
+28 - Function      shift_320_pixels250 64000/64512 1280.00 us
+
+91 - Function         read_32_pixels80 19968/20480 399.36 us
+
+111 - Function      shift_4_pixels80bin 2520/3072  50.40 us
+114 - Function      read_16_pixels80bin 10080/10240 201.60 us
+
+124 - Function         shift_pixel80bin  630/1024  12.60 us
+125 - Function       shift_pixel80bin16  714/1024  14.28 us
+126 - Function        read_pixel80bin16  714/1024  14.28 us
+
+
+
+Control RAM Entries
+
+Type               Name                        Reps 
+-------------------------------------------------------------------
+Prg     1024x1024_2500          
+0       Sub     shift_array_1024               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1032
+            Fun     shift_array_end                1
+1034    Sub     read_512_pixels               1024
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle            1
+            Fun     shift_a_line_end               1
+            Fun     shift_n_pixels                 1
+            Fun     read_64_pixels                 8
+13322   Fun     shift_4_pixels80               1
+81.32% full
+
+Prg     64x64_2500              
+16384   Sub     shift_array_1504               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1512
+            Fun     shift_array_end                1
+17898   Sub     read_32_pixels                64
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle            1
+            Fun     shift_a_line_end               1
+            Fun     shift_n_pixels                 1
+            Fun     shift_16_pixels               30
+            Fun     read_16_pixels                 2
+20202   Fun     shift_4_pixels80               1
+23.31% full
+
+Prg     1024x1024_250           
+32768   Sub     shift_array_1024               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1032
+            Fun     shift_array_end                1
+33802   Sub     read_a_line250                1024
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle            1
+            Fun     shift_a_line_end               1
+            Fun     shift_4_pixels250              7
+            Fun     read_32_pixels250             16
+60426   Fun     shift_320_pixels250            1
+168.82% full
+
+Prg     1024x1024_80            
+49152   Sub     shift_array_1024               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1032
+            Fun     shift_array_end                1
+50186   Sub     read_a_line80                 1024
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle            1
+            Fun     shift_a_line_end               1
+            Fun     shift_4_pixels80               7
+            Fun     read_32_pixels80              16
+76810   Fun     shift_320_pixels250            1
+168.82% full
+
+Prg     1024x1024_80bin2x2      
+65536   Sub     shift_array_1024               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1032
+            Fun     shift_array_end                1
+66570   Sub     read_2_lines80bin             512
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle            2
+            Fun     shift_a_line_end               1
+            Fun     shift_4_pixels80bin            4
+            Fun     read_16_pixels80bin           16
+78858   Fun     shift_320_pixels250            1
+81.32% full
+
+Prg     1024x1024_80bin16x16    
+81920   Sub     shift_array_1024               1
+            Fun     shift_array_start              1
+            Fun     shift_array_middle            1032
+            Fun     shift_array_end                1
+82954   Sub     read_16_lines80bin16          64
+            Fun     shift_a_line_start             1
+            Fun     shift_a_line_middle           16
+            Fun     shift_a_line_end               1
+            Fun     shift_pixel80bin               4
+            Fun     shift_pixel80bin16             5
+            Fun     read_pixel80bin16             32
+86730   Fun     shift_4_pixels80               1
+29.36% full
+
+Programs
+
+Type               Name                        Cycle Summary 
+-------------------------------------------------------------------
+Prg     1024x1024_2500          
+  Sub     shift_array_1024               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1032
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1032 x       480 = 495360
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             501025 = 501025
+  Sub     read_512_pixels               1024
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle          1
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                         1 x      2375 =  2375
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_n_pixels               1
+      Pat     shift_pixel2500           29 x 20 =  580
+                                         1 x       580 =   580
+    Fun     read_64_pixels               8
+      Pat     read_pixel2500            64 x 20 = 1280
+                                         8 x      1280 = 10240
+                                        1024 x             13350 = 13670400
+  Fun     shift_4_pixels80               1
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+                                         1 x      2496 =           2496
+Total Cycles                                                     14173921
+Maximum Frame Rate                                               3.528 Hz
+
+Prg     64x64_2500              
+  Sub     shift_array_1504               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1512
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1512 x       480 = 725760
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             731425 = 731425
+  Sub     read_32_pixels                64
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle          1
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                         1 x      2375 =  2375
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_n_pixels               1
+      Pat     shift_pixel2500           29 x 20 =  580
+                                         1 x       580 =   580
+    Fun     shift_16_pixels             30
+      Pat     shift_pixel2500           16 x 20 =  320
+                                        30 x       320 =  9600
+    Fun     read_16_pixels               2
+      Pat     read_pixel2500            16 x 20 =  320
+                                         2 x       320 =   640
+                                        64 x             13350 = 854400
+  Fun     shift_4_pixels80               1
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+                                         1 x      2496 =           2496
+Total Cycles                                                     1588321
+Maximum Frame Rate                                               31.480 Hz
+
+Prg     1024x1024_250           
+  Sub     shift_array_1024               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1032
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1032 x       480 = 495360
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             501025 = 501025
+  Sub     read_a_line250                1024
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle          1
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                         1 x      2375 =  2375
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_4_pixels250            7
+      Pat     shift_pixel250             4 x 200 =  800
+                                         7 x       800 =  5600
+    Fun     read_32_pixels250           16
+      Pat     read_pixel250             32 x 200 = 6400
+                                        16 x      6400 = 102400
+                                        1024 x             110530 = 113182720
+  Fun     shift_320_pixels250            1
+    Pat     shift_pixel250              320 x 200 = 64000
+                                         1 x     64000 =          64000
+Total Cycles                                                     113747745
+Maximum Frame Rate                                               0.440 Hz
+
+Prg     1024x1024_80            
+  Sub     shift_array_1024               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1032
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1032 x       480 = 495360
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             501025 = 501025
+  Sub     read_a_line80                 1024
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle          1
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                         1 x      2375 =  2375
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_4_pixels80             7
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80              1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80              1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80              1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80              1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                         7 x      2496 = 17472
+    Fun     read_32_pixels80            16
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80               1 x 20 =   20
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                        16 x     19968 = 319488
+                                        1024 x             339490 = 347637760
+  Fun     shift_320_pixels250            1
+    Pat     shift_pixel250              320 x 200 = 64000
+                                         1 x     64000 =          64000
+Total Cycles                                                     348202785
+Maximum Frame Rate                                               0.375 Hz
+
+Prg     1024x1024_80bin2x2      
+  Sub     shift_array_1024               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1032
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1032 x       480 = 495360
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             501025 = 501025
+  Sub     read_2_lines80bin             512
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle          2
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                         2 x      2375 =  4750
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_4_pixels80bin          4
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin           1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin           1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin           1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin           1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                         4 x      2520 = 10080
+    Fun     read_16_pixels80bin         16
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin            1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                        16 x     10080 = 161280
+                                        512 x             176265 = 90247680
+  Fun     shift_320_pixels250            1
+    Pat     shift_pixel250              320 x 200 = 64000
+                                         1 x     64000 =          64000
+Total Cycles                                                     90812705
+Maximum Frame Rate                                               0.551 Hz
+
+Prg     1024x1024_80bin16x16    
+  Sub     shift_array_1024               1
+    Fun     shift_array_start            1
+      Pat     send_start_of_frame        1 x  5 =    5
+      Pat     shift_array_100_100ns     1000 x  5 = 5000
+      Pat     shift_array_110_100ns     20 x  5 =  100
+                                         1 x      5105 =  5105
+    Fun     shift_array_middle          1032
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_101_100ns     16 x  5 =   80
+      Pat     shift_array_100_100ns     16 x  5 =   80
+      Pat     shift_array_110_100ns     16 x  5 =   80
+                                        1032 x       480 = 495360
+    Fun     shift_array_end              1
+      Pat     shift_array_010_100ns     16 x  5 =   80
+      Pat     shift_array_011_100ns     16 x  5 =   80
+      Pat     shift_array_001_100ns     16 x  5 =   80
+      Pat     shift_array_000_100ns     16 x  5 =   80
+      Pat     clear_reg_don_100ns       16 x  5 =   80
+      Pat     clear_reg_doff_100ns      16 x  5 =   80
+      Pat     shift_array_000_doff_100ns  16 x  5 =   80
+                                         1 x       560 =   560
+                                         1 x             501025 = 501025
+  Sub     read_16_lines80bin16          64
+    Fun     shift_a_line_start           1
+      Pat     send_start_of_line         1 x  5 =    5
+      Pat     shift_line_000_500ns       2 x 25 =   50
+                                         1 x        55 =    55
+    Fun     shift_a_line_middle         16
+      Pat     shift_line_100_500ns      30 x 25 =  750
+      Pat     shift_line_110_500ns       5 x 25 =  125
+      Pat     shift_line_010_500ns      25 x 25 =  625
+      Pat     shift_line_011_500ns       5 x 25 =  125
+      Pat     shift_line_001_500ns      30 x 25 =  750
+                                        16 x      2375 = 38000
+    Fun     shift_a_line_end             1
+      Pat     shift_line_000_500ns       4 x 25 =  100
+                                         1 x       100 =   100
+    Fun     shift_pixel80bin             4
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin           1 x 26 =   26
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                         4 x       630 =  2520
+    Fun     shift_pixel80bin16           5
+      Pat     pixel_shift_start80        1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_shift80bin16         1 x 110 =  110
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                         5 x       714 =  3570
+    Fun     read_pixel80bin16           32
+      Pat     pixel_read_start80         1 x 49 =   49
+      Pat     pixel_pedestal2_turbo80    4 x  5 =   20
+      Pat     pixel_pedestal280         73 x  5 =  365
+      Pat     pixel_read80bin16          1 x 110 =  110
+      Pat     pixel_end2_turbo80         3 x  5 =   15
+      Pat     pixel_end280              31 x  5 =  155
+                                        32 x       714 = 22848
+                                        64 x             67093 = 4293952
+  Fun     shift_4_pixels80               1
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+    Pat     pixel_shift_start80          1 x 49 =   49
+    Pat     pixel_pedestal2_turbo80      4 x  5 =   20
+    Pat     pixel_pedestal280           73 x  5 =  365
+    Pat     pixel_shift80                1 x 20 =   20
+    Pat     pixel_end2_turbo80           3 x  5 =   15
+    Pat     pixel_end280                31 x  5 =  155
+                                         1 x      2496 =           2496
+Total Cycles                                                     4797473
+Maximum Frame Rate                                               10.422 Hz
+

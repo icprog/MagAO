@@ -1,0 +1,21 @@
+# Configuration file with the string commands
+# to send IDL
+
+Server  string   127.0.0.1
+
+# This parameters is not mandatory: the default value is ERR 
+LogLevel		string		WAR
+
+IDL_path            string   "/usr/local/itt/idl/bin/idl"
+IDL_EndCmd          string   "print,'EndCmd'"
+IDL_EndMsg          string   "EndCmd"
+IDL_StartCmd        string   "print,'StartCmd'"
+IDL_StartMsg        string   "StartCmd"
+IDL_ErrorCodeTrap   string   "Error code:"
+
+IDL_ExeCmd          string   "-IDL_DLM_PATH"
+IDL_ExeCmd2         string   "'/home/aoacct/AO/current/idl/dlm:<IDL_DEFAULT>'"
+IDL_SetPathCmd      string   "@init_idl_ao.pro"
+IDL_StartupCmd      string   "@startup_right"
+
+

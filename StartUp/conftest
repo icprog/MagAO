@@ -1,0 +1,74 @@
+;+
+; HISTORY
+;  01 Dec 2004, AR
+;    re-arranged to use it together with the new wave.txt configuration file
+;  Feb 2005 D.Zanotti (DZ)
+;    new rtr parameter.
+;-
+n_crates           int      1     ;number of crates for control electronics
+n_act_per_dsp      int      4     ;number of actuators per DSP
+
+ # another comment line
+
+ ; asdf # asdf 
+ # asdf ; fffffffffff
+
+dummy_act          array          ;dummy actuators (existing DSP channel without real actuators, [-2]=none)
+    int 3
+    7 23 39
+end
+
+pppasd             string  'asdfsdfds'
+
+act_wo_curr        array         ;actuators that cannot apply current (act_wo_curr=[-2] means all actuators can apply current)
+    int 1
+    -2
+end
+
+n_slope             int     1600 ;number of slopes
+n_deltapos_delay    int     4    ;number of previous command steps to use in the temporal filter
+
+nominal_gap        float   70e-6              ;[pcounts] nominal working gap
+weight_curr        float   64e-3              ;[ccounts] abs(force) to support the weight per actuator at nominal working gap
+fu_str             string  "N"                ;String addressing the out_dac_chx units (force internal units)
+lu_str             string  "m"                ;String addressing the dist units (length internal units)
+max_dec_val        ulong   10000              ;maximum decimation value
+preshaper_len      ulong   16384              ;preshaper length for cmd/curr
+
+
+; hardware definitions for signal reference wave generation
+
+clock_freq         double  60.71428571d6      ;[Hz] frequncy clock of status machine
+wave_dac_bits      int     9                  ;number of DAC bits for reference wave generation
+wave_max_ptv       double  10d0               ;[V] maximum peak-to-valley available for reference wave
+min_ADC_samp_len   double  65.88235294582699270d-9   ;[s] minimum temporal length of ADC sample
+wave_settling          double  1.1d-6     ;[s] time of settling of the reference square wave
+adc_acq_time           double  3.2d-6       ;[s] total acquisition time of ADC
+
+; mirror set default limits
+
+fact_reduction_curr     float   0.8     ;factor of reduction current in set_isostatic
+
+; configurable steps
+max_modal_abs_step  float    1.0e-6  ;it's the maximum modal position step for dyn response.
+ 
+struc2 structure        ;in-line structure definition
+     aa     INT    5    ;int definition
+     dd     double 6d0  ;double definition
+     nest_struc structure
+        aaa ulong 4
+        ddd string "pippo "
+     end
+     ;bbvvv  ulong64 223
+end                     ;end of in-line structure definition
+
+
+strarray       ARRAY
+    STRING 4 2 
+    "asdf asa" sdff ass "ass_popo"
+    ss  df gg "sdf "
+end
+
+;longo8B    long64   -123456789123456
+;ulongo8B   ulong64   987654321987654321987654
+

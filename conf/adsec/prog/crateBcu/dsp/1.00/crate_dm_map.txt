@@ -1,0 +1,17 @@
+bus32linkhdr        long x00001000
+dummy_words         long x00001008
+softwarerelease     long x00001021
+notused             long x00001022
+framescounterirq    long x00001024
+paramselectorirq    long x00001025
+numdspboards        long x00001026
+fulldiagrecordsize  long x00001027
+saveddiagrecordsize long x00001028
+diagnosticframedec  long x00001029
+numbus32timeout     long x0000102A
+replyreceived       long x0000102B
+replyvectorptr      long x0000102C
+diagvectorptr       long x0000102D
+nullvalue           long x00001030
+saveregs            long x00001034
+bus32linkcmd        long x00001038

@@ -1,0 +1,8 @@
+LIBRARY   idl_msglib
+DESCRIPTION "Msglib wrapper for IDL"
+EXPORTS
+   test @1
+   idl_setup @2
+   idl_SendMessage @3
+   idl_ReceiveMessage @4
+

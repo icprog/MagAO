@@ -1,0 +1,12 @@
+;;+& 20110101_010101 &-;;
+; ref_data
+;
+; reference configuration for calibration data stored in
+; coil_res.txt      (coil resistence vector)
+; act_eff.txt       (actuator efficiency)
+; curr4bias_mag.txt (ratio between force of bias magnet and local weight)
+;
+
+ref_mag2coil_gap float 220e-6 ;[m] reference distance between shell magnet and actuator
+                              ;    copper-hat
+ref_temperature  float   20.0 ;[C] reference ambient temperature

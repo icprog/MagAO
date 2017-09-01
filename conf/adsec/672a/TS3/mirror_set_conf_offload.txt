@@ -1,0 +1,16 @@
+;;+& 20110101_010101 &-;;;$Id: mirror_set_conf_offload.txt,v 1.1 2009/09/14 12:37:14 marco Exp $$
+;+
+; Configuration file for mirror_set_script using 68um nominal gap
+;-
+
+;shell_set_pos       string  "status_save_45um_mean_gap.sav"      ;filename with fullpath for the position command to reach before pistoning 
+final_pos           float   60e-6				   ;[m] nominal mean final gap (TS#3:60, TS#1:55, CHOP:70um, AOBACKUP:80um)
+start_gain          float   4e3     ;[N/m] gain on all actuators
+final_gain          float   4e3	    ;[N/m] target proportional gain on all actuators for final setting of the shell
+shell_floating_pos  float   40e-6   ;[m] mean position to reach before pistoning (without control current integration)
+shell_set_pos       string  ""      ;filename with fullpath for the position command to reach before pistoning 
+max_amp_pos         float   3e-6  ;[m] delta position command during the piston application (3e-6)
+oversampling_time   float   2e-3    ;[s] timeout frame diagnostic period
+use_int_ctrl_curr   int     0       ;use control current integrator or not (ONLY WITH SHELL_SET_POS FILE NOT NULL)
+final_cmd_preshaper float   0.1e-3  ;final command preshaper: 0.1e-3 @ 60um, 0.5e-3 @ 80um ;TS1 0.1
+final_ff_preshaper  float   0.8e-3  ;final command preshaper: 0.8e-3 @ 60um, 1.5e-3 @ 80um ;TS1 0.7

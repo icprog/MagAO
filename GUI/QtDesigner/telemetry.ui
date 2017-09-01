@@ -1,0 +1,179 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>telemetry</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>telemetry</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>763</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>110</x>
+                <y>10</y>
+                <width>361</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>24</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Telemetry viewer</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>71</x>
+                <y>91</y>
+                <width>38</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>From:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>91</x>
+                <y>131</y>
+                <width>22</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>To:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="KDateTimeWidget">
+        <property name="name">
+            <cstring>kDateTimeFrom</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>90</y>
+                <width>294</width>
+                <height>29</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="KDateTimeWidget">
+        <property name="name">
+            <cstring>kDateTimeTo</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>119</x>
+                <y>131</y>
+                <width>294</width>
+                <height>29</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>buttonPlot</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>430</x>
+                <y>110</y>
+                <width>80</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Plot</string>
+        </property>
+    </widget>
+    <widget class="QwtPlot">
+        <property name="name">
+            <cstring>qwtPlot2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>170</y>
+                <width>511</width>
+                <height>291</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>listVariables</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>600</x>
+                <y>40</y>
+                <width>130</width>
+                <height>421</height>
+            </rect>
+        </property>
+    </widget>
+</widget>
+<customwidgets>
+</customwidgets>
+<connections>
+    <connection>
+        <sender>buttonPlot</sender>
+        <signal>clicked()</signal>
+        <receiver>telemetry</receiver>
+        <slot>buttonPlot_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">telemetry.ui.h</include>
+</includes>
+<slots>
+    <slot>buttonPlot_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kdatetimewidget.h</includehint>
+    <includehint>kdatewidget.h</includehint>
+    <includehint>ktimewidget.h</includehint>
+    <includehint>kdatetimewidget.h</includehint>
+    <includehint>kdatewidget.h</includehint>
+    <includehint>ktimewidget.h</includehint>
+    <includehint>qwt_plot.h</includehint>
+    <includehint>qwt_scale_widget.h</includehint>
+    <includehint>qwt_scale_widget.h</includehint>
+</includehints>
+</UI>

@@ -1,0 +1,31 @@
+# Bin 3
+
+GroupId			uint		2		# This is the TechViewer group of diagnostics, each with 
+									# a different frame size. See DiagnosticManagerGroups class in file
+									# MirrorCtrl/RequestManagers/DiagnosticManagerPool.h
+
+TechViewer_conf     string      ../techviewerctrl.conf
+
+Freq				int 		8		#Hertz. NOTE: this fixed frequency doesn't follow the CCD 47 frequency !!!
+	
+MemType			string		SDRAM
+
+FirstBcu		string		BCU_47
+LastBcu			string		BCU_47
+
+FirstDsp 		int			255
+LastDsp 		int			255
+Address 		uint		0x000000
+FrameLen		uint 		0x38C92		#BYTES, header and footer included
+FramesNum		uint		0x241		#[to check]
+HdrLen 			uint		0x10		#BYTES
+
+FrameCountMem 	string		SRAM		
+FrameCountBcu	string		BCU_47
+FrameCountDsp 	int			255
+FrameCountAddr	uint		0x3800C
+PointerFlag		int			0
+
+ShmName         string         TECHVIEWER_116281
+
+ 						 		  

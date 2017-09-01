@@ -1,0 +1,54 @@
+#
+#
+# Log interval is in seconds. Set it to Inf or comment the line for disabling the telemetry of the corresponding family      
+#
+# FamilyName                               Log interval (s)
+
+BCUTotalCurrentThresholdPos                 10
+BCUTotalCurrentThresholdNeg                 10
+
+SGNStratixTemp                              10
+DSPStratixTemp                              10
+SwitchStratixTemp                           10
+SwitchPowerTemp                             10
+BCUStratixTemp                              10 
+BCUPowerTemp                                10
+
+BCUVoltageVCCL                              10
+BCUVoltageVCCA                              10
+BCUVoltageVSSA                              10
+BCUVoltageVCCP                              10
+BCUVoltageVSSP                              10
+BCUCurrentVCCL                              10
+BCUCurrentVCCA                              10
+BCUCurrentVSSA                              10
+BCUCurrentVCCP                              10
+BCUCurrentVSSP                              10
+TotalCurrentVCCP                            10
+TotalCurrentVSSP                            10
+TotalCurrentVP                              10
+
+DSPDriverStatusDSP0WatchdogExpired          10
+DSPDriverStatusDSP1WatchdogExpired          10
+
+SwitchMirrFramesCounter                      1    
+SwitchSafeSkipFrameCnt                       1
+SwitchPendingSkipFrameCnt                    1
+
+SwitchNumFLTimeout                          60
+SwitchNumCrcErr                             60
+
+ExternalTemperature                         60
+ExternalHumidity                            60
+DewPoint                                    60
+WaterColdplateInlet                         60
+WaterColdplateOutlet                        60
+WaterMainInlet                              60
+WaterMainOutlet                             60
+CheckDewPoint                               60
+FluxRateIn                                  60
+CPTemp                                      60
+RBodyTemp                                   60
+
+
+

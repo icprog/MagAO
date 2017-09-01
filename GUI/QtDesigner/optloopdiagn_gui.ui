@@ -1,0 +1,413 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>OptLoopDiagn</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>OptLoopDiagn</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>626</width>
+            <height>535</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>OptLoopDiagn</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>30</y>
+                <width>380</width>
+                <height>52</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>30</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Optical loop data</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>230</y>
+                <width>166</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Number of frame to save:</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>editFramesNum</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>240</x>
+                <y>230</y>
+                <width>60</width>
+                <height>22</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>100</y>
+                <width>330</width>
+                <height>111</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Optical loop</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout1</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveFrames</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Frames</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveSlopes</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Slopes</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveModes</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Modal commands</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout3</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveCommands</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Actuator commands</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSavePositions</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Actuator positions</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout9</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>410</y>
+                <width>450</width>
+                <height>61</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonSave</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Start</string>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer1</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Minimum</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>85</width>
+                                <height>21</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </vbox>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>spacer2</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>21</width>
+                        <height>50</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout7</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>labelFilename</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Box</enum>
+                        </property>
+                        <property name="text">
+                            <string>Filename:</string>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignVCenter|AlignLeft</set>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>labelSpeed</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Box</enum>
+                        </property>
+                        <property name="text">
+                            <string>Speed:</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>270</y>
+                <width>350</width>
+                <height>120</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Psf</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout11</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveCcd47</cstring>
+                        </property>
+                        <property name="text">
+                            <string>save CCD47 psf: average of</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSaveIrtc</cstring>
+                        </property>
+                        <property name="text">
+                            <string>save IRTC psf: cube of</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkSavePisces</cstring>
+                        </property>
+                        <property name="text">
+                            <string>save PISCES psf: cube of</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout13</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editCcd47Num</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editIrtcNum</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editPiscesNum</cstring>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout9</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>frames</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_3_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>frames</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_3_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>frames</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonSave</sender>
+        <signal>clicked()</signal>
+        <receiver>OptLoopDiagn</receiver>
+        <slot>buttonSave_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkSaveCcd47</sender>
+        <signal>clicked()</signal>
+        <receiver>OptLoopDiagn</receiver>
+        <slot>checkSavePsf_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkSaveIrtc</sender>
+        <signal>clicked()</signal>
+        <receiver>OptLoopDiagn</receiver>
+        <slot>checkSaveIrtc_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>checkSavePisces</sender>
+        <signal>clicked()</signal>
+        <receiver>OptLoopDiagn</receiver>
+        <slot>checkSavePisces_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">optloopdiagn_gui.ui.h</include>
+</includes>
+<slots>
+    <slot>buttonSave_clicked()</slot>
+    <slot>checkSavePsf_clicked()</slot>
+    <slot>checkSaveIrtc_clicked()</slot>
+    <slot>checkSavePisces_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,14 @@
+# Dependencies
+include $(ADOPT_SOURCE)/lib/makefile.aoapp
+include $(ADOPT_SOURCE)/lib/arblib/base/makefile.basearb
+
+
+ifeq ($(origin ARBFRAMEWORK_COMPILE),undefined)
+	#MAKEOPTS += BASEARBINTF_COMPILE=$(BASEARBINTF_COMPILE)	 # To avoid unneeded recursion
+	ARBFRAMEWORK_COMPILE = $(call test_uptodate,$(ADOPT_SOURCE)/Arbitrator/framework,all,do_arbframework) $(AOAPP_COMPILE) $(BASEARBINTF_COMPILE)
+endif
+
+do_arbframework:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_SOURCE)/Arbitrator/framework all
+
+ARBFRAMEWORK_LNK = $(ADOPT_SOURCE)/Arbitrator/framework/arbframework.a $(AOAPP_LNK) $(BASEARBINTF_LNK)

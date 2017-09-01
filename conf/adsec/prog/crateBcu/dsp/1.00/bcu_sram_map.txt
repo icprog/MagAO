@@ -1,0 +1,24 @@
+; $Id: bcu_sram_map.txt,v 1.1 2009/09/14 16:53:14 marco Exp $
+;
+; sram_map.txt
+;
+; 09 Aug 2005, A. Riccardi (AR)
+;    field wr_diagnostic_record_ptr added
+; 16 may 2006, L. Busoni (LB)
+;    bcu_diagnostic area  changed from  x0003800E to x00038019
+;    dsp_diagnostics_area changed from  x00018173 to x000181a8
+;
+
+; BCU SRAM memory map
+nios_fixed_area             long x00038000; na_bcu_nios_fixed_area_offset/4 = offset to CrateID
+diagnostics_area            long x00038019; bcu_nios_fixed_area+14 = diagnostics area offset  
+diagnostic_record_ptr       long x00038012 ;
+diagnostic_record_len       long x00038013 ;
+enable_master_diag          long x00038014 ;(LSW) len 16 bit
+decimation_factor           long x00038014 ;(MSW) len 16 bit
+remote_mac_address          long x00038015 ; 0x00038016 (LSW) len 48 bit
+remote_ip_address           long x00038016 ; (MSW) 0x00038017 (LSW) len 32 bit
+remote_udp_port             long x00038017 ; (MSW) len 16 bit
+rd_diagnostic_record_ptr    long x00038018 ;
+wr_diagnostic_record_ptr    long x00038019 ;
+

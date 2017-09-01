@@ -1,0 +1,160 @@
+\documentclass[a4paper]{article}
+\usepackage{lbtadopt}
+
+\title{ LBT-AdOpt Shared Memory Management Library ({\tt buflib})   \\
+        Annotated Source Code }
+
+\author{ Luca Fini }
+
+\docnumber{LBT-AdOpt.008}
+\version{1.0}
+\date{July 2006}
+
+\newcommand{\msgl}{\tt msglib}
+\newcommand{\msgd}{\tt MsgD-RTDB}
+\newcommand{\rtdbl}{\tt rtdblib}
+\newcommand{\bufl}{\tt buflib}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm}
+
+\raggedbottom
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report contains full documentation of the \bufl\  library
+which defines an API to efficiently manage shared memory buffers.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+\vspace{5cm}
+\quad
+
+\section{Introduction}
+
+\subsection{ Library discussion}
+
+This library is used by clients (producers and consumers) to manage
+the shared buffer used to transmit bulk data. A typical use is to
+send CCD frames to a display.
+
+Note: the library uses the {\tt semtimedop()} function which is supported
+by Linux kernels greater than 2.4.20.
+
+\noindent {\bf Definitions:}
+
+\begin{description}
+\item[Block]    a shared memory buffer identified by a name in the MsgD-RTDB
+\item[Producer] a process that creates, owns and writes into a shared memory buffer
+\item[Consumer] a process that reads from the shared memory buffer
+\end{description}
+
+
+\subsubsection{ High level functioning (from the process point of view)}
+
+\begin{description}
+\item[A. Producers]
+
+Each producers creates  shared memory blocks of types BUFCONT or BUFSNAP
+using the bufCreate() function. The BUFCONT block is  used by consumers who
+want continuous update of data from the producer (but with no guarantee of
+sequentiality). The BUFSNAP block type is used by consumers who ask for a
+block of sequential data.
+
+The producer fills blocks using the bufWrite()
+function, which can be called at any time. The functioning differs according to
+access mode:
+
+\begin{itemize}
+
+\item {\bf Access mode BUFCONT}.
+The producer will continuosly write to a BUFCONT type buffer. It may be delayed
+while a consumer is reading the buffer. The probability to be delayed
+is reduced by using double buffering. Many consumers may be reading data from
+buffer while the producer is writing.
+The producer must use
+the {\tt counter} parameter to indicate sequence of buffers with respect to
+hardware.
+
+The sequence of writing is suspended when a BUFSNAP request must be served.
+Clients may wait for sequence resume.
+
+\item {\bf Access mode BUFSNAP}.
+The producer has been requested to download a sequential portion
+of his memory and must synchronize with the consumer requesting it;
+It is intended that only a single consumer at a time can issue this request.
+
+The producer cannot write onto buffer until the consumer has
+emptied it.  The function can thus block for
+an undefined amount of time if consumers do not empty the buffer.
+A timeout parameter can be used to prevent indefinite block.  
+
+\end{itemize}
+
+\item[B. Consumers]
+
+Consumers call the bufRead() function for reading blocks.
+The type of block access is specified by the {\tt accMode} argument.
+Again the functioning depends on the accessing mode:
+
+\begin{itemize}
+\item {\bf Access mode BUFCONT}.
+bufRead() will return as soon as a valid block is available.
+Return can be delayed if the producer is not writing to the buffer.
+
+\item {\bf Access mode BUFSNAP}.
+bufRead() will wait for valid data to be available.
+The amount of time can be set with a timeout parameter.
+\end{itemize}
+\end{description}
+
+\subsubsection{Lower level functioning (inside the library)}
+
+The library has been designed in order to make remote access to memory buffers
+completely transparent, while using standard shared memory access when the client
+(producer or consumer) is running on the same {\sc cpu} as the \msgd.
+
+The following discussion is related to local memory access, whenever remote access is
+needed, a proper request is sent to \msgd.
+
+\begin{description}
+
+\item Normal blocks.
+
+Normal blocks are written by the library function bufWrite().
+Each buffer is protected by a semaphore set one for writing and one for each
+consumer.  The logic ensures that when the producer takes the semaphore
+for writing all consumers are blocked, whereas consumers can read concurrently.
+The consumenr semaphore is used to synchronize readings. I.e.: after reading a buffer
+the consumer takes its own semaphore and the semaphore is released by the next
+write by the producer. This ensures that a consumer cannot read twice the same buffer
+because it is faster than the producer.
+
+See more details in @see{bufWrite}.
+
+\item Snapshot blocks.
+Snapshot blocks have another flag in their header, that is set to 1 by the
+bufRead() when data has been written, just before releasing the semaphore.
+
+Each call to bufRead() will reset this flag to 0 after it has successfully
+read data from the block.  If this flag is already 0, bufRead() fails
+with an error (may be changed for multiple consumers)
+
+Each call to bufWrite() must check that the buffer it is going to
+write into has a 0 flag (this can be done even without taking the
+semaphore). If not, bufWrite must wait and try again, until it founds
+the flag at 0. This means that at least one consumer has read the data.
+\end{description}
+
+\sourceinclude{buflib.h}
+\sourceinclude{buflib.c}
+
+\input commonappndx.tex
+\input commonbib.tex
+
+
+\end{document}

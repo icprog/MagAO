@@ -1,0 +1,558 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HexapodGUI</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>HexapodGUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>458</width>
+            <height>414</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HexapodGUI</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>21</x>
+                <y>11</y>
+                <width>404</width>
+                <height>48</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>30</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Hexapod control</string>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>130</y>
+                <width>136</width>
+                <height>198</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Current position</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout7</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;X:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Y:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Z:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Tip:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Tilt:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Rot:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curX</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curY</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curZ</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curTip</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curTilt</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>curRot</cstring>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>130</y>
+                <width>262</width>
+                <height>198</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Move relative:</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout7_2</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;X:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Y:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Z:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Tip:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2_2_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Tilt:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_2_2_2_2_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&lt;p align="right"&gt;Rot:&lt;/p&gt;</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout12</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editX</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editY</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editZ</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editTip</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editTilt</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>editRot</cstring>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout15</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveX</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveY</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveZ</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveTip</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveTilt</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>moveRot</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>50</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Move</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>80</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Status:</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelStatus</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>80</y>
+                <width>211</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>unknown</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>setupButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>360</y>
+                <width>130</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Setup</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>parkButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>360</y>
+                <width>130</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Park</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>stopButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>360</y>
+                <width>130</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>Stop</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>moveX</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveX_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>moveY</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveY_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>moveZ</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveZ_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>moveTip</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveTip_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>moveTilt</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveTilt_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>moveRot</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>moveRot_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>setupButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>setupButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>stopButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>stopButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>parkButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HexapodGUI</receiver>
+        <slot>parkButton_clicked()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>moveX_clicked()</slot>
+    <slot>moveY_clicked()</slot>
+    <slot>moveZ_clicked()</slot>
+    <slot>moveTip_clicked()</slot>
+    <slot>moveTilt_clicked()</slot>
+    <slot>moveRot_clicked()</slot>
+    <slot>setupButton_clicked()</slot>
+    <slot>stopButton_clicked()</slot>
+    <slot>parkButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

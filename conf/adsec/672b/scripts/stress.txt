@@ -1,0 +1,20 @@
+; stress structure
+;
+; contains configuration for stress FEA.
+; see sigma_setup.pro
+;
+; See read_ascii_structure for file format definition.
+;
+; DATA HISTORY:
+; creation: L. Busoni (LB) 15 jun 2007
+;
+
+stressdir            string     "~/FEA/lbt672"     ; directory containing s_k_mat.sav
+
+
+stress_thre          float       5e6             ; [Pa] tensile stress threshold
+force_act_thre       float       1.2             ; [N]  max actuator force
+int_force_thre       float       2500.0          ; [N]  max force: max([total(F[where(F gt 0)]), -total(F[where(F gt 0)])]) ???
+stroke_thre          float       40e-6           ; [m]  max actuator stroke
+
+

@@ -1,0 +1,43 @@
+rel_2_00
+  03 Feb 2004
+  Release working with P45 using new capacitive sensor boards and MMT control and communication electronics
+  Used External libraries:
+  oaa_lib : rel_2_00
+  astrolib: Jun 2000
+
+rel_2_01
+  23 Feb 2004
+  Release implementing bias magnet management
+  oaa_lib : rel_2_00
+  astrolib: Jun 2000
+
+rel_3_00
+  05 Aug 2004
+  First release implementing new LBT crate electronics
+  oaa_lib : rel_2_02
+  astrolib: Jun 2000
+
+rel_3_01
+  04 Mar 2004
+  First release with new management of common structure and configuration files
+  oaa_lib : rel_2_03
+  astrolib: Jun 2000
+
+rel_3_02
+  31 Aug 2005
+  New release after the first optical close loop between P45 and WFS.
+  oaa_lib : rel_2_03
+  astrolib: Jun 2000
+
+rel_3_10
+  Jan 2007
+  New release before the new FIRMWARE implementations
+  oaa_lib : rel_2_03
+  astrolib: Jun 2000
+  
+rel_4_00
+  Feb 2008
+  New released tagging the software used for the electromechanical acceptance test of LBT672a
+  oaa_lib : rel_2_04
+  astrolib: Jun 2000
+ 

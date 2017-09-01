@@ -1,0 +1,15 @@
+
+ifndef MAKEFILEAOARB
+MAKEFILEAOARB=.
+
+# Dependencies
+include $(ADOPT_SOURCE)/lib/arblib/base/makefile.basearb
+
+AOARBLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/arblib/aoArb,aoarb_lib.a,do_aoarblib) $(BASEARBLIB_COMPILE)
+
+do_aoarblib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C  $(ADOPT_LIB)/arblib/aoArb aoarb_lib.a
+
+AOARBLIB_LNK = $(ADOPT_SOURCE)/lib/arblib/aoArb/aoarb_lib.a $(BASEARBLIB_LNK)
+
+endif

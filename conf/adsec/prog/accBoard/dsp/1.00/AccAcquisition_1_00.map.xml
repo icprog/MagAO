@@ -1,0 +1,112 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map_ss1.xsl"?>
+<!DOCTYPE DOCUMENT SYSTEM "file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map.dtd">
+<DOCUMENT>
+<LINKPROJECT id='00BA1F98' name='p0' orig_file_name='Release\AccAcquisition.dxe' architecture='ADSP-TS101' >
+<FILE_NAME><![CDATA[Release\AccAcquisition.dxe]]></FILE_NAME>
+<MEMORY id='00B855E8' name='M0Code' start_address='0x0' end_address='0xfff' type='' qualifier='RAM' width='0x20' words_used='0x154' words_unused='0xeac' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BE1450' name='program' type='SHT_PROGBITS' start_address='0x0' word_size='0x154' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BDEDA8' name='program' start_address='0x0' size='0x1c' element_at='0x0' >
+<INPUT_FILE><![CDATA[booting_isr.doj]]></INPUT_FILE>
+<SYMBOL name='booting_isr' address='0x0' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='booting_isr.end' address='0x18' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00BCC2A0' name='program' start_address='0x1c' size='0x29' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='main' address='0x1c' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='main.end' address='0x41' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00BCD6D8' name='program' start_address='0x48' size='0x10c' element_at='0x0' >
+<INPUT_FILE><![CDATA[control_isr.doj]]></INPUT_FILE>
+<SYMBOL name='control_isr' address='0x48' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch03_input_loop_1st' address='0xd8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch03_output_loop_1st' address='0xe3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch03_input_loop_2nd' address='0xef' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch03_output_loop_2nd' address='0xf7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch47_input_loop_1st' address='0x109' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch47_output_loop_1st' address='0x113' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch47_input_loop_2nd' address='0x11f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch47_output_loop_2nd' address='0x127' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='restore_regs' address='0x132' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='control_isr.end' address='0x150' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B864A0' name='M0Data' start_address='0x1000' end_address='0xffff' type='' qualifier='RAM' width='0x20' words_used='0x10' words_unused='0xeff0' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BE1AB8' name='data0' type='SHT_PROGBITS' start_address='0x1000' word_size='0x10' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BC9978' name='data0' start_address='0x1000' size='0x10' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='acc_ADC_value' address='0x1000' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_DAC_value' address='0x1004' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_AccFiltered' address='0x1008' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86560' name='M1Data' start_address='0x80000' end_address='0x8ffff' type='' qualifier='RAM' width='0x20' words_used='0x13c' words_unused='0xfec4' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BE1D40' name='data1' type='SHT_PROGBITS' start_address='0x80000' word_size='0x13c' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BCA0F0' name='data1' start_address='0x80000' size='0x13c' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='acc_global_counter' address='0x80000' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_step_global_counter' address='0x80001' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_software_release' address='0x80002' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_ena_SDRAM_storing' address='0x80003' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_null_value' address='0x80004' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_float_ADC_value' address='0x80008' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_sdram_record' address='0x80010' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_save_regs' address='0x80020' size='0x2c' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_precal_ch03' address='0x8004c' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_ch03_coeff' address='0x80054' size='0x38' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_precal_ch47' address='0x8008c' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_ch47_coeff' address='0x80094' size='0x38' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch03_ptr' address='0x800cc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch03_base_ptr' address='0x800d0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch47_ptr' address='0x800d4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch47_base_ptr' address='0x800d8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch03_in' address='0x800dc' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch03_out' address='0x800f4' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch47_in' address='0x8010c' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_delayline_ch47_out' address='0x80124' size='0x18' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86640' name='M2Data' start_address='0x100000' end_address='0x10ffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x10000' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BE2118' name='data2' type='SHT_PROGBITS' start_address='0x100000' word_size='0x0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BCBEB8' name='data2' start_address='0x100000' size='0x0' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86670' name='SDRAM' start_address='0x4000000' end_address='0x7ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B863E0' name='MS0' start_address='0x8000000' end_address='0xbffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B85F78' name='MS1' start_address='0xc000000' end_address='0xfffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B85C10' name='HOST' start_address='0x10000000' end_address='0x11ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x2000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+</LINKPROJECT>
+</DOCUMENT>

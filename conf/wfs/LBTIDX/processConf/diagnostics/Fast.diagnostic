@@ -1,0 +1,22 @@
+
+GroupId			uint		0		# Special group for diagnostics with a fixed frame size.
+									# See class DiagnosticManagerGroups MirrorCtrl/RequestManagers/DiagnosticManagerPool.h		
+
+ShmName			string		FAST
+Freq			int 		100		#Hertz
+	
+MemType			string		SDRAM
+FirstBcu		string		BCU_MIRROR_0
+LastBcu			string		BCU_MIRROR_0
+FirstDsp 		int			0
+LastDsp 		int			11
+Address 		uint		0x000000
+FrameLen		uint 		0x098		#BYTES, including header and footer
+FramesNum		uint		0x38e38
+HdrLen 			int			4			#BYTES
+
+FrameCountMem 	string		SRAM		
+FrameCountBcu	string		BCU_MIRROR_0
+FrameCountDsp 	int			0
+FrameCountAddr	uint		0x181a7
+PointerFlag		int			1

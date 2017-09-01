@@ -1,0 +1,154 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>acquire_gui</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>acquire_gui</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>480</width>
+            <height>518</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>intmatAcquire</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>30</y>
+                <width>460</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>20</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>Acquire disturbance series</string>
+        </property>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>51</x>
+                <y>126</y>
+                <width>370</width>
+                <height>66</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout2</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel7_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Series file:</string>
+                        </property>
+                    </widget>
+                    <widget class="KURLRequester">
+                        <property name="name">
+                            <cstring>kURLinputFile</cstring>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonAcquire</cstring>
+                </property>
+                <property name="minimumSize">
+                    <size>
+                        <width>0</width>
+                        <height>30</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string>Acquire</string>
+                </property>
+            </widget>
+        </vbox>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>250</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Log:</string>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>logText</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>301</y>
+                <width>361</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonAcquire</sender>
+        <signal>clicked()</signal>
+        <receiver>acquire_gui</receiver>
+        <slot>buttonAcquire_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>kURLinputFile</sender>
+        <signal>urlSelected(const QString&amp;)</signal>
+        <receiver>acquire_gui</receiver>
+        <slot>kURLinputFile_urlSelected(const QString&amp;)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">acquire_gui.ui.h</include>
+</includes>
+<slots>
+    <slot>buttonAcquire_clicked()</slot>
+    <slot>kURLinputFile_urlSelected( const QString &amp; )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kurlrequester.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
+</UI>

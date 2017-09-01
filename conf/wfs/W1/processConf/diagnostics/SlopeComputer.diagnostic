@@ -1,0 +1,26 @@
+
+GroupId			uint		1		# This is the SlopeComputer group of diagnostics, each with 
+									# a different frame size. See DiagnosticManagerGroups class in file
+									# MirrorCtrl/RequestManagers/DiagnosticManagerPool.h
+
+ShmName			string		OPTLOOPBUF
+Freq			int 		100		#Hertz
+	
+MemType			string		SDRAM
+FirstBcu		string		BCU_39
+LastBcu			string		BCU_39
+FirstDsp 		int			255
+LastDsp 		int			255
+Address 		uint		0x000000
+FrameLen		uint 		0x4B30		# in BYTES, including header and footer
+FramesNum		uint		0x1B3C			    
+HdrLen 			int			0x10        # in BYTES
+
+FrameCountMem 	string		SRAM		
+FrameCountBcu	string		BCU_39
+FrameCountDsp 	int			255
+FrameCountAddr 	uint        0x38019
+PointerFlag	int				1
+
+#FrameCountAddr	uint		0x3800C
+#PointerFlag	int			0

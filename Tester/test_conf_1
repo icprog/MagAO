@@ -1,0 +1,5 @@
+#Test config file 1
+par0	string		pippo
+par1	int32		845
+par2	int64		105433
+inner1 	structure	test_conf_2

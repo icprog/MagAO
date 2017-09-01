@@ -1,0 +1,15 @@
+
+ifndef MAKEFILEWFSARB
+MAKEFILEWFSARB=.
+
+# Dependencies
+include $(ADOPT_SOURCE)/lib/arblib/base/makefile.basearb
+
+WFSARBLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/arblib/wfsArb,wfsarb_lib.a,do_wfsarblib) $(BASEARBLIB_COMPILE)
+
+do_wfsarblib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C  $(ADOPT_LIB)/arblib/wfsArb wfsarb_lib.a
+	
+WFSARBLIB_LNK = $(ADOPT_SOURCE)/lib/arblib/wfsArb/wfsarb_lib.a $(BASEARBLIB_LNK)
+
+endif

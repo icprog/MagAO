@@ -1,0 +1,333 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map_ss1.xsl"?>
+<!DOCTYPE DOCUMENT SYSTEM "file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map.dtd">
+<DOCUMENT>
+<LINKPROJECT id='00C07EA0' name='p0' orig_file_name='Release\HVCMainProgram.dxe' architecture='ADSP-TS101' >
+<FILE_NAME><![CDATA[Release\HVCMainProgram.dxe]]></FILE_NAME>
+<MEMORY id='00BC55F8' name='M0Code' start_address='0x0' end_address='0x3fff' type='' qualifier='RAM' width='0x20' words_used='0x9ad' words_unused='0x3653' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='0100EDD8' name='program' type='SHT_PROGBITS' start_address='0x0' word_size='0x9ad' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00C1E4D8' name='program' start_address='0x0' size='0x28' element_at='0x0' >
+<INPUT_FILE><![CDATA[booting_isr.doj]]></INPUT_FILE>
+<SYMBOL name='booting_isr' address='0x0' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='booting_isr.end' address='0x24' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C8A2B0' name='program' start_address='0x28' size='0x19' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='main' address='0x28' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='main.end' address='0x3d' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C8AF70' name='program' start_address='0x44' size='0xb4' element_at='0x0' >
+<INPUT_FILE><![CDATA[control_isr.doj]]></INPUT_FILE>
+<SYMBOL name='control_isr' address='0x44' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='update_cmd_end' address='0xa0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='restore_regs' address='0xca' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='control_isr.end' address='0xf4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C8EB88' name='program' start_address='0xf8' size='0x74' element_at='0x0' >
+<INPUT_FILE><![CDATA[timer_isr.doj]]></INPUT_FILE>
+<SYMBOL name='timer_isr' address='0xf8' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='timer_isr.end' address='0xfc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq0_isr' address='0x100' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq0_loop' address='0x12c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq0_restore_regs' address='0x154' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq0_isr.end' address='0x160' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq1_isr' address='0x164' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq1_isr.end' address='0x168' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C90B68' name='program' start_address='0x16c' size='0x41d' element_at='0x0' >
+<INPUT_FILE><![CDATA[TT1_control_isr.doj]]></INPUT_FILE>
+<SYMBOL name='TT1_control_1st_isr' address='0x16c' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='bias_ff_current' address='0x193' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch0' address='0x1ac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch2' address='0x1bc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch1' address='0x1cc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch3' address='0x1dc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch0' address='0x200' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch2' address='0x210' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch1' address='0x220' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch3' address='0x230' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_cmd_hist_end' address='0x283' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT1_control_1st_isr.end' address='0x33c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT1_control_2nd_isr' address='0x340' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch0' address='0x3a0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch2' address='0x3b8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch1' address='0x3ce' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch3' address='0x3e8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_end1' address='0x402' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch0' address='0x40c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch2' address='0x424' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch1' address='0x43a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch3' address='0x454' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_end' address='0x46e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_end' address='0x47a' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_err_smoothed_gain' address='0x48c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_err_smoothed_gain' address='0x498' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_err_smoothed_gain' address='0x4a4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_err_smoothed_gain' address='0x4af' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_speed_smoothed_gain' address='0x4c4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_speed_smoothed_gain' address='0x4d0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_speed_smoothed_gain' address='0x4dc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_speed_smoothed_gain' address='0x4e7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_poles_loop' address='0x4ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_zeros_loop' address='0x4f7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_check' address='0x510' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT1_control_2nd_isr.end' address='0x588' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00FE9890' name='program' start_address='0x58c' size='0x421' element_at='0x0' >
+<INPUT_FILE><![CDATA[TT2_control_isr.doj]]></INPUT_FILE>
+<SYMBOL name='TT2_control_1st_isr' address='0x58c' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='bias_ff_current' address='0x5b3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch0' address='0x5cc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch2' address='0x5dc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch1' address='0x5ec' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch3' address='0x5fc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch0' address='0x620' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch2' address='0x630' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch1' address='0x640' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch3' address='0x650' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_cmd_hist_end' address='0x6a3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT2_control_1st_isr.end' address='0x760' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT2_control_2nd_isr' address='0x764' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch0' address='0x7c4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch2' address='0x7dc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch1' address='0x7f2' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_ch3' address='0x80c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_end1' address='0x826' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch0' address='0x830' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch2' address='0x848' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch1' address='0x85e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_ch3' address='0x878' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='follow_err_end' address='0x892' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='servo_osc_end' address='0x89e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_err_smoothed_gain' address='0x8b0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_err_smoothed_gain' address='0x8bc' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_err_smoothed_gain' address='0x8c8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_err_smoothed_gain' address='0x8d3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_speed_smoothed_gain' address='0x8e8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_speed_smoothed_gain' address='0x8f4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_speed_smoothed_gain' address='0x900' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_speed_smoothed_gain' address='0x90b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_poles_loop' address='0x910' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_zeros_loop' address='0x91b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_check' address='0x934' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='TT2_control_2nd_isr.end' address='0x9ac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC67B8' name='M0Data' start_address='0x4018' end_address='0xffff' type='' qualifier='RAM' width='0x20' words_used='0x1c' words_unused='0xbfcc' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='0100F908' name='data0' type='SHT_PROGBITS' start_address='0x4018' word_size='0x1c' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00C1A8F8' name='data0' start_address='0x4018' size='0x1c' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='hvc_ADC_value' address='0x4018' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_DAC_value' address='0x401c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_command_vector' address='0x4020' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_current_vector' address='0x4028' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_update_cmd' address='0x4030' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC6880' name='M1Data' start_address='0x80000' end_address='0x8ffff' type='' qualifier='RAM' width='0x20' words_used='0x82d0' words_unused='0x7d30' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='0100FB00' name='data1' type='SHT_PROGBITS' start_address='0x80000' word_size='0x82d0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00C1F128' name='data1' start_address='0x80000' size='0x82d0' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='hvc_global_counter' address='0x80000' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_step_global_counter' address='0x80001' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_SoftwareRelease' address='0x80002' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_delay_DAC' address='0x80003' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_DAC_not_sent' address='0x80004' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_DAC_not_ready' address='0x80005' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_EnableIsr' address='0x80006' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_CmdHistEna' address='0x80007' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_DACMaxDelta' address='0x80008' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscOnOff' address='0x8000c' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscStartDataPtr' address='0x8000d' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscStopDataPtr' address='0x8000e' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscCurrDataPtr' address='0x8000f' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_delay_acc' address='0x80010' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_num_samples' address='0x80011' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_delay_counter' address='0x80012' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_acc_counter' address='0x80013' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_reset_acc' address='0x80014' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_inv_num_samples' address='0x80015' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CmdHistCnt' address='0x80016' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CmdHistStep' address='0x80017' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CmdHistGain' address='0x80018' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CmdHistPtr' address='0x8001a' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscOnOff' address='0x8001c' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscStartDataPtr' address='0x8001d' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscStopDataPtr' address='0x8001e' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscCurrDataPtr' address='0x8001f' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_delay_acc' address='0x80020' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_num_samples' address='0x80021' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_delay_counter' address='0x80022' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_acc_counter' address='0x80023' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_reset_acc' address='0x80024' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_inv_num_samples' address='0x80025' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CmdHistCnt' address='0x80026' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CmdHistStep' address='0x80027' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CmdHistGain' address='0x80028' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CmdHistPtr' address='0x8002a' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_null_value' address='0x8002c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_cmdhist_cmd' address='0x80030' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_cmdhist_curr' address='0x80034' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_command' address='0x80038' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_command' address='0x8003c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_dist_average' address='0x80040' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_average' address='0x80044' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_bias_command' address='0x80048' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_bias_current' address='0x8004c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_cmd_current' address='0x80050' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_start_preshaper_cmd' address='0x80054' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_final_preshaper_cmd' address='0x80058' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_preshaped_cmd' address='0x8005c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_step_ptr_preshaper_cmd' address='0x80060' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_ptr_preshaper_cmd' address='0x80064' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_start_preshaper_curr' address='0x80068' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_final_preshaper_curr' address='0x8006c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_preshaped_curr' address='0x80070' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_step_ptr_preshaper_curr' address='0x80074' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_ptr_preshaper_curr' address='0x80078' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_float_ADC_value' address='0x8007c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_dist_B_coeff' address='0x80080' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_dist_A_coeff' address='0x80084' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_distance' address='0x80088' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_delayline_ptr' address='0x8008c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_current' address='0x80090' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_pre_current' address='0x80094' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_control_enable' address='0x80098' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_float_DAC_value' address='0x8009c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_sat_DAC_value' address='0x800a0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_nsat_DAC_value' address='0x800a4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_DAC_N2A_gain' address='0x800a8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_DAC_A2bit_gain' address='0x800ac' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_DAC_bit_offset' address='0x800b0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_uint_DAC_value' address='0x800b4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_post_loop_gain' address='0x800b8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_post_smoothed_gain' address='0x800bc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_post_smoothed_step' address='0x800c0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pre_loop_gain' address='0x800c4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pre_smoothed_gain' address='0x800c8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pre_smoothed_step' address='0x800cc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscSum02' address='0x800d0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscSum13' address='0x800d4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscSumSqr02' address='0x800d8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscSumSqr13' address='0x800dc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscTrigLevel' address='0x800e0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscTrigTimeout' address='0x800e4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscTrigCounter' address='0x800e8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1ServoOscBitShift' address='0x800ec' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CLError' address='0x800f0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1CLErrorTrigLevel' address='0x800f4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_cmdhist_cmd' address='0x800f8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_cmdhist_curr' address='0x800fc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_command' address='0x80100' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_command' address='0x80104' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_dist_average' address='0x80108' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_average' address='0x8010c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_bias_command' address='0x80110' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_bias_current' address='0x80114' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_cmd_current' address='0x80118' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_start_preshaper_cmd' address='0x8011c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_final_preshaper_cmd' address='0x80120' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_preshaped_cmd' address='0x80124' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_step_ptr_preshaper_cmd' address='0x80128' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_ptr_preshaper_cmd' address='0x8012c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_start_preshaper_curr' address='0x80130' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_final_preshaper_curr' address='0x80134' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_preshaped_curr' address='0x80138' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_step_ptr_preshaper_curr' address='0x8013c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_ptr_preshaper_curr' address='0x80140' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_float_ADC_value' address='0x80144' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_dist_B_coeff' address='0x80148' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_dist_A_coeff' address='0x8014c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_distance' address='0x80150' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_delayline_ptr' address='0x80154' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_current' address='0x80158' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_pre_current' address='0x8015c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_control_enable' address='0x80160' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_float_DAC_value' address='0x80164' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_sat_DAC_value' address='0x80168' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_nsat_DAC_value' address='0x8016c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_DAC_N2A_gain' address='0x80170' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_DAC_A2bit_gain' address='0x80174' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_DAC_bit_offset' address='0x80178' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_uint_DAC_value' address='0x8017c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_post_loop_gain' address='0x80180' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_post_smoothed_gain' address='0x80184' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_post_smoothed_step' address='0x80188' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pre_loop_gain' address='0x8018c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pre_smoothed_gain' address='0x80190' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pre_smoothed_step' address='0x80194' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscSum02' address='0x80198' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscSum13' address='0x8019c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscSumSqr02' address='0x801a0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscSumSqr13' address='0x801a4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscTrigLevel' address='0x801a8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscTrigTimeout' address='0x801ac' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscTrigCounter' address='0x801b0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2ServoOscBitShift' address='0x801b4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CLError' address='0x801b8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2CLErrorTrigLevel' address='0x801bc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_dist_accumulator' address='0x801c0' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_accumulator' address='0x801c8' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_dist_accumulator2' address='0x801d0' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_curr_accumulator2' address='0x801dc' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_delayline_zeros' address='0x801e8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_delayline_poles' address='0x801f8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT1_pos_coeff' address='0x80208' size='0x24' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_dist_accumulator' address='0x8022c' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_accumulator' address='0x80234' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_dist_accumulator2' address='0x8023c' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_curr_accumulator2' address='0x80248' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_delayline_zeros' address='0x80254' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_delayline_poles' address='0x80264' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_TT2_pos_coeff' address='0x80274' size='0x24' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_save_regs' address='0x80298' size='0x2c' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_save_regs1' address='0x802c4' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_preshaper_cmd_buffer' address='0x802d0' size='0x4000' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='hvc_preshaper_curr_buffer' address='0x842d0' size='0x4000' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC6988' name='M2Data' start_address='0x100000' end_address='0x10ffff' type='' qualifier='RAM' width='0x20' words_used='0x10000' words_unused='0x0' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='0100FCF8' name='data2' type='SHT_PROGBITS' start_address='0x100000' word_size='0x10000' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00C23E08' name='data2' start_address='0x100000' size='0x10000' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='hvc_CmdHistVect' address='0x100000' size='0x10000' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC69B8' name='SDRAM' start_address='0x4000000' end_address='0x7ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC6718' name='MS0' start_address='0x8000000' end_address='0xbffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BCADF0' name='MS1' start_address='0xc000000' end_address='0xfffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BD1E88' name='HOST' start_address='0x10000000' end_address='0x11ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x2000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+</LINKPROJECT>
+</DOCUMENT>

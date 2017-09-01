@@ -1,0 +1,302 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AdSecCalibration_gui</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AdSecCalibration_gui</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>414</width>
+            <height>383</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>AdsecCalibration</string>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>208</x>
+                <y>11</y>
+                <width>191</width>
+                <height>358</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Utilities</string>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout6</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonPowerSupplyTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>POWER SUPPLY TEST</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonFastLinkTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>FASTLINK TEST</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonCoilsTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>COILS TEST</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonCapSensTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>CAPSENS TEST</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonWatchdogTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>WATCHDOG TEST</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonDustTest</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>DUST TEST</string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </vbox>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>11</y>
+                <width>191</width>
+                <height>358</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Calibration</string>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>170</width>
+                    <height>320</height>
+                </rect>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonAccelerometer</cstring>
+                    </property>
+                    <property name="text">
+                        <string>ACCELEROMETER</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonTurbulenceTrack</cstring>
+                    </property>
+                    <property name="text">
+                        <string>TURBULENCE TRACK</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonDynamicResponse</cstring>
+                    </property>
+                    <property name="text">
+                        <string>DYNAMIC RESPONSE</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonFFMatrix</cstring>
+                    </property>
+                    <property name="text">
+                        <string>FF MATRIX</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonTestNoise</cstring>
+                    </property>
+                    <property name="text">
+                        <string>TEST NOISE</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonStepResponse</cstring>
+                    </property>
+                    <property name="text">
+                        <string>STEP RESPONSE</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonFindTouch</cstring>
+                    </property>
+                    <property name="text">
+                        <string>FIND TOUCH</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonAcq4DIntMat</cstring>
+                    </property>
+                    <property name="text">
+                        <string>ACQ 4D INTMAT</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonFlat4DMirror</cstring>
+                    </property>
+                    <property name="text">
+                        <string>FLAT 4D MIRROR</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonAccelerometer</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonAccelerometer_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonTurbulenceTrack</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonTurbulenceTrack_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonDynamicResponse</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonDynamicResponse_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonFFMatrix</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonFFMatrix_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonTestNoise</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonTestNoise_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonStepResponse</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonStepResponse_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonFindTouch</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonFindTouch_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonAcq4DIntMat</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonAcq4DIntMat_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonFlat4DMirror</sender>
+        <signal>clicked()</signal>
+        <receiver>AdSecCalibration_gui</receiver>
+        <slot>buttonFlat4DMirror_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">AdSecCalibration_gui.ui.h</include>
+</includes>
+<slots>
+    <slot>ffReduce_clicked()</slot>
+    <slot>ffAcquire_clicked()</slot>
+    <slot>capsensTest_clicked()</slot>
+    <slot>coilsTest_clicked()</slot>
+    <slot>watchdogTest_clicked()</slot>
+    <slot>powersupplyTest_clicked()</slot>
+    <slot>dustTest_clicked()</slot>
+    <slot>password_returnPressed()</slot>
+    <slot>fastlinkTest_clicked()</slot>
+    <slot>buttonAccelerometer_clicked()</slot>
+    <slot>buttonTurbulenceTrack_clicked()</slot>
+    <slot>buttonDynamicResponse_clicked()</slot>
+    <slot>buttonFFMatrix_clicked()</slot>
+    <slot>buttonTestNoise_clicked()</slot>
+    <slot>buttonStepResponse_clicked()</slot>
+    <slot>buttonFindTouch_clicked()</slot>
+    <slot>buttonAcq4DIntMat_clicked()</slot>
+    <slot>buttonFlat4DMirror_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

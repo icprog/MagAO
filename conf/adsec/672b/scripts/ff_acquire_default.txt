@@ -1,0 +1,51 @@
+;txt file for the default parametes in the feed forward acquisition script.
+;number of acquisition cycle must be gt 1 to have a real fit
+n_cycles                            int             30
+
+;; amp MUST be a positive number, modal for modal anallisys and ff for feed forward use.
+;modal with FF
+amp                                 float        3.4e-6 
+modal                               byte              1
+ff                                  byte              1
+
+;; local with FF
+;amp                                 float        2.0e-7    
+;modal                               byte              0 
+;ff                                  byte              1      
+
+;; local without FF
+;amp                                 float             1.3e-6
+;modal                               byte              0 
+;ff                                  byte              0   
+
+;; local without FF
+;amp                                 float             600e-9
+;modal                               byte              0 
+;ff                                  byte              0   
+
+;max peak force factor ralated to magnet weight
+max_peak_fact                       float           3.0
+path_0                              string  "ff_matrix"
+path_1                              string "2009_03_11"
+ext                                 string  ""
+
+;smoothing 
+do_smooth                           byte              0
+
+;no reordering modes
+no_match_ordering                   byte              1
+
+;; accumulator settings
+delay                               int             500  
+samples                             uint           2048 
+
+;; number of times the noise covar matrix is measured
+times                               int             10
+
+;; set to use an integrator (don't use it if FF  enabled)
+integ                               int               0 
+
+;; check or no the linearity of commands
+lin_ck					 byte		     0                               
+
+

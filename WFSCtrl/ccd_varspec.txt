@@ -1,0 +1,44 @@
+
+
+Variable set for CCD control:
+
+
+Name         Type      Mode   Description
+
+CCDnNAME     Char       ro     CCD name for GUI interaction
+
+CCDnDX       Int        ro     CCD dimension X (no. of pixels)
+
+CCDnDY       Int        ro     CCD dimension Y (no. of pixels)
+
+CCDnXBINS    Int(array) ro     Available binnings along the X direction
+
+CCDnYBINS    Int(array) ro     Available binnings along the Y direction
+                               This two arrays are to be considered a single array of couples: (1,1) (2,2) etc.
+                               If asymmetric binnings like (1,2) and (2,1) are allowed, all possible combinations
+                               must be specified as separate array elements.
+                              
+CCDnSPEEDS   Int(array) ro     Available readout speeds
+
+CCDnXBIN     Int        rw     Sets the X binning.
+
+CCDnYBIN     Int        rw     Sets the Y binning. Only an (X,Y) combination found in CCDnXBINS and CCDnYBINS can be used
+
+CCDnSPEED    Int        rw     Sets the readout speed. Together with the binning, determines the resulting frame rate.
+                                                           
+CCDnSTATUS   Bitwise    ro     Status word. The following bits are defined:
+
+                               bit mask   meaning
+                             
+                               0x0001     Ready (the CCD is ready for operation)
+                               0x0002     Operating (the CCD is acquiring frames)
+                               0x0004     Error (see message in CCDnERRMSG)
+                             
+CCDnGO       Int        rw     Start/Stop control. Set to 1 to start operation, 0 to stop
+
+CCDnERRMSG   Char       ro     Last error message (valid when the error bit in the status word is on).
+
+CCDnTEMPS    Int(array) ro     CCD temperatures in Celsius degrees. The length of the array is determined by the actual # of temperature sensors.
+
+
+

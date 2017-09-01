@@ -1,0 +1,52 @@
+@ERR?
+@ERR^0
+@JOE?
+@JOE! 2.2.4
+@AAM?
+@AAM! #0:0; #1:0
+@DCA?
+@DCA! #0:40; #1:40
+@DSA?
+@DSA! #0:50; #1:50
+@FAM?
+@FAM! #0:0; #1:0
+@OAC?
+@OAC! #0:$000278; #1:$000287; #2:$00026F; #3:$000273
+@PRG?
+@PRG! 0
+@REP?
+@REP! $000000
+@MAP?0
+@MAP! #0:4
+@MAP?4
+@MAP! #4:2
+@SEQ?
+@SEQ! 1
+@TXC?
+@TXC! 0
+@CTF?
+@CTF! 'ARCETRI v1.1
+@PTF?
+@PTF! 'ARCETRI v1.1
+@RCL 0
+@RCL! 0; '2500
+@OMM?4
+@OMM! #4:0
+@OMM?0
+@OMM! #0:1
+@TMP?
+@TMP! #0:227; #1:48; #2:48; #3:128
+
+Non bisognerebbe fare il @RCL 0 (recall settings) all'inizio, subito dopo la verifica di @JOE?
+Aggiungere:
+
+@SEQ?
+@SEQ! 0
+
+Sequenza iniziale:
+
+1. Verifica collegamento & hardware (@ERR?, @JOE?)
+2. Recall settings (@RCL 0)
+3. Download settings (tutti gli altri)
+4. Attesa di comandi
+

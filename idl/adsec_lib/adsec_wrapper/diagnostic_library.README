@@ -1,0 +1,183 @@
+This README describes a bunch of IDL commands that can be used to communicate with a DiagnApp like for instance the Housekeeper and the Fastdiagn.
+
+SETDIAGNPARAM:    Set variables parameters
+GETDIAGNPARAM:    Retrieve variables parameters
+GETDIAGNVALUE:    Retrieve variables value: last value inserted in the running mean, mean and stdev of the runnig mean buffer
+GETDIAGNBUFFER:   Retrieve variable running mean buffer: values inserted in the buffer and the corresponding times.
+SETLOGLEVEL:      Increase/Decrease the logging level of an application connected to the Supervisor. This apply also to IDL itself. 
+
+//
+// SetLogLevel
+// 
+// SetLogLevel(AOApp, /decr, /incr, /time)
+// 
+// INPUT
+//      AOApp           AO application name ('FASTDGN', 'TTCTRL', ...) 
+//                      '' means this library
+// 
+// KEYWORD
+//      increase        increase verbosity
+//      decrease        decrease verbosity
+//      timeout         timeout [s] (def. 1s)
+//
+// RETURN
+//      NO_ERROR
+//
+
+//
+// GETDIAGNPARAM
+//
+// This function get diagnostic parameters from a diagnostic application (DiagnApp)
+// A filter (family, from, to) is given as input to match a subset of the diagnostic variables (DiagnVars)
+// 
+// err = GetDiagnParam(diagnapp, family, from, to, vars , timeout=timeout)
+// 
+// INPUTS
+//      diagnapp        Diagnostic application name ('FASTDGN00', 'HOUSEKPR00')
+//      family          Family name of the DiagnVars to retrieve, wildcards allowed ('ChDistAverage', '*Temp*', 'pippo pluto')
+//      from            Index of the first DiagnVar to read from, -1 means "from the first one"
+//      to              Index of the last DiagnVar to read from, -1 means "to the last one"
+//
+// OUTPUT
+//      vars            Matched Vars. Array of structures {FAMILY, INDEX, ALARM_MIN, WARNING_MIN, WARNING_MAX,
+//                                                         ALARM_MAX, MEAN_PERIOD, CAF, ENABLED, SLOW}
+//                      Each element of the array corresponds to a matched DiagnVar where,
+//                      FAMILY          is the family name,
+//                      INDEX           is the index,
+//                      ALARM_MIN       below this threshold an alarm event is triggered
+//                      WARNING_MIN     below this threshold an warning event is triggered
+//                      WARNING_MAX     above this threshold an warning event is triggered
+//                      ALARM_MAX       above this threshold an alarm event is triggered
+//                      MEAN_PERIOD     period of the running mean average [s]
+//                      CAF             Consecutive Allowed Faults. Should be 0. Untested
+//                      ENABLED         1 if the DiagnVar is enabled, 0 if is disabled
+//                      SLOW            1 if the DiagnVar run in the "slow" thread, 0 if it runs in the "fast" thread
+// 
+// KEYWORDS
+//      TIMEOUT         timeout in the communication with the DiagnApp [s]
+//
+
+//
+///
+// SETDIAGNPARAM
+//
+// This function set diagnostic parameters from a diagnostic application (DiagnApp)
+// A filter (family, from, to) is given as input to match a subset of the diagnostic variables (DiagnVars)
+// One or more parameters can be changed using the corresponding keywords without affecting the other parameters.
+//
+// 
+// mod_vars = SetDiagnParam(diagnapp, family, from, to, vars , ALARM_MAX=alarm_max, ALARM_MIN=alarm_min, 
+//                     CONS_ALLOWED_FAULTS=caf, ENABLED=enabled, MEAN_PERIOD=mean_period, SLOW=slow, TIMEOUT=timeout,
+//                     WARNING_MAX=warning_max,  WARNING_MIN=warning_min)
+// 
+// RETURN VALUE
+//       This function return the number of modified DiagnVars
+// 
+//
+// INPUTS
+//      diagnapp        Diagnostic application name ('FASTDGN00', 'HOUSEKPR00')
+//      family          Family name of the DiagnVars to match, wildcards allowed ('ChDistAverage', '*Temp*', 'pippo pluto')
+//      from            Index of the first DiagnVar to match, -1 means "from the first one"
+//      to              Index of the last DiagnVar to match, -1 means "to the last one"
+//
+// KEYWORDS
+//      ALARM_MIN       below this threshold an alarm event is triggered
+//      WARNING_MIN     below this threshold an warning event is triggered
+//      WARNING_MAX     above this threshold an warning event is triggered
+//      ALARM_MAX       above this threshold an alarm event is triggered
+//      MEAN_PERIOD     period of the running mean average [s]
+//      CAF             Consecutive Allowed Faults. Should be 0. Untested
+//      ENABLED         1 if the DiagnVar is enabled, 0 if is disabled
+//      SLOW            1 if the DiagnVar run in the "slow" thread, 0 if it runs in the "fast" thread
+//      TIMEOUT         timeout in the communication with the DiagnApp [s]
+//
+
+
+//
+// GETDIAGNVALUE
+//
+// This function get diagnostic values from a diagnostic application (DiagnApp)
+// A filter is given as input to match a subset of the diagnostic variables (DiagnVars)
+// 
+//
+// 
+// err = GetDiagnValue(diagnapp, family, from, to, vars , timeout=timeout)
+// 
+// INPUTS
+//      diagnapp        Diagnostic application name ('FASTDGN00', 'HOUSEKPR00')
+//      family          Family name of the DiagnVars to retrieve, wildcards allowed ('ChDistAverage', '*Temp*', 'pippo pluto')
+//      from            Index of the first DiagnVar to read from, -1 means "from the first one"
+//      to              Index of the last DiagnVar to read from, -1 means "to the last one"
+//
+// OUTPUT
+//      vars            Matched Vars. Array of structures {FAMILY, INDEX, AVERAGE, STDDEV, LAST, TIME}.
+//                      Each element of the array corresponds to a matched DiagnVar where,
+//                      FAMILY  is the family name,
+//                      INDEX   is the index,
+//                      AVERAGE is the average value of the running mean buffer (see GetDiagParam),
+//                      STDDEV  is the stddev of the values in the running mean buffer
+//                      LAST    is the last value inserted in the running mean buffer
+//                      TIME    is the timestamp corresponding to the average value
+//                      STATUS  can be one of 0=OK, 1=WARNING, 2=ALARM
+//
+// KEYWORDS
+//      TIMEOUT         timeout in the communication with the DiagnApp [s]
+//
+
+
+//
+// GETDIAGNBUFFER
+//
+// This function retrieve the values in the running mean buffers from a diagnostic application (DiagnApp)
+// A filter is given as input to match a subset of the diagnostic variables (DiagnVars)
+// A DiagnVar stores in the running mean buffer both the values and the timestamps.
+// 
+// 
+// err = GetDiagnBuffer(diagnapp, family, from, to, vars , timeout=timeout)
+// 
+// INPUTS
+//      diagnapp        Diagnostic application name ('FASTDGN00', 'HOUSEKPR00')
+//      family          Family name of the DiagnVars to retrieve, wildcards allowed ('ChDistAverage', '*Temp*', 'pippo pluto')
+//      from            Index of the first DiagnVar to read from, -1 means "from the first one"
+//      to              Index of the last DiagnVar to read from, -1 means "to the last one"
+//
+// OUTPUT
+//      vars            Matched Vars. Structure of structures {V0000, V0001, V0002, V000N} 
+//                      where N+1 is the number of matched variables
+//                      Each Vxxx is of the form:
+//                      FAMILY     family name,
+//                      INDEX      index,
+//                      TIMES      timestamps of the values in the running mean buffer [s]
+//                      VALUES     values in the running mean buffer
+//
+// KEYWORDS
+//      TIMEOUT         timeout in the communication with the DiagnApp [s]
+//
+// EXAMPLE
+// In the following the buffers of every DiagnVar matching the name '*Temp*' of the DiagnApp HOUSEKPR00
+// are retrieved. 
+//
+// IDL> print, getdiagnbuffer('HOUSEKPR00', '*Temp*', -1, -1, vars, time=2)
+// IDL> help, vars
+// VARS            STRUCT    = -> <Anonymous> Array[1]
+// IDL> help, vars, /str
+// ** Structure <a03a474>, 31 tags, length=2656, data length=2656, refs=1:
+//   V0000            STRUCT    -> <Anonymous> Array[1]
+//   V0001            STRUCT    -> <Anonymous> Array[1]
+//   V0002            STRUCT    -> <Anonymous> Array[1]
+//   V0003            STRUCT    -> <Anonymous> Array[1]
+//   V0004            STRUCT    -> <Anonymous> Array[1]
+//   V0005            STRUCT    -> <Anonymous> Array[1]
+// IDL> help, vars.v0000, /str
+// ** Structure <a0359c4>, 4 tags, length=96, data length=96, refs=2:
+//   FAMILY          STRING    'BCUPowerTemp'
+//   INDEX           LONG                 0
+//   TIMES           DOUBLE    Array[5]
+//   VALUES          DOUBLE    Array[5]
+//IDL> print, vars.v0000.times
+//       209.85261       210.88453       211.91236       212.94063       213.96821
+//IDL> print, vars.v0000.values
+//       31.562500       31.562500       31.500000       31.500000       31.500000
+//
+//  
+

@@ -1,0 +1,123 @@
+#@File makefile.gen
+
+# General makefile for the Supervisor software
+#
+# This makefile must be included by any Makefile used to build 
+# Supervisor software modules.  It essentially defines a number 
+# of symbols to be used by makefiles.
+#
+# Makefiles must define two implicit rules for compilation as follows:
+#
+# .c.o:
+#         $(CC) $(CFLAGS) $(OPTIMIZE) -c $<
+# .cpp.o:
+#         $(CPP) $(CPPFLAGS) $(OPTIMIZE) -c $<
+#
+# and must use the predefined commands: $(LINK) and $(LINKPP) to
+# generate code from, respectively, C and C++ object modules.
+#
+# LIST OF ENVIRONMENT VARIABLES NEEDED TO BUILD AND INSTALL ADOPT SOFTWARE
+#   from aows 09 may 2009. Set to your systems's need
+#   
+#   ADOPT_ROOT=/usr/local/adopt
+#   ADOPT_LOG=/tmp
+#   ADOPT_IDL_SOURCE=/home/labot/idl
+#   ADOPT_SUBSYSTEM=ADSEC
+#   ADOPT_SOURCE=/home/labot/work/AO/Supervisor
+#   ADOPT_SIDE=L
+#   QTDIR=/usr/lib/qt-3.3
+#   IDLDIR=/usr/local/itt/idl
+#
+
+#ifndef ADOPT_SOURCE
+#ADOPT_SOURCE = $(shell pwd)
+#endif
+
+
+ADOPT_LIB = $(ADOPT_SOURCE)/lib
+ADOPT_BASELIB= $(ADOPT_SOURCE)/lib/base
+ADOPT_AOSLIB = $(ADOPT_SOURCE)/lib/aoslib
+ADOPT_BCULIB = $(ADOPT_SOURCE)/lib/BcuLib
+ADOPT_HWLIB = $(ADOPT_SOURCE)/lib/hwlib
+
+LIB_INCLUDE = -I$(ADOPT_SOURCE)/lib
+
+# Python version and utility symbols (only needed for idl_wrapper/idl_4dlib)
+# This version is ok with the 4D idl wrapper (see idl_wrapper/Makefile)
+PY_VER := $(shell python -c 'import sys; print sys.version' | cut -c 1-3 | head -1)
+PY_LIB_LNK = -lpython$(PY_VER)
+PY_INCLUDE = -I/usr/include/python$(PY_VER)
+
+
+# QT symbols (QTDIR must be set e.g. /usr/share/qt3 on ubuntu 8.10, /usr/lib/qt-3.3 on centos4)
+QT_INCLUDE = -I $(QTDIR)/include
+
+# IDL symbols (IDLDIR must be set e.g. /usr/local/itt/idl for IDL>6.3)
+IDL_INCLUDE = -I$(IDLDIR)/external/include
+
+MATLAB_INCLUDE = -I/usr/local/MATLAB/R2011a/extern/include
+
+ADOPT_INCLUDE = -I/usr/local/include -I$(ADOPT_SOURCE)/lib $(PY_INCLUDE) $(IDL_INCLUDE) $(QT_INCLUDE) $(MATLAB_INCLUDE)
+
+#OPTIMIZE = -O
+OPTIMIZE = -ggdb
+
+CFLAGS = -W -Wall -Wreturn-type -Wunused -Wmissing-prototypes -D_GNU_SOURCE
+CPPFLAGS = -Wall -W -Wreturn-type -Wunused -D_GNU_SOURCE
+
+# The following command is prepended to code generation in order
+# to allow the automatic computation of the executable generation
+# time used in MsgD for debugging purposes. This will happen when
+# the Makefile uses one of the symbols $(LINK) or $(LINKPP) to
+# generate executables.
+
+MAKE_BUILD_TIME = gcc $(ADOPT_INCLUDE) $(OPTIMIZE) $(CFLAGS) -c $(ADOPT_BASELIB)/build_time.c
+
+MSGLIB_A = $(ADOPT_BASELIB)/msglib.a
+THRDLIB_A = $(ADOPT_BASELIB)/thrdlib.a 
+
+# Cleaner output by default.
+# Use "make Q=" to have normal (verbose) output
+Q ?= @
+MAKEOPTS = --no-print-directory Q=$(Q)
+
+## Ristrutturazione direttive include
+## Nota: i due simboli seguenti dovranno essere definiti dopo la 
+## modifica delle direttive include
+## 
+CC = $(Q)echo "	 [CC] $<"; gcc  $(ADOPT_INCLUDE)
+CPP = $(Q)echo "  [CPP] $<"; g++ $(ADOPT_INCLUDE)
+#CPP = g++ $(ADOPT_INCLUDE)
+
+CCDEP = $(Q)echo "	 [DEP] $<"; gcc  $(ADOPT_INCLUDE)
+CPPDEP = $(Q)echo "  [DEP] $<"; g++ $(ADOPT_INCLUDE)
+
+
+LINK = $(Q)echo "  [LD] $@"; $(MAKE_BUILD_TIME); gcc build_time.o
+LINKPP = $(Q)echo "  [LD] $@"; $(MAKE_BUILD_TIME); g++ build_time.o
+
+AR = $(Q)echo "  [AR] $@"; ar -r 
+RANLIB =$(Q)echo "  [RANLIB] $@";  ar -s
+
+# Macro to check whether a sub-make needs recompiling.
+#
+# $(call test_uptodate,$1,$2,$3)
+#
+# $1 = directory
+# $2 = target to check
+# $3 = string to output in case the target needs recompiling.
+# If no recompiling is needed, result is an empty string.
+
+test_uptodate = $(shell $(MAKE) $(MAKEOPTS) -C $1 -q $2; if [ $$? -eq 1 ]; then echo $3; fi)
+
+#.cpp.o: 
+%.o: %.cpp 
+	$(CPP) $(OPTIMIZE) $(CPPFLAGS) -c $<
+	$(CPPDEP) -MM $(CPPFLAGS) $< > $*.d
+
+%.o: %.c
+	$(CC) $(OPTIMIZE) $(CFLAGS) -c $<
+	$(CCDEP) -MM $(CFLAGS) $< > $*.d
+
+
+

@@ -1,0 +1,40 @@
+HEADER
+; IDL Visual Widget Builder Resource file. Version 1
+; Generated on:	08/10/2005 19:01.01
+VERSION 1
+END
+
+XSL_COMM_GUI_BASE BASE 5 5 745 193
+TIMEREVENT "xls_comm_on_timer"
+TLB
+CAPTION "Slope Computer Communication"
+XPAD = 3
+YPAD = 3
+SPACE = 3
+BEGIN
+  START_STOP_BTN PUSHBUTTON 4 4 75 27
+  VALUE "Start"
+  ALIGNCENTER
+  ONACTIVATE "xsc_comm_start_btn_on_press"
+  END
+  REFRESH_TIME_FLD TEXT 86 36 -1 -1
+  NUMITEMS = 1
+  ITEM "0.1"
+  EDITABLE
+  NONEWLINE
+  WIDTH = 20
+  HEIGHT = 1
+  END
+  WID_LABEL_0 LABEL 5 41 78 18
+  VALUE "Polling time [s]:"
+  ALIGNLEFT
+  END
+  WID_LABEL_1 LABEL 7 75 0 0
+  VALUE "Messages:"
+  ALIGNLEFT
+  END
+  MESSAGE_FLD TEXT 64 78 669 78
+  WIDTH = 20
+  HEIGHT = 5
+  END
+END

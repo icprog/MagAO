@@ -1,0 +1,54 @@
+; $Id: dsp_const.txt,v 1.1 2009/09/14 16:52:34 marco Exp $
+;+
+; dsp_const
+;
+; structure with constants related to dsp program
+;
+; HISTORY
+;
+; 18 May 2004: A. Riccardi (AR)
+;  test_addr, test_len fields and dsp_prog_name added.
+; 28 Jul 2004: Marco Xompero (MX)
+;  max_preshaper_step, min_preshaper_step added.
+; 30 Jul 2004: AR and MX
+;  changed value of max_data_IO_len to SDRAM size divided by n_dataIO
+;  max_data_IO_len in hexadecimal
+; 04 Aug 2004: MX
+;  names changed: min_preshaper_step to fastest_preshaper_step and
+;                 max_preshaper_step to slowest_preshaper_step.
+;
+; 12 Aug 2004: AR
+;   n_dataIO changed from 16 to 8 to keep the end of buffer processing before the
+;   next IRQ (sampling at 80kHz)
+;-
+;
+prog_name            string "DspMainProgram.ldr" ; DSP program file name
+IO_vars_offset          int           8 ; mem offet between corresponding IO#n and IO#(n+1) vars. [words]
+coeff_len               int           0 ; max control low coeffs len per channel
+scale_factor_len        int           0 ; length of the vector of the control scale factors [words]
+n_dataIO                int           8 ; number of available data IO buffers
+max_data_IO_len         ulong x00100000 ; max data IO len for buffers [words] (=length*record_size)
+max_data_acc_len        uint      x8000 ; max data len for the accumulators [words]
+io_startontrig_mask     ulong x55555555 ; io_start mask, binary: 01010101010101010101010101010101
+io_startnow_mask        ulong xAAAAAAAA ; io_start mask, binary: 10101010101010101010101010101010
+io_stop_mask            ulong xFFFFFFFF ; io_start mask
+mean_transfer_time      double  0.000040 ; [s] mean tranfer time to transmit one word
+mean_transfer_time_per_empty_pkt double 300e-6; [s] mean transfer time to transmit one empty packet
+first_ch_addr           long  x00080008 ; first address containing actuator-based data
+last_ch_addr            long  x000800A4 ; last address containing actuator-based data
+slowest_preshaper_step      long           1 ; minimum preshaper length (no preshaper)
+fastest_preshaper_step      long       16384 ; maximum preshaper lenght
+pos_fixed_point         double     1d-11 ; position fixed point truncating for the pos accumulators 
+curr_fixed_point        double     1d-8  ; current fixed point truncating for the cur accumulators
+
+;*** communication buffer quantities
+;
+head_length              int          8 ; [bytes]
+max_read_buffer_len      long         0 ; max len of comm. buffer when reading [bytes]. It must be larger then or equal to 4*n_dsp. Filled in init_dsp_map.pro
+max_write_buffer_len     long         0 ; max len of comm. buffer when writing [bytes]. It must be larger then or equal to 4*n_dsp+header_len. Filled in init_dsp_map.pro
+
+;*** data for communication tests
+;
+test_len                 long       400 ; default buffer len for communcation tests
+max_filters_coeff        int        5  ; default number of filters coeff for numerator or denominator 
+					    ;(written as 5num/ 4den degree of polynomials)

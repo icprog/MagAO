@@ -1,0 +1,2376 @@
+<!DOCTYPE FSM>
+<FSM>
+    <statemachine>
+        <name>WfsFsmCore</name>
+        <comment></comment>
+        <initialstate>PowerOff</initialstate>
+        <event>
+            <name>AntiDrift</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CalibratePISCESDark</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>OptimizeGain</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>OffsetXY</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>ResumeLoop</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>SaveStatus</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>RecoverPanic</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CalibrateIRTCDark</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>OffsetZ</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>RecoverFailure</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>PrepareAdsec</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CalibrateSlopenull</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>StopLoopAdsec</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>Off</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>SetSource</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>AutoTrack</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>SaveOptLoopData</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CalibrateTVDark</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>ForceFailure</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>ModifyAO</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>Operate</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CheckRef</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>PauseLoop</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CorrectModes</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>StopLoop</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>GetTVSnap</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CloseLoop</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>PrepareAcquireRef</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>EmergencyOff</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>EnableDisturb</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>CalibrateHODark</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>AcquireRef</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>ForcePanic</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>SetLoopFreq</name>
+            <comment></comment>
+        </event>
+        <event>
+            <name>RefineLoop</name>
+            <comment></comment>
+        </event>
+        <input>
+            <name>processCommand</name>
+            <comment></comment>
+        </input>
+        <state>
+            <name>Operating</name>
+            <comment>All WFS devices are operating correctly.</comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>Off</name>
+                    <comment></comment>
+                    <condition>Off &amp;&amp; processCommand</condition>
+                    <destination>PowerOff</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>Operate</name>
+                    <comment></comment>
+                    <condition>Operate &amp;&amp; processCommand</condition>
+                    <destination></destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>PrepareAcquireRef</name>
+                    <comment></comment>
+                    <condition>PrepareAcquireRef &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoop</name>
+                    <comment></comment>
+                    <condition>StopLoop &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AutoTrack</name>
+                    <comment></comment>
+                    <condition>AutoTrack &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AntiDrift</name>
+                    <comment></comment>
+                    <condition>AntiDrift &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>EnableDisturb</name>
+                    <comment></comment>
+                    <condition>EnableDisturb &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveOptLoopData</name>
+                    <comment></comment>
+                    <condition>SaveOptLoopData &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveStatus</name>
+                    <comment></comment>
+                    <condition>SaveStatus &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateHODark</name>
+                    <comment></comment>
+                    <condition>CalibrateHODark &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateTVDark</name>
+                    <comment></comment>
+                    <condition>CalibrateTVDark &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateIRTCDark</name>
+                    <comment></comment>
+                    <condition>CalibrateIRTCDark &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateSlopenull</name>
+                    <comment></comment>
+                    <condition>CalibrateSlopenull &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>ModifyAO</name>
+                    <comment></comment>
+                    <condition>ModifyAO &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibratePISCESDark</name>
+                    <comment></comment>
+                    <condition>CalibratePISCESDark &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>Failure</name>
+            <comment></comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>RecoverFailure (Operate)</name>
+                    <comment>Recovers an error which was specified as recoverable. It's implemented as an Operate.</comment>
+                    <condition>RecoverFailure &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>LoopClosed</name>
+            <comment>Adaptive optics loop is closed</comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>PauseLoop</name>
+                    <comment></comment>
+                    <condition>PauseLoop &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoop</name>
+                    <comment></comment>
+                    <condition>StopLoop &amp;&amp; processCommand
+</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>RefineLoop</name>
+                    <comment></comment>
+                    <condition>RefineLoop &amp;&amp; processCommand</condition>
+                    <destination></destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>OffsetXY</name>
+                    <comment></comment>
+                    <condition>OffsetXY &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>OffsetZ</name>
+                    <comment></comment>
+                    <condition>OffsetZ &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AntiDrift</name>
+                    <comment></comment>
+                    <condition>AntiDrift &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AutoTrack</name>
+                    <comment></comment>
+                    <condition>AutoTrack &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>EnableDisturb</name>
+                    <comment></comment>
+                    <condition>EnableDisturb &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveOptLoopData</name>
+                    <comment></comment>
+                    <condition>SaveOptLoopData &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveStatus</name>
+                    <comment></comment>
+                    <condition>SaveStatus &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateIRTCDark</name>
+                    <comment></comment>
+                    <condition>CalibrateIRTCDark &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibratePISCESDark</name>
+                    <comment></comment>
+                    <condition>CalibratePISCESDark &amp;&amp; processCommand</condition>
+                    <destination></destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>OptimizeGain</name>
+                    <comment></comment>
+                    <condition>OptimizeGain &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>ModifyAo</name>
+                    <comment></comment>
+                    <condition>ModifyAO &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>AOPrepared</name>
+            <comment></comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>AcquireRef</name>
+                    <comment></comment>
+                    <condition>AcquireRef &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>Operate</name>
+                    <comment>Sends an Operate command with dummy flag (has no real effect).</comment>
+                    <condition>Operate &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoop</name>
+                    <comment></comment>
+                    <condition>StopLoop &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AntiDrift</name>
+                    <comment></comment>
+                    <condition>AntiDrift &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AutoTrack</name>
+                    <comment></comment>
+                    <condition>AutoTrack &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateHODark</name>
+                    <comment></comment>
+                    <condition>CalibrateHODark &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveOptLoopData</name>
+                    <comment></comment>
+                    <condition>SaveOptLoopData &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveStatus</name>
+                    <comment></comment>
+                    <condition>SaveStatus &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CheckRef</name>
+                    <comment></comment>
+                    <condition>CheckRef &amp;&amp; processCommand</condition>
+                    <destination></destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>ModifyAO</name>
+                    <comment></comment>
+                    <condition>ModifyAO &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>Off</name>
+                    <comment></comment>
+                    <condition>Off &amp;&amp; processCommand</condition>
+                    <destination>PowerOff</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>PrepareAcquireRef</name>
+                    <comment></comment>
+                    <condition>PrepareAcquireRef &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibratePISCESDark</name>
+                    <comment></comment>
+                    <condition>CalibratePISCESDark &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateIRTCDark</name>
+                    <comment></comment>
+                    <condition>CalibrateIRTCDark &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>LoopPaused</name>
+            <comment>Closed loop is paused</comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>ResumeLoop</name>
+                    <comment></comment>
+                    <condition>ResumeLoop &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoop</name>
+                    <comment>Stops the AO loop</comment>
+                    <condition>StopLoop &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>OffsetXY</name>
+                    <comment></comment>
+                    <condition>OffsetXY &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>OffsetZ</name>
+                    <comment></comment>
+                    <condition>OffsetZ &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AntiDrift</name>
+                    <comment></comment>
+                    <condition>AntiDrift &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AutoTrack</name>
+                    <comment></comment>
+                    <condition>AutoTrack &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>EnableDisturb</name>
+                    <comment></comment>
+                    <condition>EnableDisturb &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveOptLoopData</name>
+                    <comment></comment>
+                    <condition>SaveOptLoopData &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveStatus</name>
+                    <comment></comment>
+                    <condition>SaveStatus &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateIRTCDark</name>
+                    <comment></comment>
+                    <condition>CalibrateIRTCDark &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateHODark</name>
+                    <comment></comment>
+                    <condition>CalibrateHODark &amp;&amp; processCommand</condition>
+                    <destination>LoopPaused</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>PowerOff</name>
+            <comment>Main power switch is turned off. Only ethernet switch, ethernet/serial converters and relay board are powered by the 110V mains.</comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>Operate</name>
+                    <comment></comment>
+                    <condition>Operate &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+        <state>
+            <name>AOSet</name>
+            <comment>AO light source (reference fiber or star) is acquired and the system is correctly configured for the closed loop.</comment>
+            <incomeactions/>
+            <outcomeactions/>
+            <transitions>
+                <transition type="simple" >
+                    <name>CloseLoop</name>
+                    <comment></comment>
+                    <condition>CloseLoop &amp;&amp; processCommand</condition>
+                    <destination>LoopClosed</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>ModifyAo</name>
+                    <comment>Transition used for changing parameters of the SetAO state (usually closed loop parameters) without restarting the source acq. procedure</comment>
+                    <condition>ModifyAO &amp;&amp; processCommand
+</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AcquireRef</name>
+                    <comment>Source acquisition: configures HO arm for the expected source, moves stages iteratively until the source is on the pyramid spot.</comment>
+                    <condition>AcquireRef &amp;&amp; processCommand
+</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>Operate</name>
+                    <comment>Sends an Operate command with dummy flag (has no real effect).</comment>
+                    <condition>Operate &amp;&amp; processCommand</condition>
+                    <destination>Operating</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>PrepareAcquireRef</name>
+                    <comment></comment>
+                    <condition>PrepareAcquireRef &amp;&amp; processCommand</condition>
+                    <destination>AOPrepared</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoop</name>
+                    <comment></comment>
+                    <condition>StopLoop &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AutoTrack</name>
+                    <comment></comment>
+                    <condition>AutoTrack &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>AntiDrift</name>
+                    <comment></comment>
+                    <condition>AntiDrift &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>EnableDisturb</name>
+                    <comment></comment>
+                    <condition>EnableDisturb &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveOptLoopData</name>
+                    <comment></comment>
+                    <condition>SaveOptLoopData &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>SaveStatus</name>
+                    <comment></comment>
+                    <condition>SaveStatus &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateHODark</name>
+                    <comment></comment>
+                    <condition>CalibrateHODark &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateTVDark</name>
+                    <comment></comment>
+                    <condition>CalibrateTVDark &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CheckRef</name>
+                    <comment></comment>
+                    <condition>CheckRef &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>Off</name>
+                    <comment></comment>
+                    <condition>Off &amp;&amp; processCommand</condition>
+                    <destination>PowerOff</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>PrepareAdsec</name>
+                    <comment></comment>
+                    <condition>PrepareAdsec &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>StopLoopAdsec</name>
+                    <comment></comment>
+                    <condition>StopLoopAdsec &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateSlopenull</name>
+                    <comment></comment>
+                    <condition>CalibrateSlopenull &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibrateIRTCDark</name>
+                    <comment></comment>
+                    <condition>CalibrateIRTCDark &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+                <transition type="simple" >
+                    <name>CalibratePISCESDark</name>
+                    <comment></comment>
+                    <condition>CalibratePISCESDark &amp;&amp; processCommand</condition>
+                    <destination>AOSet</destination>
+                    <transite_destination></transite_destination>
+                    <transitionactions/>
+                </transition>
+            </transitions>
+        </state>
+    </statemachine>
+    <graphics>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <QPoint name="position" >
+                    <int>5208</int>
+                    <int>4947</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <QPoint name="position" >
+                    <int>5554</int>
+                    <int>4975</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <QPoint name="position" >
+                    <int>5067</int>
+                    <int>5268</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >Failure</qstring>
+                <QPoint name="position" >
+                    <int>4711</int>
+                    <int>5344</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >PowerOff</qstring>
+                <QPoint name="position" >
+                    <int>4958</int>
+                    <int>4897</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <QPoint name="position" >
+                    <int>4690</int>
+                    <int>5115</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GStateSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GStateSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <QPoint name="position" >
+                    <int>5430</int>
+                    <int>5179</int>
+                </QPoint>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4910</int>
+                        <int>5003</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5621</int>
+                        <int>5103</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" />
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5366</int>
+                        <int>4889</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >1</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5524</int>
+                        <int>5057</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >1</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5418</int>
+                        <int>5205</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5372</int>
+                        <int>5271</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5364</int>
+                        <int>5374</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5425</int>
+                        <int>5213</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >2</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5357</int>
+                        <int>5105</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5370</int>
+                        <int>5083</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >2</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5610</int>
+                        <int>4913</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5631</int>
+                        <int>4848</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5591</int>
+                        <int>4831</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >1</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4787</int>
+                        <int>5237</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4760</int>
+                        <int>5231</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >PowerOff</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4844</int>
+                        <int>4961</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >1</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5382</int>
+                        <int>5039</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Failure</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4685</int>
+                        <int>5307</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >2</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4886</int>
+                        <int>5160</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4972</int>
+                        <int>5281</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >0</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5266</int>
+                        <int>5309</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >1</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4935</int>
+                        <int>5132</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >3</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5088</int>
+                        <int>5072</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >3</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4791</int>
+                        <int>5233</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4799</int>
+                        <int>5212</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >4</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5259</int>
+                        <int>5237</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5254</int>
+                        <int>5236</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >2</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5135</int>
+                        <int>5343</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5115</int>
+                        <int>5373</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5107</int>
+                        <int>5367</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >5</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5527</int>
+                        <int>5252</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5527</int>
+                        <int>5266</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >3</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5528</int>
+                        <int>4912</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5518</int>
+                        <int>4877</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5568</int>
+                        <int>4932</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >4</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5498</int>
+                        <int>4993</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5477</int>
+                        <int>5026</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >2</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5329</int>
+                        <int>4927</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5365</int>
+                        <int>4932</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5329</int>
+                        <int>4951</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >3</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5172</int>
+                        <int>4847</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5205</int>
+                        <int>4869</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5229</int>
+                        <int>4902</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >4</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5209</int>
+                        <int>5017</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5182</int>
+                        <int>5004</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >5</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5689</int>
+                        <int>5055</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5691</int>
+                        <int>5058</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5659</int>
+                        <int>5060</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5612</int>
+                        <int>5019</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >5</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5176</int>
+                        <int>4967</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5169</int>
+                        <int>4969</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5130</int>
+                        <int>4944</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5150</int>
+                        <int>4938</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >6</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5638</int>
+                        <int>4880</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5647</int>
+                        <int>4886</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5629</int>
+                        <int>4942</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >4</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4590</int>
+                        <int>5185</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4581</int>
+                        <int>5167</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >5</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4630</int>
+                        <int>5043</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4619</int>
+                        <int>5076</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >3</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4996</int>
+                        <int>5341</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5020</int>
+                        <int>5299</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >4</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5016</int>
+                        <int>5389</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4993</int>
+                        <int>5371</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >6</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5469</int>
+                        <int>5097</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5435</int>
+                        <int>5066</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >7</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5500</int>
+                        <int>5116</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5526</int>
+                        <int>5129</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >7</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5660</int>
+                        <int>4913</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5672</int>
+                        <int>4920</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5674</int>
+                        <int>4936</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >8</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5554</int>
+                        <int>5172</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5549</int>
+                        <int>5189</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >6</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4593</int>
+                        <int>5095</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4578</int>
+                        <int>5120</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >6</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5263</int>
+                        <int>4989</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5269</int>
+                        <int>5023</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5247</int>
+                        <int>5034</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5242</int>
+                        <int>4996</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >8</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5687</int>
+                        <int>5011</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5673</int>
+                        <int>5039</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >9</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5700</int>
+                        <int>4944</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5687</int>
+                        <int>4974</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >9</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5439</int>
+                        <int>5357</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5422</int>
+                        <int>5335</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >10</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5493</int>
+                        <int>5313</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5513</int>
+                        <int>5303</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >7</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4657</int>
+                        <int>5001</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4661</int>
+                        <int>4952</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >8</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4690</int>
+                        <int>5011</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4719</int>
+                        <int>5003</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >7</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5124</int>
+                        <int>4893</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5171</int>
+                        <int>4888</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >8</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5243</int>
+                        <int>4847</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5256</int>
+                        <int>4850</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5268</int>
+                        <int>4909</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >9</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4686</int>
+                        <int>5215</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4607</int>
+                        <int>5253</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4621</int>
+                        <int>5183</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >10</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4735</int>
+                        <int>5265</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4763</int>
+                        <int>5253</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >11</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4793</int>
+                        <int>5170</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4809</int>
+                        <int>5213</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >12</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4758</int>
+                        <int>5025</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4740</int>
+                        <int>5027</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >11</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5545</int>
+                        <int>5232</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5558</int>
+                        <int>5215</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >12</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5546</int>
+                        <int>5194</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5557</int>
+                        <int>5211</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >5</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5151</int>
+                        <int>5308</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5179</int>
+                        <int>5335</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5174</int>
+                        <int>5344</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >6</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5084</int>
+                        <int>5406</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5066</int>
+                        <int>5370</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >7</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5049</int>
+                        <int>5244</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5034</int>
+                        <int>5213</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5046</int>
+                        <int>5196</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5073</int>
+                        <int>5219</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >8</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5110</int>
+                        <int>5197</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5134</int>
+                        <int>5194</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5136</int>
+                        <int>5223</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >13</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5318</int>
+                        <int>5181</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5294</int>
+                        <int>5159</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >9</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5164</int>
+                        <int>5217</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5192</int>
+                        <int>5223</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >13</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5191</int>
+                        <int>5018</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >10</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4975</int>
+                        <int>5035</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >14</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5038</int>
+                        <int>5014</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >11</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5209</int>
+                        <int>5306</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5202</int>
+                        <int>5329</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >15</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5508</int>
+                        <int>5260</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5512</int>
+                        <int>5301</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >16</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5534</int>
+                        <int>5232</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5542</int>
+                        <int>5252</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >17</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5486</int>
+                        <int>5320</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5486</int>
+                        <int>5333</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5454</int>
+                        <int>5305</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >18</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5319</int>
+                        <int>5203</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5255</int>
+                        <int>5190</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >12</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5222</int>
+                        <int>5384</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5186</int>
+                        <int>5376</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >9</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5371</int>
+                        <int>4987</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5337</int>
+                        <int>5005</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >10</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5685</int>
+                        <int>4985</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5688</int>
+                        <int>5001</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >Operating</qstring>
+                <int name="transition" >14</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>4805</int>
+                        <int>5128</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>4782</int>
+                        <int>5182</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOPrepared</qstring>
+                <int name="transition" >13</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5201</int>
+                        <int>5281</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5174</int>
+                        <int>5344</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >AOSet</qstring>
+                <int name="transition" >19</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5509</int>
+                        <int>5192</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5493</int>
+                        <int>5229</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >11</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5685</int>
+                        <int>4988</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5659</int>
+                        <int>5050</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >12</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5667</int>
+                        <int>4986</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5644</int>
+                        <int>5039</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopClosed</qstring>
+                <int name="transition" >13</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5667</int>
+                        <int>4986</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5644</int>
+                        <int>5039</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+        <class classname="GTransitionSaver" >
+            <meta classname="GSaver" >
+                <data classname="GSaver" />
+            </meta>
+            <data classname="GTransitionSaver" >
+                <qstring name="stateName" >LoopPaused</qstring>
+                <int name="transition" >10</int>
+                <qvaluelist name="points" >
+                    <QPoint>
+                        <int>5342</int>
+                        <int>4960</int>
+                    </QPoint>
+                    <QPoint>
+                        <int>5315</int>
+                        <int>5023</int>
+                    </QPoint>
+                </qvaluelist>
+            </data>
+        </class>
+    </graphics>
+</FSM>

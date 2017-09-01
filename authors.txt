@@ -1,0 +1,7 @@
+fquiros = f quiros <fquiros@magao.edu>
+jrmales = j males <jrmales>
+lfini = l fini <lfini@magao.edu>
+luca = luca f <luca@magao.edu>
+marco = marco x <marco@magao.edu>
+puglisi = a puglisi <puglisi@magao.edu>
+svnadmin = svn admin <svnadmin@magao.edu>

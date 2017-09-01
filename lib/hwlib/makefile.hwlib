@@ -1,0 +1,15 @@
+# This file can be used by client applications to link
+# this library: before using "XXX_LNK" please call the
+# "xxx_compile" target.
+
+ifndef MAKEFILEIOLIB
+MAKEFILEIOLIB=.
+
+HWLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/hwlib,all,do_hwlib) $(BASE_COMPILE)
+
+do_hwlib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/hwlib all
+
+HWLIB_LNK = $(ADOPT_SOURCE)/lib/hwlib/hwlib.a
+
+endif

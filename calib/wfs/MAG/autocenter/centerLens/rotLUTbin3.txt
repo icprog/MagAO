@@ -1,0 +1,10 @@
+#
+# Bin3 CL values can be derived from bin1 as follows:
+#
+# X = bin1 + 43.9
+# Y = bin1 + 13.4
+#
+# Derot pos    rerot pos   CL X     CL Y
+
+
+120.0            223.8    -55.7     -22.6

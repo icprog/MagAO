@@ -1,0 +1,9 @@
+stratix_temp   int 0 ; // temperatura del chip stratix
+power_temp     int 0 ; // temperatura board nella zona di power
+dsps_temp      int 0 ; // temperatura board tra i due dsp
+driver_temp    int 0 ; // temperatura board tra i driver di corrente
+coil_current   array ; // corrente sui coils
+    uint 8
+    0 0 0 0 0 0 0 0 
+end
+

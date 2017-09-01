@@ -1,0 +1,15 @@
+
+ifndef MAKEFILEADSECARB
+MAKEFILEADSECARB=.
+
+# Dependencies
+include $(ADOPT_SOURCE)/lib/arblib/base/makefile.basearb
+
+ADSECARBLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/arblib/adSecArb,adsecarb_lib.a,do_adsecarblib) $(BASEARBLIB_COMPILE)
+
+do_adsecarblib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C  $(ADOPT_LIB)/arblib/adSecArb adsecarb_lib.a
+	
+ADSECARBLIB_LNK = $(ADOPT_SOURCE)/lib/arblib/adSecArb/adsecarb_lib.a $(BASEARBLIB_LNK)
+
+endif	

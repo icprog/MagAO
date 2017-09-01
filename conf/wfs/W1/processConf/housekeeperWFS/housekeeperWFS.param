@@ -1,0 +1,86 @@
+# config file for parameters settings of housekeeper
+# Each entry must be composed of 11 fields:
+# Fields 0-2 identify a filter that matches a set of DiagnVars
+# Fields 3-10 are used to specify parameters to be set for the DiagnVars matched by the filter.
+#
+# Examples of filters:
+# Matching all variables:                                   *           All     All
+# Matching all DistAve vars:                                DistAve     All     All
+# Matching all variables with index 13:                     *           13      13
+# Matching first 100 Modes:                                 Modes       All     99
+#
+# [Alarm/Warn][Min/Max] specify alarm and warning ranges. Use SI units.
+#
+# RunningMeanLen specify the length in seconds of the running mean buffer over which the average value is computed.
+# It defaults to 1s.
+# 
+# CAF specify the number of Consecutive Allowed Faults that can be detected before triggering a warning/alarm.
+# This can be useful in case of faulty sensors that sometimes output a very wrong value. It defaults to 0.
+#
+# Set Enabled to "disabled" if you don't want to monitor the matched variables. Defaults is "enabled".
+#
+# Set Slow to "slow" if the matched variables are heavy to be computed. The update of the "slow" variables is done in a 
+# dedicated thread at a reduced rate with respect to "fast" variables. Default is "fast"   
+#
+# Entry will be applied in order, from top to bottom. 
+#
+# FamilyName                           From    To      AlarmMin    WarnMin     WarnMax     AlarmMax    RunningMean [s]  CAF  Enabled Slow
+# DiagnApp variables
+  DiagnAppFrameTimestamp               All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppFrameCounter                 All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppFastVarsCounter              All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppSlowVarsCounter              All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppFrameRate                    All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppFastVarsRate                 All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+  DiagnAppSlowVarsRate                 All     All     0.0         0.0          Inf         Inf         0               0    ena     fast
+
+# BCU 39 nios fixed area
+  BCU39CrateID                           All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39WhoAmI                            All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39SoftwareRelease                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39LogicRelease                      All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39Address                           All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39FramesCounter                     All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39SerialNumber                      All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39EnableMasterDiagnostic            All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39DecimationFactor                  All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU39RemoteIPAddress                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+
+# BCU 47 nios fixed area
+  BCU47CrateID                           All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47WhoAmI                            All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47SoftwareRelease                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47LogicRelease                      All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47Address                           All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47FramesCounter                     All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47SerialNumber                      All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47EnableMasterDiagnostic            All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47DecimationFactor                  All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  BCU47RemoteIPAddress                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+
+# Wavegen nios fixed area
+  WGNWhoAmI                         All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  WGNSoftwareRelease                All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  WGNLogicRelease                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+  WGNSerialNumber                   All     All     0.0         0.0         Inf       Inf       1e-4            0    ena     fast
+
+# BCU related vars ( 1 record per BCU, 6 CRATES = 6)
+  BCU39StratixTemp                       All     All     -22         -10         52          72          1e-4               3    ena     fast
+  BCU39PowerTemp                         All     All     -22         -10         50          60          1e-4               3    ena     fast
+  BCU47StratixTemp                       All     All     -22         -10         52          72          1e-4               3    ena     fast
+  BCU47PowerTemp                         All     All     -22         -10         50          60          1e-4               3    ena     fast
+  WGNStratixTemp                         All     All     -22         -10         52          72          1e-4               3    ena     fast
+  WGNPowerTemp                           All     All     -22         -10         50          60          1e-4               3    ena     fast
+
+# each entry here is a bit of BCU reset_status word ( 1 record per BCU, 6 CRATE = 6)
+  BCU39ResetStatusFPGAReset              All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU39ResetStatusBUSReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU39ResetStatusDSPReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU39ResetStatusFLASHReset             All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU39ResetStatusPCIReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU47ResetStatusFPGAReset              All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU47ResetStatusBUSReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU47ResetStatusDSPReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU47ResetStatusFLASHReset             All     All    -1          -1           2           2          1e-4            1    ena     fast
+  BCU47ResetStatusPCIReset               All     All    -1          -1           2           2          1e-4            1    ena     fast
+

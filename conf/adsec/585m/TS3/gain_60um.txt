@@ -1,0 +1,42 @@
+;;+& 20110101_010101 &-;;
+;$Id: gain_60um.txt,v 1.1 2009/09/14 15:17:21 marco Exp $
+
+
+d_all       float 0.25                ;STD derivative gain for all actuators
+p_all       float 0.06                ;STD proportional gain for all actuators
+
+d_clist     float 0.30                ;derivative gain for "clist" actuators array (close loop actuators not in the following lists)
+p_clist     float 0.13                ;proportional gain for "clist" actuators array (close loop actuators not in the following lists)
+
+d_flist     float 0.25                ;derivative gain for "flist" actuators array
+p_flist     float 0.06                ;proportional gain for "flist" actuators array
+
+d_slist     float 0.30                ;derivative gain for "slist" actuators array
+p_slist     float 0.10                ;proportional gain for "slist" actuators array
+
+icc_dcgain  float 5.0                 ;dc gain control current pseudo-integrator
+icc_cutfreq float 10.0                ;cut frequency of pseudo-integrator
+
+
+flist  array
+    int 87
+       4       5       6       7      31      19      20      21      22      23
+      36      37      38      39     147     148     149     150     151     131
+     132     133     134     135     143     116     117     118     119     228
+     229     230     231     255     243     244     245     246     247     260
+     261     262     263     371     372     373     374     375     355     356
+     357     358     359     367     340     341     342     343     452     453
+     454     455     479     467     468     469     470     471     484     485
+     486     487     595     596     597     598     599     579     580     581
+     582     583     591     564     565     566     567
+end
+
+slist array
+    int 2
+      18     368 
+end
+
+exclude_list array
+    int 1
+    -2     
+end

@@ -1,0 +1,73 @@
+#@File: aoscodes.txt
+#
+# Codes and constants for the AOS related functions
+# 
+#@
+
+# AOS subcommands for:
+#                     housekeeping operations  MsgCode: AOS_HOUSKEEP
+
+AOS_REQ_SERVICE       1    Request service to TCS (i.e. go to engineering status)
+AOS_LOG_ITEM          2    Log data into logging system
+AOS_STOP              3    Stop current operation
+AOS_INFO              4    Notify info message
+AOS_WARNING           5    Notify warning condition
+AOS_ERROR             6    Notify error condition
+AOS_LOGON             7    Request to AOS to send log messages to MsgD
+AOS_LOGOFF            8    Cancel above request
+
+AOS_DBG_00           20    Set debug level lower (only error,warning,info)
+AOS_DBG_01           21    Set debug level debug
+AOS_DBG_02           22    Set debug level trace
+AOS_DBG_03           23    Set debug level vtrace
+AOS_DBG_04           24    Set debug level vvtrace
+
+AOS_FLAT_LIST        30    Update flat list
+
+AOS_WAKEUP           50    Wakeup command
+
+#
+# AOS subcommands for hexapod commands MsgCode: AOS_HXP_CMD
+
+AOS_HXPINIT        101    Initialize hexapod
+AOS_HXPMOVETO      102    Move exapod
+AOS_HXPMOVEBY      103    Move hexapod (delta)
+AOS_HXPMOVSPH      104    Move hexapod (on sphere)
+AOS_HXPNEWREF      105    Redefine hexapod ref. system
+AOS_HXPGETPOS      106    Get current position
+AOS_HXPGETABS      107    Get current (absolute) position
+AOS_HXPOPENBRAKE   108    Open brake
+AOS_HXPCLOSEBRAKE  109    Close brake
+AOS_HXPISINITIALIZED  110 Check hexapod initialization status
+AOS_HXPISMOVING       111 Check if hexapod is moving
+
+
+# AOS subcommands for telescope control commands MsgCode: AOS_TEL_CMD
+
+SET_ALTAZ      131    Set telescope position
+SET_ROTATOR    132    Set rotator angle
+SET_TERTIARY   133    Set tertiary position
+ACT_PRESET     134    Set activate preset GUI
+TEL_POINT      135    Set Telescope pointing position
+TEL_OFFSET     136    Offset telescope pointing position
+OFFL_MODES     137    Offload modes (in engineering mode)
+
+# AOS subcommands for observation mode operations  MsgCode: AOS_OBSERV_CMD
+
+AOS_START_OBS       200    Request observation mode
+AOS_PRESET_FLAT     201    Preset AO subsystem for seeing limited operation
+AOS_PRESET_AO       202    Preset AO subsystem for Adaptive mode operation
+
+AOS_ACQUIREREFAO    203    Acquire reference star
+AOS_GETSNAP         204    Get field snapshot
+AOS_REFINEAO        205    Refine AO
+AOS_STARTAO         206    Start AO
+AOS_OFFSETXY        207    Offset XY
+AOS_OFFSETZ         208    Offset Z
+AOS_CORRECTMODES    209    Correct modes
+AOS_STOP_OP         210    Stop
+AOS_PAUSE           211    Pause
+AOS_RESUME          212    Resume
+AOS_TERMINATE       213    Terminate
+AOS_USERPANIC       214    User panic
+

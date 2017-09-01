@@ -1,0 +1,3 @@
+self.stagez.moveTo(34)
+self.lens.moveTo(0,0)
+self.stagez.waitTargetReached(checkStatus= True)

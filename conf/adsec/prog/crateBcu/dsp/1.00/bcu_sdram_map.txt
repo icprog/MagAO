@@ -1,0 +1,24 @@
+; $Id: bcu_sdram_map.txt,v 1.1 2009/09/14 16:53:14 marco Exp $
+;
+; sdram_map.txt
+;
+dataIO_0       long x00000000
+dataIO_1       long x00010000
+dataIO_2       long x00020000
+dataIO_3       long x00030000
+dataIO_4       long x00040000
+dataIO_5       long x00050000
+dataIO_6       long x00060000
+dataIO_7       long x00070000
+dataIO_8       long x00080000
+dataIO_9       long x00090000
+dataIO_10      long x000A0000
+dataIO_11      long x000B0000
+dataIO_12      long x000C0000
+dataIO_13      long x000D0000
+dataIO_14      long x000E0000
+dataIO_15      long x000F0000
+
+test_address   long x00100000
+
+;last available address 0x00FFFFFF

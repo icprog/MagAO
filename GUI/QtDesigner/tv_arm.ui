@@ -1,0 +1,396 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>TVarm</class>
+<comment>Python:from AdOpt.widgets.rtdbSingleValue import *
+Python:from AdOpt.widgets.rtdbStatus import *
+Python:from AdOpt.widgets.positionPreset import *
+Python:from AdOpt.widgets.devicePolicy import *
+Python:from AdOpt.widgets.rtdbStatusLight import *</comment>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>761</width>
+            <height>687</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>60</y>
+                <width>340</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>CCD 47</string>
+        </property>
+        <widget class="rtdbStatus">
+            <property name="name">
+                <cstring>ccd47Status</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>320</width>
+                    <height>40</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="devicePolicy">
+            <property name="name">
+                <cstring>ccd47Policy</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="rtdbSingleValue">
+            <property name="name">
+                <cstring>ccd47Freq</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>320</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="rtdbSingleValue">
+            <property name="name">
+                <cstring>ccd47Binning</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>320</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>401</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;&lt;font size="+4"&gt;TV arm control&lt;/font&gt;&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup8</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>370</x>
+                <y>60</y>
+                <width>340</width>
+                <height>330</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>CCD 47 display</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3_2_3_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>210</y>
+                <width>340</width>
+                <height>130</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Filter wheel 1</string>
+        </property>
+        <widget class="rtdbStatus">
+            <property name="name">
+                <cstring>Fw1Status</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>320</width>
+                    <height>40</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="devicePolicy">
+            <property name="name">
+                <cstring>Fw1Policy</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="positionPreset">
+            <property name="name">
+                <cstring>Fw1PositionPreset</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3_2_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>350</y>
+                <width>340</width>
+                <height>130</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Filter wheel 2</string>
+        </property>
+        <widget class="rtdbStatus">
+            <property name="name">
+                <cstring>Fw2Status</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>320</width>
+                    <height>40</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="devicePolicy">
+            <property name="name">
+                <cstring>Fw2Policy</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="positionPreset">
+            <property name="name">
+                <cstring>Fw2PositionPreset</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3_2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>500</y>
+                <width>340</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>ADC</string>
+        </property>
+        <widget class="rtdbSingleValue">
+            <property name="name">
+                <cstring>AdcPos1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>320</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="devicePolicy">
+            <property name="name">
+                <cstring>AdcPolicy</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>60</y>
+                    <width>320</width>
+                    <height>30</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="rtdbStatus">
+            <property name="name">
+                <cstring>AdcStatus</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>320</width>
+                    <height>40</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="rtdbSingleValue">
+            <property name="name">
+                <cstring>AdcPos2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>320</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<customwidgets>
+    <customwidget>
+        <class>rtdbSingleValue</class>
+        <header location="global">1</header>
+        <sizehint>
+            <width>-1</width>
+            <height>0</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image0</pixmap>
+        <property type="0">3</property>
+        <property type="rtdbSingleValue"></property>
+        <property type="-1">1</property>
+    </customwidget>
+    <customwidget>
+        <class>rtdbStatus</class>
+        <header location="local"></header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image1</pixmap>
+    </customwidget>
+    <customwidget>
+        <class>positionPreset</class>
+        <header location="local"></header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image1</pixmap>
+    </customwidget>
+    <customwidget>
+        <class>devicePolicy</class>
+        <header location="local"></header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>5</hordata>
+            <verdata>5</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image1</pixmap>
+    </customwidget>
+</customwidgets>
+<images>
+    <image name="image0">
+        <data format="PNG" length="931">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b0000036a49444154388dad9331681c4718469fcc16ffc116b320c10e2870275cf80a195fa1e2e4b88820850502c7e046418d21654893ca51ec4a550ca95209c74540ea4e8540291ce32248ebc2f88c2cbc019bdb050b6641821df0c2fdc582529c62598ee54a03c3cc348f37df7c3336d81d400584307579ea887318839dc1d8d8f6ce3636b43c587f70d4bdd425f739c3c32199cf68d060c8108bc5e13e792e7d49fa3a257996407d020f6c6899ba3c75f4b8f718634aecb4c15519b31251aa230a2da566cc8716b40489f09a61e4e49cbc14a28786adbffc09d8550e80f46d4a77d2d0df7f80bccb486bc54690be055f08ae5004a1310e9d69c8504c0085423c014ce8a938021bdad1ae02a77da4565cedb113867e02cfff549e3c2b9000b4562430c417856f9722da33439a068a4a698e0ba0ff377e55bca2234afa2ec54686ad4d656dd5430dc608f6a220022e57f237caca4f193797626e2e417c0cffa4b13dced24e08fd047ac7d0c51b319d0568b72cbe760811bd8d21bd554fef8f9c76b34de77a8338d453c617fe3376952312c195b0b5e9d15a99bf1133771b5a2da5a8533868b0b65eb2b814b1f8bd8140f86dd52115f8d3c21f19d719f816e98b3ec6c47cb500b151bc82d496955f4ab23d4f7900cb772dc9234ff68f92f48758731a7ccad886429a6710806d42eb0b2854412356ee38d23d8f1861fe5a441994b43b06ad15b70faefa08fca1310a56046aa5158e1293cab272b724dbd3d143864263125a06084002416bb046ce364640432030ece48ad0a0b7391c9986423c69c8f382fbf71c4912e132456ba5d56c507eae155e33bad3d06c0a45aef43686dcfeae4579a0cc5f8f6818b87f0ff23705cb3f38b4f2c4b1a1dd01f59c6d6c44f028f3b704ad7554a98d8ce53b96d6cc904e77c88f3f5be2d8e00f0ba86176c1d0b902ee73c6a8c304c2ec35d0c398df5773d67e85e491a73b63f035b8acc41fea285b94f46f2579daa065cef879d9fea80d852acd10e66e0962daf4d61de99e92bec82160f480e386b96f0ccf9f28aef2481091ee9f619cbe4e495221b642a14a6c606e61c8fcd76d92be430fa1aca07dc962db9ece15489e3630411b5f67642f4f673cb6bdb3cdd5d9ab4704d0fd5288eca852aa0a32aa9004bc5f15185d7a1487f790f6155728bef8803cd81d001c9df77cdf8af31e176c6819ec0cc6ce1dec2a07216cef6c9f1b7cb03b18fb17f6dadc850c5f1e600000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="998">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000003ad49444154388db59531881c6514c77f7319e35b59e4fbf0023ba0b20b07b985886cba152d12b07031c5622117ab5c2101b1ba46927041480a0d3636163149632ea0608a844d91e2ac6e8b887b85b0c2056785d319b895f9c0c379914dc6e29bdd4b504e2d7cf0186678f3fbfedf37ff792f288a8269044130071c0042600e08cadc2f8a321f0113e06151148f8229f8dc9973cfb617dba7476eb49ca7f9e17837fe079e0fe71cf1567cbfff6d7f8d0957805f8107e154e9ed2f6f9f8ee6dd47b629641a7334ac906b86ad5ab24986158b4c32104bb2ebefb349860d0d83210b725956d7bfd10af0299085e5c20746c968d9d685617a9d2c8b0125b2ca3011d26d211b2b20d87968359534040961a4503b04950880b781eb33c54098bbfc70a631680c38222b6cdc330c6e39fa9b0ed0b254a82f0a6f2d199a6da85515a7503300bc08d8c715cfc5e398a3a192e51edabb036b9fa51e55151a8b060921d956463f289f9c4fe92c194e9e9219bc8c0a70700a0eac58724d882c6cdc9312aa1c7bb346a72b345e00872244f46ee6ac5d4ee9dd4869d6ebb44f588cb829f80010cc4dc19966d82a24bf09eb37dd0cfacebb42a3e17038d811bebe917172a9c2f2fb3540b872cdc12eb8c94c71000453c5e5574ed0b130fcde618ca1d3154cd5e126206ab87849196e3ab21d583963e9dff5b5fd81a1567dd28653c5649a6105e26df58ea897db9f42571dc34d8799178ebf26a8e4345b024032529ccadf83bd4fc18a2fa8893f539ce1e2aa32dcf40b8a807dbe426480700a13cc7e8a11a0ea0b07db8a60e9ddc12b3542ad6648b71d17ce266cf42dc996b74254af3cee0ac0f78499e26437a1d554ea0bc2e8bed2bb9973f25444b6a3745e172af3152e9c8574e4b8f85e8caa62e685562b271f3f49fecb196b089dae77fbdae594dead84953396461b5aed8c950f1b989ac139874e94e3dd1acd23ecaf38d30409e19563a063c3d56b29572fa5f4ef0aed96e080642b41c73a7bf3bb75c7e044445415f6fece3d7011a7311d81d1d8ffa6c797044c9dde57de0dc3cd3d35665ee874eb6cac3b9c2a02c4e90c5a00c51e782bbe3f18b2600ef96d99aad2e90a9d379af4070979ea9f3717221a2f25348f40ff4484c1e02631c38102fc023c048aa0280a8220a810f241eb55598d2210c1b7ecd0a784de297b0707a048283807c38192a48a4bb90e7c0efc48d9e89fc277a68f819fd89b0aff367f06be00bac0cbc0a1a9e2397c57b2c073e5b542d950d83f8a72fb3990e12748361b4d411084c0d3c03325f420ff6de6fd51c27f071e04ffd730fd135249c3113d1aa3550000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>rtdbstatus.h</includehint>
+    <includehint>devicepolicy.h</includehint>
+    <includehint>rtdbsinglevalue.h</includehint>
+    <includehint>rtdbsinglevalue.h</includehint>
+    <includehint>rtdbstatus.h</includehint>
+    <includehint>devicepolicy.h</includehint>
+    <includehint>positionpreset.h</includehint>
+    <includehint>rtdbstatus.h</includehint>
+    <includehint>devicepolicy.h</includehint>
+    <includehint>positionpreset.h</includehint>
+    <includehint>rtdbsinglevalue.h</includehint>
+    <includehint>devicepolicy.h</includehint>
+    <includehint>rtdbstatus.h</includehint>
+    <includehint>rtdbsinglevalue.h</includehint>
+</includehints>
+</UI>

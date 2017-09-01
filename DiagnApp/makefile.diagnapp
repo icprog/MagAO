@@ -1,0 +1,19 @@
+# This file can be used by client applications to link
+# this library: before using "XXX_LNK" please call the
+# "xxx_compile" target.
+
+# Dependencies
+include $(ADOPT_LIB)/makefile.aoapp
+include $(ADOPT_LIB)/makefile.iolib
+include $(ADOPT_LIB)/makefile.mastdiagnlib
+include $(ADOPT_LIB)/arblib/base/makefile.basearb
+include $(ADOPT_LIB)/arblib/adSecArb/makefile.adsecarb
+
+DIAGNAPP_COMPILE = $(call test_uptodate,$(ADOPT_SOURCE)/DiagnApp,all,do_diagnapp) $(AOAPP_COMPILE) $(IOLIB_COMPILE) $(MASTDIAGNLIB_COMPILE) \
+                                                                                  $(BASEARBINTF_COMPILE) $(ADSECARBLIB_COMPILE)
+
+do_diagnapp:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_SOURCE)/DiagnApp all
+
+DIAGNAPP_LNK = $(ADOPT_SOURCE)/DiagnApp/diagnapp.a $(AOAPP_LNK) $(IOLIB_LNK) $(MASTDIAGNLIB_LNK) $(BASEARBINTF_LNK) $(ADSECARBLIB_LNK) \
+			   -L$(ADOPT_SOURCE)/contrib/cfitsio -lcfitsio -lpthread -lboost_serialization -lboost_thread -lrt -lm -lgmp

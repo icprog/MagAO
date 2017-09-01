@@ -1,0 +1,40 @@
+# --- MirrorCtrl Config file --- #
+# It should be nice to use an XML file
+
+
+### Test parameters ###
+RunsNum				int 		1		 // Number of runs	
+RunsSleep_s		int 			5		 // Sleep between runs	
+CmdHdlTestNum		int			2		 // Number of BcuCommandHandlerTest to concurrently start
+										 // for each run
+PacketNum			int 		5000	 // Number of packets for each BcuCommandHandlerTest
+										 // to each Bcu
+
+### Application parameters ###
+
+LogLevel			int			6
+
+MyName		    	string		MIRRORCTRL
+ID			    	int			0
+Server		    	string		127.0.0.1
+
+# The following two ports must be equals ONLY when connected to the real BCU,
+# because the BCU reply to the same port :-(
+LocalPort_start		int		10002 		# The first pair of local/remote Udp ports to use. This value 
+										# will be incremented according to BcuNum.
+BcuPort_start		int		10012									
+										
+Timeout_ms			int		100	# Used for BcuPacket receiving
+AllowedTimeouts		int		8		# Allowed consecutive timeouts
+
+# Info about existing BCUs
+BcuQueueSize		int			4	
+BcuNum          	int         8				# Used to read the BcuIp_i. Move it to lib/AdsecConstants.h
+BcuIp_0				string		193.206.155.155	# 192.168.0.58 (Bcu) 193.206.155.155 (adsec)
+BcuIp_1				string		193.206.155.155
+BcuIp_2				string		193.206.155.155
+BcuIp_3				string		193.206.155.155
+BcuIp_4				string		193.206.155.155
+BcuIp_5				string		193.206.155.155
+BcuIp_6				string		193.206.155.155
+BcuIp_7				string		193.206.155.155

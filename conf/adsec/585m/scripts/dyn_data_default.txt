@@ -1,0 +1,48 @@
+;;+& 20110101_010101 &-;;
+;txt file for the default parametes in the dynamical data  acquisition script.
+
+;location .sav files
+path_0                              string  "dyn"
+path_1                              string ""
+ext                                 string  "_pgain_0.03_"
+
+;saving
+do_save                             byte            1
+
+;cycles for the gaussian estimation of the syncronization of DSPs.
+n_cycles_sync                       long         1000
+
+;general parameters fot the measurement
+restorecycle				 int            0
+restoremode				 int            0
+n_rep                               int           3
+n_samples                           uint        16384
+min_freq                            float       4.0
+max_freq                            float     30000.0
+freq_step                           float     90000.0
+do_optimize                         byte           1
+
+;modal excitation parameters
+
+max_amp_modal                       float      0.6e-7 ;1.2e-7  ;3.4e-7
+;mod_list                            int            -2   ; -2 means no modes applied
+;mod_list                            int           -1   ; -1 means all modes applied
+mod_list  array
+    int 40
+    130 131 132 133 134 135 136 137 138 139
+    140 141 142 143 144 145 146 147 148 149
+    150 151 152 153 154 155 156 157 158 159
+    160 161 162 163 164 165 166 167 168 169
+end
+
+;zonal excitation parameters
+curr_excite                          byte            0   ; 0 for pos excite, 1 for curr excite
+;max_amp_zonal                        float     14e-3   ; with curr_excite [N]
+;max_amp_zonal                        float      1e-6   ; with curr_excite [N]
+max_amp_zonal                       float        0.7e-6 ;0.7e-6   ; 1e-6 without curr_excite [m]
+act_list                            int            -2   ; -2 means no zonal excitation
+;act_list                            int            -1   ; -1 means all cl actuators excitation
+;act_list  array
+;    int 13
+;      224 236 232 295 289 288 296 313 312 334 331 329 328
+;end

@@ -1,0 +1,97 @@
+
+# Process list configuration file for WFS Unit #2
+# Format:
+# ProcessID        Description              executable          options 
+
+# System processes
+
+msgdrtdb           "MsgD-RTDB"              msgdrtdb            ""
+mirrorctrl         "BCU interface"          MirrorCtrl          ""      
+pinger             "Pinger"                 Pinger              ""            
+
+# WFS processes 
+
+masterdiagnostic   "Master diagnostics"     MasterDiagnostic    ""           
+wfsarb             "WFS Arbitrator"         WfsArbitrator       ""           
+pupilcheck39       "Pupil check ccd39"      pupilcheck.py       "ccd39"      
+slopecompctrl      "Slope computer ctrl"    SlopeCompCtrl       ""          
+techviewctrl       "Technical viewer ctrl"  FrameGrabberCtrl    ""         
+powerboard         "Relay controller"       RelayCtrlW2         ""          
+picctrl            "PIC controller"         PicCtrlW2           ""           
+ccd39              "CCD39 controller"       JoeCtrl             ""          
+ccd47              "CCD47 controller"       JoeCtrl             ""         
+ttctrl             "Tip-tilt controller"    TTCtrl              ""         
+adc1               "ADC controller 1"       SimpleMotorCtrl     ""          
+adc2               "ADC controller 2"       SimpleMotorCtrl     ""         
+filterwheel1       "Filter wheel ctrl 1"    SimpleMotorCtrl     ""         
+filterwheel2       "Filter wheel ctrl 2"    SimpleMotorCtrl     ""         
+rerotator          "Rerotator ctrl"         SimpleMotorCtrl     ""          
+mercury            "Cube rotator ctrl"      SimpleMotorCtrl     ""          
+cubestage          "Cube stage ctrl"        SimpleMotorCtrl     ""           
+baysidex           "Bayside X Stage"        CopleyCtrl          ""          
+baysidey           "Bayside Y Stage"        CopleyCtrl          ""          
+baysidez           "Bayside Z Stage"        CopleyCtrl          ""          
+cameralensctrl     "Camera lens controller" CameraLensCtrl      ""          
+housekeeperWFS     "Housekeeper WFS"        housekeeperWFS      ""          
+optloopdiag        "OpticalLoop Diagnostic" OptLoopDiagnostic   ""         
+irtcproxy          "Irtc proxy"             irtc_proxy.py       ""
+
+
+# Interfaces
+
+startAO            "AO interface start"     startAO.py          ""          
+wfscontrol         "WFS Arbitrator GUI"     WfsControl          ""          
+wfshwgui           "WFS HW GUI"             wfshw.py            ""          
+boardgui           "WFS Board GUI"          BoardGui            ""          
+enggui             "Engineering GUI"        engGui.py           ""          
+hoccd              "HO CCD viewer"          ccd_viewer.py       "ccd39" 
+tvccd              "TV CCD viewer"          ccd_viewer.py       "ccd47"
+quadranteq         "Quadrant equalizer"     equalize_quadrants2.py  "--quiet"
+sysprocesses       "System processes"       sys_processes.py    ""           
+vartool            "Variable inspector"     vartool_AO.py       ""           
+aoshell            "AdOpt interactive shell" /usr/bin/xterm      "-e ./thaoshell.py" 
+idlterm            "IDL terminal"            /usr/bin/xterm      "-e ./terminal"    
+ccd39acq           "CCD39 frame acquisition" ccd_acq.py         "ccd39"       
+ccd47acq           "CCD47 frame acquisition" ccd_acq.py         "ccd47"       
+optloopdiagngui    "Optical loop diagnostic" OptLoopDiagnGui    ""            
+imacqgui           "Acquire intmat"          intmatAcquireGui   ""           
+intmatanalysegui   "Analyse intmat"          intmatAnalyseGui   ""           
+intmatdisturbgui   "Generate intmat disturbance" intmatDisturbGui    ""      
+autofocusirtcgui   "Autofocus IRTC"         AutoFocusIrtcGui    ""          
+autofocuspiscesgui "Autofocus PISCES"       AutoFocusPiscesGui    ""          
+piscesgui          "PISCES GUI"             PiscesGui.py    ""          
+
+# test/calibration procedures
+
+ccd39ron_test      "CCD39 ron test"         thaoshell.py        "-wait -dev ccd39 ../py/test_dark_ron.py"     
+ccd39ron_table     "CCD39 ron AO TABLE"     thaoshell.py        "-wait -dev ccd39 ../py/test_dark_ron_table.py"
+muovileggirot      "Muovi leggi rerotator"  /usr/bin/xterm      "-e ./thaoshell.py -wait -dev rerotator,ccd39,stagex,stagey ../py/muovileggirot.py"   
+rerotator_test     "Rerotator test"         /usr/bin/xterm      "-e ./thaoshell.py -wait -dev rerotator,ccd39,stagex,stagey ../py/tozzi.py"          
+adc_test           "ADC test"               thaoshell.py        "-wait -dev ccd39,adc ../py/test_adc.py"      
+
+# Actions
+
+autocenter_stages  "Autocenter - stages"      runCenterPupils.py  "-center -stages -mod 2"        
+autocenter_tt      "Autocenter - tt"          runCenterPupils.py  "-center -tt -mod 2"            
+autofocus_stages   "Autofocus  - stage Z"     runCenterPupils.py  "-center -focus -mod 2"         
+autocenter_lens    "Autocenter - camera lens" runCenterPupils.py  "-center -cameralens -th 2.4"   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

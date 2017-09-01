@@ -1,0 +1,126 @@
+;;+& 20110101_010101 &-;;
+;+
+; HISTORY
+;  01 Dec 2004, AR
+;    re-arranged to use it together with the new wave.txt configuration file
+;  Feb 2005 D.Zanotti (DZ)
+;    new rtr parameter.
+;-
+n_crates           int      6     ;number of crates for control electronics
+n_bcu              int      6     ;number of communication boards accessed by diagnostic communication
+n_board_per_bcu    int     14     ;number of DSP boards per communication board (BCU) for diagnostic communication
+n_dsp_per_board    int      2     ;number of DSPs per DSP board
+n_act_per_dsp      int      4     ;number of actuators per DSP
+
+dummy_act          array          ;dummy actuators (existing DSP channel without real actuators, [-2]=none)
+ int 1
+ -2
+end
+
+;unglued magnets 131     132     133     134     135     143     117   118     147
+; try: 29 34 35 38 39
+;act_wo_curr        array         ;actuators that cannot apply current (act_wo_curr=[-2] means all actuators can apply current)
+;    int 2
+;    454 108 160 ;174, 339, 448 reinserted into the loop 20101022 for testing;454 removed at T=5deg; 38 244 374 375 469 487 detached magnets 20101202; 108 on 20101206; 160 after FF acquisition
+;  end
+
+act_wo_curr        array         ;removed also the one wo_pos
+    int 3
+    454 108 160 
+end
+
+;HISTORY
+;364, 308 removed after shell silvered mounting, 117-134 for high RMS
+;174 removed after one week use
+;364 removed on 30/set/2010 drifting capsens signal
+;91 540 removed 20100419
+;114, 91, 530, 561, 649 
+;elevation problems: 339, 448, 295, 279, 309
+;448, 339, 174 reinserted to campute ff matrix and check for detached
+;magnets
+
+act_wo_pos         array        ;actuators that cannot read position (act_wo_pos=[-2] means all actuators can read position)  
+;114 171 173 175 194 259 278 311 337 344 347 377 391 396 407 451 598 removed after slew test 20101015
+;243 removed 20101027 after remounted on the tower. anyway, jumps were detected in clean room
+   int 21
+    32  91  113 117 134 159 174 183 224 254 
+    285 308 364 339 448 540 561 649 108 590 
+    160  ;174 339 448 reinserted 20101022   ;295 279     226 309 114 171 173 175 194 259 ;    278 311 337 344 347 377 39 243;396 407 451 598  ;38 244 374 375 469 487 detached magnets removed 20101202; 108 removed 20101206; 590 removed in clean room (large drifts); 160 after FF
+   end
+
+
+act_wo_cl_on_set   array
+    int 1
+    -1
+end
+
+;HISSTORY
+;;8 24 51 122 162 170 removed 20100419 during first set
+;removed in clean room: 112 227 236, 454 460
+
+act_wo_icc   array    ;8 24 51 122 162 170 removed 20100419 during first set
+    int 8 ;39
+    8 24 51 122 162 170 374 469;    8   24  33  34  51  112 122 125 126 128     136 137 138 139 157 162 167 169 170 175    227 236 267 274 275 278 337 338 341 342    343 348 349 351 376 385 450 453    455 reinserted (39 acts) 20101022 ;449 454 460 reinserted 20101022 ;374 469 removed 20101202222
+end
+
+act_w_ffb_on_flat array
+    int 1
+    -2
+end
+
+
+nominal_gap        float   70e-6              ;[pcounts] nominal working gap
+weight_curr        float   64e-3              ;[ccounts] abs(force) to support the weight per actuator at nominal working gap
+pos_sat_force      float   0.8                ;[fu] positive saturation force
+neg_sat_force      float   -0.8               ;[fu] negative saturation force
+err_smoothed_step  float   1e-4               ;step of the err_loop_gain during DSP internal gain smoothing
+speed_smoothed_step float  1e-4               ;step of the speed_loop_gain during DSP internal gain smoothing
+secure_factor      float   1.5                ;pure number used in all operations that need the thin shell crushed on the ref. plate
+time_secure_factor float   1.5                ;pure number used in all operations that need a delay time to wait in normal operations
+capsens_vmax       float   20.0               ;max voltage converted by capsens ADC
+fu_str             string  "N"                ;String addressing the out_dac_chx units (force internal units)
+lu_str             string  "m"                ;String addressing the dist units (length internal units)
+dac_bits           int     16                 ;number of bits of current driver DACs
+adc_bits           int     16                 ;number of bits of capsens ADCs
+offset_delta_pos   float   0.0                ;offset to be added at delta_pos in the DSP memory
+max_seq_samples    ulong   16384              ;max number of samples in the time sequences
+max_dec_val        ulong   10000              ;maximum decimation value
+preshaper_len      ulong   16384              ;preshaper length for cmd/curr
+
+
+; hardware definitions for signal reference wave generation
+
+clock_freq         double  60.71428571d6      ;[Hz] frequncy clock of status machine
+wave_dac_bits      int     9                  ;number of DAC bits for reference wave generation
+wave_max_ptv       double  10d0               ;[V] maximum peak-to-valley available for reference wave
+min_ADC_samp_len   double  65.88235294582699270d-9   ;[s] minimum temporal length of ADC sample
+max_ADC_samp_len   double  691.7647059311834101d-9   ;[s] maximum temporal length of ADC sample
+wc_comp_time               double  2.5d-6   ;[s] end of computation time from main interrupt (worst case)
+dsp2dac_transfer_time  double  1.29d-6  ;[s] transfer time of dac data (dsp-spi-dac)
+wave_settling          double  1.1d-6     ;[s] time of settling of the reference square wave
+dac_settling               double  0.5d-6   ;[s] settling time of DAC
+adc_acq_time           double  3.2d-6       ;[s] total acquisition time of ADC
+
+wave_clock_decimation  int  2               ; number of master clock for wave decimation
+DSP_clock_decimation   int  4               ;number of master clock for dsp decimation
+; mirror set default limits
+
+max_amp_pos             float   100e-09	;[lu] maximum amplitude of position to apply
+max_amp_pos_ramp        float   340e-09	;[lu] maximum amplitude of position to apply in ramp_gain
+max_amp_pos_tilt        float   34e-07  ;[lu] maximum amplitude of position to apply in remove_tilt
+max_delta_curr          float   4e-2	;[fu] maximum allowed delta current for  step in ramp_gain
+max_gain_step           float   10e3	;[N/m] maximum delta gain allowed in a single step
+min_gain_step           float   100.0   ;[N/m] minimum delta gain allowed in a single step
+max_curr_tospread       float   0.1     ;[N] maximum current to spread to the bias current of all actuators
+thr_perr	        float   102e-10 ;[m] threshold of position error
+max_iter_integ          int     10      ;maximum number of iteration in integrator
+max_curr                float   18e-2   ;[N] maximum current threshold
+fact_reduction_curr     float   0.8     ;factor of reduction current in set_isostatic
+
+; configurable steps
+ff2bias_step       int      10    ; steps of bias current in order to achieve the ff_current + bias_current total current and no ff_current.
+weight_times4peak   float    5.0     ;factor to increase the peak of maximum  allowable force.
+curr_threshold      float    0.35    ;factor to decrase the max_peak_current used for dsp dynamical response to define max current.
+max_dyn_peak_pos    float    1.0e-6  ;max position peak performed in the optimized dynamical response.
+max_modal_abs_step  float    1.0e-6  ;it's the maximum modal position step for dyn response.
+ 

@@ -1,0 +1,29 @@
+
+
+Variable set for WFS/RTR control:
+
+
+Name          Type      Mode   Description
+
+WFSnnNAME     Char       ro     WFS name for GUI interaction
+WFSnnDARK     Char       rw     Dark file used
+WFSnnPIXELLUT Char       rw     Pixel lut file
+WFSnnSLPNULL  Char       rw     Slope offset file
+WFSnnNSUBAP   Int        ro     Number of subapertures (set based on the pixel LUT)
+WFSnnSTATUS   Int        ro     status bit field
+
+                                0x0001 = Up  (ethernet link ok)
+                                0x0002 = Ready (configuration ok)
+                                0x0004 = Operating (DSP running)
+                                0x0008 = Error (see ERRMSG)
+
+WFSnnERRMSG   Char       ro     Last error message
+
+RTRnnNSUBAP   Int        rw     Number of subapertures (set based on WFSnSUBAP)
+RTRnnREC      Char       rw     REC file used
+RTRnnCLOSE    Int        rw     set to 1 to close the loop
+
+Clients set dark/rec files writing into the variables. The BCU controlling process
+receives var notifications and reconfigures WFS hardware. An error is
+signalled using the STATUS and ERRMSG variables
+

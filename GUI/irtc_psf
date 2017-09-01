@@ -1,0 +1,25 @@
+
+Script per acquisire 3 psf, fare il dark irtc, e acquisirne altre 3
+
+irtc 0.1
+image 100
+image 100
+image 100
+
+savegain
+gainzero
+lamp off
+wait 5
+
+dark 100
+lamp on
+wait 5
+restoregain
+
+image 100
+image 100
+image 100
+
+
+
+

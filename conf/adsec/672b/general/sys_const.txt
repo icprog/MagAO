@@ -1,0 +1,113 @@
+;;+& 20110101_010101 &-;;
+;======================================= sys_const.txt ============================================
+;system constants for P45
+;
+
+adsec_model                string "672a"      ;choose among: "P36", "S336", "A336", "P45", "672a", "672b"
+
+;
+; release of the program running on the communication logics in the AS crates
+;
+;
+; L001: Program running on communication board logics release 1 (Relase MMT Spring 2001). It supports
+;       PCIHotLink and SwiftNet (see the use of the most significant bit of the DataPacketLength field
+;       in the communication header)
+;
+; L002: Release P36/P45 Fall 2001. It supports the buggy PCIHotLink (PCIHotLinkBug) doubling the reading
+;       buffer size. SwiftNet is not correctly supported.
+;
+; L003: Release 18/05/2004 for new LBT electronics
+;
+adsec_comm                 string "L003"     ;choose among: "L001", "L002", "L003"
+
+;
+; available communication types and corresponding communication dll
+;
+
+;host_comm_list array                         ; list of allowed external host communication boards
+;string 7
+;Dummy
+;AdSecLeft
+;AdSecLeftDiag
+;AdSecRight
+;AdsecRightDiag
+;OnlyCommLeft
+;OnlyCommRight
+;end
+
+
+;dll_name_list array                          ; corresponding DLL to use
+;string 7
+;no_dll
+;idl_wraplib.so
+;idl_wraplib.so
+;idl_wraplib.so
+;idl_wraplib.so
+;idl_wraplib.so
+;idl_wraplib.so
+;end
+
+;
+; default communication type (see init_gvar.pro for available communication types)
+;
+;host_comm_default          int 0             ; index of host_comm_list for the default host communication board
+;name_comm array
+;string 7
+;Dummy
+;AOSuper
+;Diags
+;AOSuper2
+;Diags2
+;OnlyComm
+;OnlyComm2
+;end
+;name_comm array
+; string 7 
+;Dummy
+;conf/left/adsec.conf
+;conf/left/adsec_diagn.conf
+;conf/left/adsec_onlycom.conf 
+;conf/right/adsec.conf
+;conf/right/adsec_diagn.conf
+;conf/right/adsec_onlycom.conf
+;end
+
+min_timeout        long    3000               ;minimum communication timeout [ms]
+MirrCtrl_id        array                      ;vector of addressable BCU (at least n_bcu + 1 (switch bcu))
+int 7
+    11 12 13 14 15 16 77
+end
+
+Bcu_Ip array                          ; corresponding DLL to use
+string 7
+    192.168.0.1
+    192.168.0.2
+    192.168.0.3
+    192.168.0.4
+    192.168.0.5
+    192.168.0.6
+    192.168.0.7
+end
+
+; Field Point parameters
+
+field_ip                   string "193.206.155.40"    ;IP address
+field_port                 int     4006               ;TCP Port
+field_com                  string "socket"            ;Communication type
+
+;End field point configuration
+
+;Debug status
+debug                      byte     1                 ; execute (1) or don't execute (0) the program in debug mode
+ll_debug                   byte     0                 ; execute (1) or don't execute (0) the program in low level debug mode
+;End debug status
+
+;MSGDRTDB variables
+msgd_diag_name	      string   BCU00DIAG
+msgd_freq_name	      string   BCU00DIAG
+
+
+
+
+
+;======================================= END ============================================

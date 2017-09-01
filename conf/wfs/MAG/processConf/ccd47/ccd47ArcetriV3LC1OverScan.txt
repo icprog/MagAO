@@ -1,0 +1,3376 @@
+# 01/18/06 Arcetri CCD47 Sequences
+#
+# 02/03/06 Clamp and Sample advanced by 1 cycle in Read_pixel2500
+#
+# 05/10/10 Clamp and Sample advanced again by 1 cycle in Read and Shift pixel 2500
+#
+# 05/31/10 Sequence sets developed for Laird Close
+#
+# 01/20/11 Sequences 0,2 and 4 in Set 1 changed to 1034 lines to sample bias level
+#	   
+#
+#		 Set 1 (ccd47ArcetriV3LC1)	Set 2 (ccd47ArcetriV3LC2)
+#
+# Prog	PixRate/ Frame	Frame	Bin	Integ	Frame	Frame	Bin	Integ
+# No	Filter	 Size	RateMax	Factor	Inc(us)	Size	RateMax	Factor	Inc(us)
+#
+#  0	2500/0	 1024	 3.495	  1x1	  49.92	 512	 6.703	 1x1	49.92
+#  1	2500/0	   64	31.480	  1x1	  49.92	  32	42.779	 1x1	49.92
+#  2	 250/2	 1024	 0.435	  1x1	1280.00	 512	 1.487	 1x1	49.92
+#  3	  80/3	   -	  -	   -	   -	 512	 0.535	 1x1	49.92
+#  4	  80/3	 1024	 0.142	  1x1	1280.00	 256	 1.772	 1x1	49.92
+#  5	  80/3	   -	  -	   -	   -	  -	  -	  -	 -
+#  6	  80/3	 1024	 0.551	  2x2	1280.00	  -	  -	  -	 -
+#  7	  80/3	 1024	 10.42	16x16	  49.92	  -	  -	  -	 -
+#
+
+
+program 1024x1024_2500;#0
+
+shift_array_1024	1;
+read_512_pixels		1034;
+shift_4_pixels80	1;
+
+program 64x64_2500;#1
+
+shift_array_1504	1;
+read_32_pixels		64;
+shift_4_pixels80	1;
+
+program 1024x1024_250;#2
+
+shift_array_1024	1;
+read_a_line250		1034;
+shift_320_pixels250	1;
+
+program 1024x1024_80;#4
+
+shift_array_1024	1;
+read_a_line80		1034;
+shift_320_pixels250	1;
+
+program 1024x1024_80bin2x2;#6
+
+shift_array_1024	1;
+read_2_lines80bin	512;
+shift_320_pixels250	1;
+
+program 1024x1024_80bin16x16;#7
+
+shift_array_1024	1;
+read_16_lines80bin16	64;
+shift_4_pixels80	1;
+
+#program 512x512;#0
+#
+#shift_array_1280	1;
+#read_256_pixels	512;
+#shift_pixel2500	1;
+#
+#program 32x32;#1
+#
+#shift_array_1520	1;
+#read_16_pixels		32;
+#shift_4_pixels80	1;
+#
+#program 512x512_250;#2
+#
+#shift_array_1280	1;
+#read_256_pixels250	512;
+#shift_4_pixels80	1;
+#
+#program 512x512_80;#3
+#
+#shift_array_1280	1;
+#read_256_pixels80	512;
+#shift_4_pixels80	1;
+#
+#program 256x256_80;#4
+#
+#shift_array_1408	1;
+#read_128_pixels80	256;
+#shift_4_pixels80	1;
+
+subroutine shift_array_1024;
+shift_array_start	1;
+shift_array_middle	1032;
+shift_array_end		1;
+
+subroutine shift_array_1280;
+shift_array_start	1;
+shift_array_middle	1288;
+shift_array_end		1;
+
+subroutine shift_array_1408;
+shift_array_start	1;
+shift_array_middle	1416;
+shift_array_end		1;
+
+subroutine shift_array_1472;
+shift_array_start	1;
+shift_array_middle	1480;
+shift_array_end		1;
+
+subroutine shift_array_1504;
+shift_array_start	1;
+shift_array_middle	1512;
+shift_array_end		1;
+
+subroutine shift_array_1520;
+shift_array_start	1;
+shift_array_middle	1528;
+shift_array_end		1;
+
+function shift_array_start;
+send_start_of_frame	1;
+shift_array_100_100ns	1000;
+shift_array_110_100ns	20;
+
+function shift_array_middle;
+shift_array_010_100ns	16;
+shift_array_011_100ns	16;
+shift_array_001_100ns	16;
+shift_array_101_100ns	16;
+shift_array_100_100ns	16;
+shift_array_110_100ns	16;
+
+function shift_array_end;
+shift_array_010_100ns	16;
+shift_array_011_100ns	16;
+shift_array_001_100ns	16;
+shift_array_000_100ns	16;
+clear_reg_don_100ns	16;
+clear_reg_doff_100ns	16;
+shift_array_000_doff_100ns	16;
+
+function shift_a_line_start;
+send_start_of_line	1;
+shift_line_000_500ns	2;
+
+function shift_a_line_middle;
+shift_line_100_500ns	30;#was60
+shift_line_110_500ns	5;#was10
+shift_line_010_500ns	25;#was50
+shift_line_011_500ns	5;#was10
+shift_line_001_500ns	30;#was60
+
+function shift_a_line_end;
+shift_line_000_500ns	4;
+
+subroutine read_512_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+read_64_pixels		8;
+#read_16_pixels		1;	# overscan
+
+subroutine read_256_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+shift_16_pixels		16;
+read_64_pixels		4;
+#read_16_pixels		1;	# overscan
+
+subroutine read_128_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+shift_16_pixels		24;
+read_16_pixels		8;	# 9 for overscan
+
+subroutine read_64_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+shift_16_pixels		28;
+read_16_pixels		4;	# 5 for overscan
+
+subroutine read_32_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+shift_16_pixels		30;
+read_16_pixels		2;	# 3 for overscan
+
+subroutine read_16_pixels;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_n_pixels		1;#n=24+5
+shift_16_pixels		31;
+read_16_pixels		1;	# 2 for overscan
+
+subroutine read_a_line250;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_4_pixels250	7;
+read_32_pixels250	16;	# read_33_pixels250 for overscan
+
+subroutine read_256_pixels250;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_32_pixels		8;
+shift_4_pixels250	7;
+read_32_pixels250	8;
+
+subroutine read_a_line80;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_4_pixels80	7;
+read_32_pixels80	16;	# read_33_pixels80 for overscan
+
+subroutine read_256_pixels80;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_32_pixels		8;
+shift_4_pixels80	7;
+read_32_pixels80	8;
+
+subroutine read_128_pixels80;
+shift_a_line_start	1;
+shift_a_line_middle	1;
+shift_a_line_end	1;
+shift_32_pixels		12;
+shift_4_pixels80	7;
+read_32_pixels80	4;
+
+subroutine read_2_lines80bin;
+shift_a_line_start	1;
+shift_a_line_middle	2;
+shift_a_line_end	1;
+shift_4_pixels80bin	4;
+read_16_pixels80bin	16;	# 17; for overscan
+
+subroutine read_16_lines80bin16;
+shift_a_line_start	1;
+shift_a_line_middle	16;
+shift_a_line_end	1;
+shift_pixel80bin	4;
+shift_pixel80bin16	5;
+read_pixel80bin16	32;
+
+function shift_62_pixels;
+shift_pixel2500		62;
+
+function shift_60_pixels;
+shift_pixel2500		60;
+
+function shift_64_pixels;
+shift_pixel2500		64;
+
+function read_64_pixels;
+read_pixel2500		64;
+
+function read_32_pixels;
+read_pixel2500		32;
+
+function shift_32_pixels;
+shift_pixel2500		32;
+
+function shift_16_pixels;
+shift_pixel2500		16;
+
+function read_16_pixels;
+read_pixel2500		16;
+
+function read_32_pixels250;
+read_pixel250		32;
+
+function shift_256_pixels;
+shift_pixel2500		256;
+
+function shift_4_pixels250;
+shift_pixel250		4;
+
+function shift_28_pixels250;
+shift_pixel250		28;	# was29 for dark current meas.
+
+function shift_320_pixels250;
+shift_pixel250		320;
+
+function shift_pixel80;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_4_pixels80;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_4_pixels80bin;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_pixel80bin;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin	1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_16_pixels80bin;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#9
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#10
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#11
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#12
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#13
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#14
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#15
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#16
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_pixel80bin16;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_6_pixels80bin16;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_16_pixels80bin16;
+
+pixel_shift_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#9
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#10
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#11
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#12
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#13
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#14
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#15
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_shift_start80	1;#16
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_shift80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function read_pixel80;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function read_32_pixels80;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#9
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#17
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#25
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+#pixel_read_start80	1;#33
+#pixel_pedestal2_turbo80 4;
+#pixel_pedestal280	73;
+#pixel_read80		1;
+#pixel_end2_turbo80	3;
+#pixel_end280		31;
+
+function read_pixel80bin;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function read_16_pixels80bin;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function read_pixel80bin16;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16	1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function read_16_pixels80bin16;
+
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#1
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#2
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#3
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#4
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#5
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#6
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#7
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+pixel_read_start80	1;#8
+pixel_pedestal2_turbo80 4;
+pixel_pedestal280	73;
+pixel_read80bin16		1;
+pixel_end2_turbo80	3;
+pixel_end280		31;
+
+function shift_n_pixels;#n=24+5
+shift_pixel2500		29;
+
+function read_16_pixels250;
+
+read_pixel250			16;
+
+function shift_16_pixels250;
+
+shift_pixel250			16;
+
+function integrate1;
+
+wait223			5;
+
+pattern send_start_of_frame;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 001;# SOF
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+pattern send_start_of_line;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 010;# SOL
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+pattern shift_array_000_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 000 000 110 1 010 111;
+ 111 11111 000 000 110 1 010 111;
+ 111 11111 000 000 110 1 010 111;
+ 111 11111 000 000 110 1 010 111;
+ 111 11111 000 000 110 1 010 111;
+
+pattern shift_array_000_doff_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+
+
+pattern shift_array_100_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+
+
+pattern shift_array_110_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+
+
+pattern shift_array_010_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+
+
+pattern shift_array_011_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+
+
+pattern shift_array_001_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+
+
+pattern shift_array_101_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+
+pattern clear_reg_don_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11111 000 000 000 1 010 111;
+ 111 11111 000 000 000 1 010 111;
+ 111 11111 000 000 000 1 010 111;
+ 111 11111 000 000 000 1 010 111;
+ 111 11111 000 000 000 1 010 111;
+
+pattern clear_reg_doff_100ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 000 000 1 010 111;
+ 111 11110 000 000 000 1 010 111;
+ 111 11110 000 000 000 1 010 111;
+ 111 11110 000 000 000 1 010 111;
+ 111 11110 000 000 000 1 010 111;
+
+
+pattern shift_line_100_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+ 111 11110 000 100 110 1 010 111;
+
+pattern shift_line_110_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+ 111 11110 000 110 110 1 010 111;
+
+pattern shift_line_010_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+ 111 11110 000 010 110 1 010 111;
+
+pattern shift_line_011_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+ 111 11110 000 011 110 1 010 111;
+
+pattern shift_line_001_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+ 111 11110 000 001 110 1 010 111;
+
+pattern shift_line_101_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+ 111 11110 000 101 110 1 010 111;
+
+pattern shift_line_000_500ns;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCT 210
+#        D III SSS RRR G
+#          123 123 123  
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+
+pattern shift_array;#changed I and S order andR
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+ 111 11110 101 101 110 1 010 111;
+
+pattern shift_arraywd_line1;#changed I and S order andR
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+ 111 11110 110 110 110 1 010 111;
+
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+ 111 11110 010 010 110 1 010 111;
+
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+ 111 11110 011 011 110 1 010 111;
+
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11110 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+
+pattern shift_arraywd_middle;#changed I and S order andR
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+ 111 11111 110 110 110 1 010 111;
+
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+ 111 11111 010 010 110 1 010 111;
+
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+ 111 11111 011 011 110 1 010 111;
+
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+ 111 11111 001 001 110 1 010 111;
+
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+ 111 11111 101 101 110 1 010 111;
+
+pattern clear_readout_register;#changed I and S order andR
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+ 111 11111 100 100 110 1 010 111;
+
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11111 100 100 000 1 010 111;
+ 111 11110 100 100 000 1 010 111;
+ 111 11110 100 100 000 1 010 111;
+ 111 11110 100 100 000 1 010 111;
+ 111 11110 100 100 000 1 010 111;
+ 111 11110 100 100 000 1 010 111;
+
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+
+pattern shift_line;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+ 111 11110 100 100 110 1 010 111;
+
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+ 111 11110 100 110 110 1 010 111;
+
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+ 111 11110 100 010 110 1 010 111;
+
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+ 111 11110 100 011 110 1 010 111;
+
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+ 111 11110 100 001 110 1 010 111;
+
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+ 111 11110 100 101 110 1 010 111;
+
+pattern wait223;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 1 010 111;
+
+pattern shift_pixel250;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 110 0 100 111;#10
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 011;
+ 111 11110 000 000 010 1 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+
+ 111 11110 000 000 010 0 100 111;#10
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 010 0 111 111;#10
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 011 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#end start
+
+ 111 11110 000 000 001 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#endturbo250
+
+ 111 11110 000 000 001 0 110 111;#10total,turbo shouldbe0
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#end ped2
+
+
+ 111 11110 000 000 001 0 010 111;#10
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;#endread250
+
+ 111 11110 000 000 100 0 001 111;#15
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;#end end2_turbo250
+
+
+ 111 11110 000 000 100 0 000 111;#20 turbo should be zero
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#20
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#20
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#5
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern read_pixel250;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 110 0 100 111;#10
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 011;
+ 111 11110 000 000 010 1 100 101;
+ 111 11110 000 000 010 0 100 101;
+ 111 11110 000 000 010 0 100 110;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+
+ 111 11110 000 000 010 0 100 111;#10
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 010 0 111 111;#10
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 011 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#end start
+
+ 111 11110 000 000 001 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#10total
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;#endturbo250
+
+ 111 11110 000 000 001 0 110 111;#10total,turbo shouldbe0
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#10total
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;#end ped2
+
+
+ 111 11110 000 000 001 0 010 111;#10
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;#endread250
+
+ 111 11110 000 000 100 0 001 111;#15
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;#end end2_turbo250
+
+
+ 111 11110 000 000 100 0 000 111;#20 turbo should be zero
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#20
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#20
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;#5
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern shift_pixel2500;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 110 1 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 011 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 011 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 110 111;
+
+ 111 11110 000 000 101 0 110 111;
+ 111 11110 000 000 100 0 110 111;
+ 111 11110 000 000 100 0 100 111;
+ 111 11110 000 000 100 0 100 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern shift_pixel2500bin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 110 1 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 011 111;
+ 111 11110 000 000 011 0 111 111;
+#new
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 101 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+#old
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern read_pixel2500;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 110 1 000 011;
+ 111 11110 000 000 010 0 000 101;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 011 110;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 011 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 110 111;
+
+ 111 11110 000 000 101 0 110 111;
+ 111 11110 000 000 100 0 110 111;
+ 111 11110 000 000 100 0 100 111;
+ 111 11110 000 000 100 0 100 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern read_pixel2500bin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 110 1 000 011;
+ 111 11110 000 000 010 0 000 101;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 001 110;
+ 111 11110 000 000 010 0 011 111;
+ 111 11110 000 000 011 0 111 111;
+#new
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 101 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+#old
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern shift_pixel_with_reset_9;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 010 1 010 111;
+ 111 11110 000 000 010 0 010 111;
+ 111 11110 000 000 010 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 100 0 010 111;
+ 111 11110 000 000 100 0 010 111;
+ 111 11110 000 000 100 0 010 111;
+
+pattern wait223_12_with_reset;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 110 1 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+ 111 11110 000 000 110 0 010 111;
+
+pattern shift_pixel2500_fast;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 010 1 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+
+pattern shift_pixel2500_fast_with_sol;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 010 1 001 111;
+ 111 11110 000 000 010 0 001 010;#sol
+ 111 11110 000 000 010 0 001 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+
+pattern shift_pixel2500binbin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 100 100 110 1 000 011;
+ 111 11110 100 100 010 0 000 111;
+ 111 11110 100 100 010 0 001 111;
+ 111 11110 100 100 010 0 001 111;
+ 111 11110 100 100 010 0 111 111;
+ 111 11110 100 100 011 0 111 111;
+#new
+ 111 11110 100 100 001 0 111 111;
+ 111 11110 100 100 101 0 111 111;
+ 111 11110 100 100 100 0 101 111;
+ 111 11110 100 100 110 0 101 111;
+ 111 11110 100 100 010 0 101 111;
+ 111 11110 100 100 001 0 101 111;
+ 111 11110 100 100 001 0 101 111;
+ 111 11110 100 100 101 0 101 111;
+ 111 11110 100 100 100 0 101 111;
+ 111 11110 100 100 110 0 001 111;
+ 111 11110 100 100 010 0 001 111;
+ 111 11110 100 100 011 0 001 111;
+#old
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 000 111;
+
+ 111 11110 100 100 101 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+
+pattern shift_pixel2500bin_fast;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 010 1 000 011;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+#new
+ 
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 001 0 001 111;
+#old
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern read_pixel2500_fast;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 010 1 001 011;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 001 101;
+
+ 111 11110 000 000 001 0 111 101;
+ 111 11110 000 000 001 0 111 101;
+ 111 11110 000 000 001 0 111 110;
+
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+
+
+pattern read_pixel2500binbin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 100 100 110 1 000 011;
+ 111 11110 100 100 010 0 000 101;
+ 111 11110 100 100 010 0 001 101;
+ 111 11110 100 100 010 0 001 110;
+ 111 11110 100 100 010 0 111 111;
+ 111 11110 100 100 011 0 111 111;
+#new
+ 111 11110 100 100 001 0 111 111;
+ 111 11110 100 100 101 0 111 111;
+ 111 11110 100 100 100 0 101 111;
+ 111 11110 100 100 110 0 101 111;
+ 111 11110 100 100 010 0 101 111;
+ 111 11110 100 100 011 0 101 111;
+ 111 11110 100 100 001 0 101 111;
+ 111 11110 100 100 101 0 101 111;
+ 111 11110 100 100 100 0 101 111;
+ 111 11110 100 100 110 0 001 111;
+ 111 11110 100 100 010 0 001 111;
+ 111 11110 100 100 011 0 001 111;
+#old
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 001 111;
+ 111 11110 100 100 001 0 000 111;
+
+ 111 11110 100 100 101 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+ 111 11110 100 100 100 0 000 111;
+
+pattern read_pixel2500bin_fast;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 010 1 000 011;
+ 111 11110 000 000 010 0 000 101;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 111 101;
+ 111 11110 000 000 001 0 111 110;
+#new
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 100 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 001 0 001 111;
+#old
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+
+pattern shift_pixel2500binbinbin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123  
+#
+ 111 11110 000 000 110 1 000 011;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 011 0 111 111;
+#new
+ 111 11110 000 000 001 0 111 111;#18 steps
+ 111 11110 000 000 101 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 101 0 101 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 101 0 101 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 011 0 001 111;
+#old
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+
+pattern read_pixel2500binbinbin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#        D III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 110 1 000 011;
+ 111 11110 000 000 010 0 000 101;
+ 111 11110 000 000 010 0 001 101;
+ 111 11110 000 000 010 0 001 110;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 011 0 111 111;
+#new
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 101 0 111 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 101 0 101 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 101 111;
+ 111 11110 000 000 010 0 101 111;
+ 111 11110 000 000 011 0 101 111;
+ 111 11110 000 000 001 0 101 111;
+ 111 11110 000 000 101 0 101 111;
+ 111 11110 000 000 100 0 101 111;
+ 111 11110 000 000 110 0 001 111;
+ 111 11110 000 000 010 0 001 111;
+ 111 11110 000 000 011 0 001 111;
+#old
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 001 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 101 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_read_start80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 011;
+ 111 11110 000 000 010 1 100 101;
+ 111 11110 000 000 010 0 100 101;
+ 111 11110 000 000 010 0 100 110;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+pattern pixel_shift_start80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 011;
+ 111 11110 000 000 010 1 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 100 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 110 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+ 111 11110 000 000 010 0 111 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+pattern pixel_pedestal180;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+
+pattern pixel_pedestal280;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+ 111 11110 000 000 001 0 110 111;
+
+pattern pixel_pedestal2_turbo80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+ 111 11110 000 000 001 0 111 111;
+
+pattern pixel_read80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_read80bin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_read80bin16;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_shift80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_shift80bin;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_shift80bin16;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+ 111 11110 000 000 001 0 010 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 010 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+ 111 11110 000 000 001 0 000 111;
+
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_end180;
+
+#FB  21111 000 111 111 0     Cmd
+#210 09876 789 543 201 6 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+pattern pixel_end2_turbo80;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+ 111 11110 000 000 100 0 001 111;
+
+pattern pixel_end280;
+
+#FB  11111 100 000 000 0     Cmd
+#210 54321 098 765 432 1 SCt 210
+#          III SSS RRR G
+#          123 123 123
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+ 111 11110 000 000 100 0 000 111;
+
+
+
+
+
+
+

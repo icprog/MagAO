@@ -1,0 +1,29 @@
+#@File: globals.txt
+
+
+# Skip frame thresholds:
+
+SAFESKIP_PERC_WARN    5    Warning Skip frame percentage
+SAFESKIP_PERC_ERROR   10   Error Skip frame percentage
+
+# Define supported Wavefront sensors
+
+AO_WFS_NONE   "_NONE_"     No Wavefront sensor
+AO_WFS_FLAO   "FLAOWFS"    FLAO Wavefront sensor identifier
+AO_WFS_MAG    "MAGWFS"     MAG  Wavefront sensor identifier
+AO_WFS_LBTI   "LBTIWFS"    LBTI Wavefront sensor identifier
+AO_WFS_MAG    "MAGWFS"     Magellan AO Wavefront sensor identifier
+
+# Define supported mirrors
+
+AO_ADSEC_FLAO "ADSEC"      The only supported AdSec
+
+# Define supported AO Modes
+
+AO_MODE_UNDEFINED   "Undefined" Undefined
+AO_MODE_ACE         "ACE-AO"    Automatic AO Mode
+AO_MODE_ICE         "ICE-AO"    Interactive AO Mode
+AO_MODE_TTM         "TTM-AO"    Tip-Tilt only correction
+AO_MODE_FIX         "FIX-AO"    Seeing limited mode
+AO_MODE_LGS         "LGS-AO"    Laser Gude star mode (for future use)
+

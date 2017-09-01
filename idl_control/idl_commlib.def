@@ -1,0 +1,10 @@
+LIBRARY   idl_commlib
+DESCRIPTION "Commlib wrapper for IDL"
+EXPORTS
+   test @1
+   idl_setup @2
+   idl_function @3
+   idl_WriteToBCU @4
+   idl_ReadFromBCU @5
+   idl_GetPacketNum @6	
+

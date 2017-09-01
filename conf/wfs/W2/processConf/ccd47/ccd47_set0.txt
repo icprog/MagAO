@@ -1,0 +1,16 @@
+
+name		  string  "CCD47 program set 0"
+control_filename  string  "ccd47ArcetriV1-con-com.bin"
+pattern_filename  string  "ccd47ArcetriV1-pat-com.bin"
+num_programs	  int	  1
+program0	  structure  "./ccd47_set0_program0.txt"
+#program1	  structure  "./ccd47_set0_program1.txt"
+#program2	  structure  "./ccd47_set0_program2.txt"
+#program3	  structure  "./ccd47_set0_program3.txt"
+#program4	  structure  "./ccd47_set0_program4.txt"
+#program5	  structure  "./ccd47_set0_program5.txt"
+#program6	  structure  "./ccd47_set0_program6.txt"
+#program7	  structure  "./ccd47_set0_program7.txt"
+
+
+

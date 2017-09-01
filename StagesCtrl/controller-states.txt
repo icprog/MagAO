@@ -1,0 +1,16 @@
+
+iDrive control states
+
+This is the list of the possible iDrive control states. At launch, the control program goes through each stage from 0 to 4 in sequence. Errors in controlling the drive can put back the program to a different state from which it will try to recover.
+
+0: Unitialized  (program starting up, iDrive communication not attempted yet)
+1: power on OK  (communication test OK)
+2: configured   (iDrive parameters have been configured)
+3: homing       (homing started)
+4: ready        (ready to accept commands)
+5: moving       (executing command, goes back to 4 when done)
+
+6: limit error  (limit switch on. goes back to 4 when fixed)
+7: generic error (unable to recover from error. Check error message)
+
+Network or power failure will put the controller back to state 0.

@@ -1,0 +1,269 @@
+<DOCUMENT>
+<LINKPROJECT id='00BB2130' name='p0' orig_file_name='Release\DspMainProgram.dxe' architecture='ADSP-TS101' >
+<FILE_NAME><![CDATA[Release\DspMainProgram.dxe]]></FILE_NAME>
+<MEMORY id='00B954F8' name='M0Code' start_address='0x0' end_address='0xfff' type='' qualifier='RAM' width='0x20' words_used='0x678' words_unused='0x988' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00C3A178' name='program' type='SHT_PROGBITS' start_address='0x0' word_size='0x678' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BEFE80' name='program' start_address='0x0' size='0x20' element_at='0x0' >
+<INPUT_FILE><![CDATA[booting_isr.doj]]></INPUT_FILE>
+<SYMBOL name='booting_isr' address='0x0' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='booting_isr.end' address='0x1c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00BE5CF0' name='program' start_address='0x20' size='0x2a1' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='main' address='0x20' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='init_reconstructor' address='0x33' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='memrst_slope_loop' address='0x5c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='memrst_modes_loop' address='0x60' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_start_rtr' address='0x62' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_start_mm' address='0x69' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_start_ff' address='0x71' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_start_dl' address='0x79' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_rtr_sleep' address='0x81' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_update_slopes' address='0x89' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='matrix_B0_loop' address='0xac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_modes' address='0xee' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='matrix_M2C_loop' address='0x100' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_distur_cmd' address='0x125' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_feed_forward' address='0x16e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='matrix_K_loop' address='0x1a4' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_delay_line' address='0x1ea' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='copy_slopes_loop' address='0x24c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='matrix_B_delay_loop' address='0x268' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='copy_modes_loop' address='0x284' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='matrix_A_delay_loop' address='0x29c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_sleep_routine' address='0x2b3' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='main.end' address='0x2bd' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C1A890' name='program' start_address='0x2c4' size='0x3ac' element_at='0x0' >
+<INPUT_FILE><![CDATA[control_isr.doj]]></INPUT_FILE>
+<SYMBOL name='control_isr' address='0x2c4' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mod_upd_cmd' address='0x328' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mod_reset_acc' address='0x33b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='bias_upd_current' address='0x363' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='cmd_preshaper' address='0x36b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch0' address='0x37c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch2' address='0x38c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch1' address='0x39c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_cmd_preshaper_ch3' address='0x3ac' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch0' address='0x3d0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch2' address='0x3e0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch1' address='0x3f0' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_reset_curr_preshaper_ch3' address='0x400' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_err_smoothed_gain' address='0x530' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_err_smoothed_gain' address='0x53c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_err_smoothed_gain' address='0x548' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_err_smoothed_gain' address='0x553' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch1_speed_smoothed_gain' address='0x568' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch2_speed_smoothed_gain' address='0x574' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ch3_speed_smoothed_gain' address='0x580' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_speed_smoothed_gain' address='0x58b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_poles_loop' address='0x590' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='pos_zeros_loop' address='0x59b' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='speed_poles_loop' address='0x5a7' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='speed_zeros_loop' address='0x5af' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_accumulator' address='0x5ba' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='acc_check' address='0x5c8' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='restore_regs' address='0x642' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='control_isr.end' address='0x66c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00C31BE0' name='program' start_address='0x670' size='0x8' element_at='0x0' >
+<INPUT_FILE><![CDATA[timer_isr.doj]]></INPUT_FILE>
+<SYMBOL name='timer_isr' address='0x670' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='timer_isr.end' address='0x674' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B964D0' name='M0Data' start_address='0x1000' end_address='0xffff' type='' qualifier='RAM' width='0x20' words_used='0x4' words_unused='0xeffc' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00C3A978' name='data0' type='SHT_PROGBITS' start_address='0x1000' word_size='0x4' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BDB290' name='data0' start_address='0x1000' size='0x4' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='m2_ADC_value' address='0x1000' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_value' address='0x1002' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B96590' name='M1Data' start_address='0x80000' end_address='0x8ffff' type='' qualifier='RAM' width='0x20' words_used='0x8240' words_unused='0x7dc0' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00C3AB70' name='data1' type='SHT_PROGBITS' start_address='0x80000' word_size='0x8240' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BDB8E0' name='data1' start_address='0x80000' size='0x8240' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='m2_global_counter' address='0x80000' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_step_global_counter' address='0x80001' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_software_release' address='0x80002' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_board_number' address='0x80003' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_delay_acc' address='0x80004' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_num_samples' address='0x80005' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_delay_counter' address='0x80006' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_acc_counter' address='0x80007' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_command_pending' address='0x80008' size='0x2' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_inv_num_samples' address='0x8000a' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_delay_DAC' address='0x8000b' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_not_sent' address='0x8000c' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_not_ready' address='0x8000d' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_reset_acc' address='0x8000e' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_rtr_sleep' address='0x8000f' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_old_skip_rtr' address='0x80010' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_last_slope_size' address='0x80011' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes_size' address='0x80012' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_feedfwd_size' address='0x80013' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_slope_memcpy_size' address='0x80014' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_prod_slope_delay_size' address='0x80015' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes_memcpy_size' address='0x80016' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_prod_modes_delay_size' address='0x80017' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_slope_delay_size' address='0x80018' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes_delay_size' address='0x80019' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_slope_vector_ptr' address='0x8001a' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_rtr_ptr' address='0x8001b' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes_vector_ptr' address='0x8001c' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_mm_ptr' address='0x8001d' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_command_vector_ptr' address='0x8001e' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_update_cmd_ptr' address='0x8001f' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_ff_cmd_vector_ptr' address='0x80020' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_ff_ptr' address='0x80021' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_dl_ptr' address='0x80022' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_update_ff_ptr' address='0x80023' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_slope_delay_ptr' address='0x80024' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes_delay_ptr' address='0x80025' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_diagnostic_ptr' address='0x80026' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_disturb_start_ptr' address='0x80027' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_disturb_stop_ptr' address='0x80028' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_disturb_curr_ptr' address='0x80029' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_B0a_ptr' address='0x8002a' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_B0b_ptr' address='0x8002b' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_Ba_delay_ptr' address='0x8002c' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_Bb_delay_ptr' address='0x8002d' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_A_delay_ptr' address='0x8002e' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_K_ptr' address='0x8002f' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_matrix_M2C_ptr' address='0x80030' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_ff_command' address='0x80034' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_ff_current' address='0x80038' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_ff_ud_current' address='0x8003c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_ff_pure_current' address='0x80040' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_mean_control_current' address='0x80044' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_int_control_current' address='0x80048' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_command' address='0x8004c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_null_value' address='0x80050' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_average' address='0x80054' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_curr_average' address='0x80058' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_accumulator' address='0x8005c' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_curr_accumulator' address='0x80064' size='0x8' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_accumulator2' address='0x8006c' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_curr_accumulator2' address='0x80078' size='0xc' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_bias_current' address='0x80084' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_fullbias_curr' address='0x80088' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_cmd_current' address='0x8008c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_preshaper_cmd' address='0x80090' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_final_preshaper_cmd' address='0x80094' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_preshaped_cmd' address='0x80098' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_step_ptr_preshaper_cmd' address='0x8009c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_curr_ptr_preshaper_cmd' address='0x800a0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_start_preshaper_curr' address='0x800a4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_final_preshaper_curr' address='0x800a8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_preshaped_curr' address='0x800ac' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_step_ptr_preshaper_curr' address='0x800b0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_curr_ptr_preshaper_curr' address='0x800b4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_float_ADC_value' address='0x800b8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_A_coeff' address='0x800bc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_B_coeff' address='0x800c0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_C_coeff' address='0x800c4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dist_threshold' address='0x800c8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_distance' address='0x800cc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_delayline_ptr' address='0x800d0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_current' address='0x800d4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_pre_current' address='0x800d8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_current' address='0x800dc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_pre_current' address='0x800e0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_control_enable' address='0x800e4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_float_DAC_value' address='0x800e8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_sat_DAC_value' address='0x800ec' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_nsat_DAC_value' address='0x800f0' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_N2A_gain' address='0x800f4' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_A2bit_gain' address='0x800f8' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_DAC_bit_offset' address='0x800fc' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_err_loop_gain' address='0x80100' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_err_smoothed_gain' address='0x80104' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_err_smoothed_step' address='0x80108' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_loop_gain' address='0x8010c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_smoothed_gain' address='0x80110' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_smoothed_step' address='0x80114' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_new_delta_command' address='0x80118' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_bias_command' address='0x8011c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_fullbias_cmd' address='0x80120' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_modes' address='0x80124' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_precalc_slope' address='0x80128' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_precalc_modes' address='0x8012c' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_G_a' address='0x80130' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_G_b' address='0x80134' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_BF1_a' address='0x80138' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_BF1_b' address='0x8013c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_AF1_a' address='0x80140' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_AF1_b' address='0x80144' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_BF0_a' address='0x80148' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_gain_BF0_b' address='0x8014c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_Cmol_a' address='0x80150' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_Fmol_a' address='0x80154' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_Cmol_b' address='0x80158' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_Fmol_b' address='0x8015c' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_max_mode' address='0x80160' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dmax_mode' address='0x80164' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_min_cmd' address='0x80168' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_max_cmd' address='0x8016c' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_dmax_cmd' address='0x80170' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_min_curr' address='0x80174' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_max_curr' address='0x80178' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_check_threshold' address='0x8017c' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_check_cnt_threshold' address='0x80180' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_check_internal_cnt' address='0x80184' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_AccCoeff' address='0x80188' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_save_regs' address='0x8018c' size='0x2c' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_preshaper_cmd_buffer' address='0x801b8' size='0x4000' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_preshaper_curr_buffer' address='0x841b8' size='0x4000' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_delayline_zeros' address='0x881b8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_delayline_poles' address='0x881c8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_delayline_zeros' address='0x881d8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_delayline_poles' address='0x881e8' size='0x10' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_pos_coeff' address='0x881f8' size='0x24' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='m2_speed_coeff' address='0x8821c' size='0x24' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B96670' name='M2Data' start_address='0x100000' end_address='0x10ffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x10000' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00C3AD68' name='data2' type='SHT_PROGBITS' start_address='0x100000' word_size='0x0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BE5908' name='data2' start_address='0x100000' size='0x0' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B966A0' name='SDRAM' start_address='0x4000000' end_address='0x7ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B96410' name='MS0' start_address='0x8000000' end_address='0xbffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BA14C0' name='MS1' start_address='0xc000000' end_address='0xfffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BB1BF0' name='HOST' start_address='0x10000000' end_address='0x11ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x2000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+</LINKPROJECT>
+</DOCUMENT>

@@ -1,0 +1,167 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map_ss1.xsl"?>
+<!DOCTYPE DOCUMENT SYSTEM "file:///C:/Programmi/Analog Devices/VisualDSP 4.5/System/linker_map.dtd">
+<DOCUMENT>
+<LINKPROJECT id='00BA1F30' name='p0' orig_file_name='Release\SwitchBCU.dxe' architecture='ADSP-TS101' >
+<FILE_NAME><![CDATA[Release\SwitchBCU.dxe]]></FILE_NAME>
+<MEMORY id='00B85580' name='M0Code' start_address='0x0' end_address='0xfff' type='' qualifier='RAM' width='0x20' words_used='0x357' words_unused='0xca9' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BF7078' name='code' type='SHT_PROGBITS' start_address='0x0' word_size='0x357' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BE18A8' name='program' start_address='0x0' size='0x24' element_at='0x0' >
+<INPUT_FILE><![CDATA[booting_isr.doj]]></INPUT_FILE>
+<SYMBOL name='booting_isr' address='0x0' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='booting_isr.end' address='0x20' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00BD2980' name='program' start_address='0x24' size='0x11' element_at='0x0' >
+<INPUT_FILE><![CDATA[reply_isr.doj]]></INPUT_FILE>
+<SYMBOL name='timer0_isr' address='0x24' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='timer0_isr.end' address='0x2c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq2_isr' address='0x2d' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='irq2_isr.end' address='0x34' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+<INPUT_SECTION id='00BD6B38' name='program' start_address='0x38' size='0x31f' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='main' address='0x38' size='0x0' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='slope_memset' address='0x48' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_main_loop' address='0x4f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='glob_timeout_exp' address='0x75' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mirr_frame_start' address='0x91' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='cmd_pending_test' address='0xaf' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mirr_frame_cnt' address='0xbd' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wfs_sequence_start' address='0xc5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wfs_sequence_cnt' address='0x107' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wfs_pending_test' address='0x123' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wfs_sequence_cnt1' address='0x131' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_slope_memcpy' address='0x137' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_start_sequence' address='0x142' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_wait_loop' address='0x1b9' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_rtr_test' address='0x1ca' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='skip_frame_rtr_test' address='0x1e6' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mm_wait_loop' address='0x205' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_mm_test' address='0x216' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='skip_frame_mm_test' address='0x232' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ff_wait_loop' address='0x251' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='start_ff_test' address='0x262' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='skip_frame_ff_test' address='0x272' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_skip_frame' address='0x281' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='memset_FFCmdVector' address='0x28c' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='mm_skip_frame' address='0x295' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='ff_skip_frame' address='0x2a1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='send_start_dl' address='0x2ab' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='save_diagnostic' address='0x2c5' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='save_diag' address='0x2f1' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='check_loop' address='0x2fd' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='no_save_diag' address='0x30f' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='end_fastlink' address='0x314' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_sleep_routine' address='0x31d' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='rtr_sleep_loop' address='0x31e' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='main.end' address='0x32d' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_fl_end' address='0x331' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_cmd' address='0x338' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_fl_close' address='0x347' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='wait_for_fl_end.end' address='0x354' size='0x0' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86510' name='M0Data' start_address='0x1000' end_address='0xffff' type='' qualifier='RAM' width='0x20' words_used='0xa8' words_unused='0xef58' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BF7530' name='data0' type='SHT_PROGBITS' start_address='0x1000' word_size='0xa8' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+<INPUT_SECTION id='00BD3A38' name='data0' start_address='0x1000' size='0xa8' element_at='0x0' >
+<INPUT_FILE><![CDATA[main.doj]]></INPUT_FILE>
+<SYMBOL name='swb_FastlinkHdr' address='0x1000' size='0x8' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_dummy_words' address='0x1008' size='0x19' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SoftwareRelease' address='0x1021' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NotUsed' address='0x1022' size='0x2' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_FramesCounterIrq' address='0x1024' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_ParamSelectorIrq' address='0x1025' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NumTotSlopes' address='0x1026' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NumActuators' address='0x1027' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NumModes' address='0x1028' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_CmdDisturbAct' address='0x1029' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_InvOvsFrameRate' address='0x102a' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_TimeoutFrameRate' address='0x102b' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_MirrorFrameRate' address='0x102c' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_DiagnosticFrameDec' address='0x102d' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_ParamSelector' address='0x102e' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_OffloadSelector' address='0x102f' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_EnableCmdPending' address='0x1030' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_EnableDSPStorage' address='0x1031' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_EnableACCAquisition' address='0x1032' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_PreviousIntCounter' address='0x1033' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_MirrFramesCounter' address='0x1034' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SafeSkipFrameCnt' address='0x1035' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_PendingSkipFrameCnt' address='0x1036' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_WFSGlobalTimeout' address='0x1037' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_WFSGlobalTimeoutCnt' address='0x1038' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_MirrorFrameExpired' address='0x1039' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NumFLTimeout' address='0x103a' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NumFLCrcErr' address='0x103b' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_ReplyReceived' address='0x103c' size='0x1' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SCSlopeVectorPtr' address='0x103d' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SCStartRTRPtr' address='0x103e' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_HeaderPtr' address='0x103f' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SlopeVectorPtr' address='0x1040' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_StartRTRPtr' address='0x1041' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_ModesVectorPtr' address='0x1042' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_StartMMPtr' address='0x1043' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_FFCmdVectorPtr' address='0x1044' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_StartFFPtr' address='0x1045' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_ReplyVectorPtr' address='0x1046' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_RTRSleep' address='0x1047' size='0x1' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_NullValue' address='0x1048' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_AccData' address='0x104c' size='0x8' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_AccCoeff' address='0x1054' size='0x4' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_AccParams' address='0x1058' size='0x20' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_SaveRegs' address='0x1078' size='0x4' binding='GLOBAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+<SYMBOL name='swb_FastlinkCmd' address='0x107c' size='0x2c' binding='LOCAL'><DEMANGLED_NAME><![CDATA[]]></DEMANGLED_NAME></SYMBOL>
+</INPUT_SECTION>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B865D0' name='M1Data' start_address='0x80000' end_address='0x87fff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x8000' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BF7728' name='data1' type='SHT_PROGBITS' start_address='0x80000' word_size='0x0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86688' name='M1aData' start_address='0x88000' end_address='0x8ffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x8000' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BF7870' name='data1a' type='SHT_PROGBITS' start_address='0x88000' word_size='0x0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B866B8' name='M2Data' start_address='0x100000' end_address='0x10ffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x10000' >
+<OUTPUT_SECTIONS>
+<OUTPUT_SECTION id='00BF79A0' name='data2' type='SHT_PROGBITS' start_address='0x100000' word_size='0x0' word_size_unmapped='0x0' >
+<INPUT_SECTIONS>
+</INPUT_SECTIONS>
+</OUTPUT_SECTION>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B86450' name='SDRAM' start_address='0x4000000' end_address='0x7ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B9FD08' name='MS0' start_address='0x8000000' end_address='0xbffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00B85FB0' name='MS1' start_address='0xc000000' end_address='0xfffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x4000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+<MEMORY id='00BC9A98' name='HOST' start_address='0x10000000' end_address='0x11ffffff' type='' qualifier='RAM' width='0x20' words_used='0x0' words_unused='0x2000000' >
+<OUTPUT_SECTIONS>
+</OUTPUT_SECTIONS>
+</MEMORY>
+</LINKPROJECT>
+</DOCUMENT>

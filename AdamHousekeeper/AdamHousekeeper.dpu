@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+\usepackage{lbtadopt}
+
+\title{ LBT-AdOpt AdamHousekeeper Diagnostic Application ({\tt HouseKeeper})   \\
+        Annotated Source Code }
+
+\author{ Marco Xompero }
+
+\docnumber{AdOptSW.xxx}
+\version{0.0}
+\date{8 September 2006}
+
+\newcommand{\msgl}{{\tt msglib}}
+\newcommand{\msgd}{{\tt MsgD-RTDB}}
+\newcommand{\rtdbl}{{\tt rtdblib}}
+\newcommand{\bufl}{{\tt buflib}}
+\newcommand{\thrdl}{{\tt thrdlib}}
+\newcommand{\diagnapp}{{\tt DiagnApp}}
+\newcommand{\hsk}{{\tt AdamHousekeeper}}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm}
+
+\raggedbottom
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report contains full documentation of the diagnostic application (\hsk),
+which provides housekeeping diagnostic services for LBT Adaptive Secondary Unit, in particular wrt ADAM monitoring.
+\end{abstract}
+
+\tableofcontents
+
+
+\newpage
+\quad
+\vspace{5cm}
+
+\section{Introduction}
+
+The \hsk monitors the status of ADAM IO module inside the cabinet of the LBT Adaptive Secondary Unit.
+
+\section{The \hsk object}
+E' fatto come l'housekeeper.
+
+\section{Library Content}
+\makelist
+
+\end{document}

@@ -1,0 +1,5 @@
+#Test config file 3
+par11	float32		345.45
+par12	float64		12345.145
+
+max_dbl float64		1.79769e+308 

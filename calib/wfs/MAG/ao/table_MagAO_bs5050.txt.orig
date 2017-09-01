@@ -1,0 +1,33 @@
+# Table has the following features:
+# - flux is always decreasing
+# - frequency is always decreasing within a binning
+# - lines that change parameters other than frequency (binning, rec, etc.)  are duplicated with the same magnitude, and specify
+#   two sets of parameters, one for the lower binning and one for the higher binning
+
+# Columns:
+# 0    1   2     3      4   5       6     7                 8                 9       10              11               12                 13      14    15       16     17      18      19        20       21     22       23          24              25               26
+mag   flux bin freq ccdgain  phot  modes goodseeing  base/rec             badseeing base/rec         filtering         pupils         slopenull   tt   gain  fw1_acq  fw2_acq  fw1_obs  fw2_obs  TVbin  TVfreq  TVavg   TVflux     base and REC for CL centering    Freq
+
+-2  2054737983 1  1000  0 20877016 300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      1      4.3     5        15000   KL_MARCO3ORTH   20130329_165015   500
+0.00 325654024 1  1000  0 330878   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      1      4.3     5        15000   KL_MARCO3ORTH   20130329_165015   500
+3.39 18700000  1  1000  0  19000   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      1      4.3     5        15000   KL_MARCO3ORTH   20130329_165015   500
+5.40  2970000  1  1000  0   3000   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      1      4.3     5         5000   KL_MARCO3ORTH   20130329_165015   500
+6.30  1287000  1  1000  0   1300   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      2      0.55    5         2000   KL_MARCO3ORTH   20130329_165015   300
+7.34   495000  1  1000  0    500   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      2      0.55    5          800   KL_MARCO3ORTH   20130329_165015   300
+8.27   210870  1  1000  0    213   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      2      0.55    5          300   KL_MARCO3ORTH   20130329_165015   300
+9.27    84150  1  1000  0     85   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      2      0.55    5         2400   KL_MARCO3ORTH   20130329_165015   300
+9.89    48400  1  1000  0     48   300   KL_MARCO3ORTH  20130329_165015   KL_MARCH 20130329_210902   pureIntegrator    20130329-161229   zero     0.17    0.1    0         0        0        0      2      0.55    5         1500   KL_MARCO3ORTH   20130329_165015   300
+9.89    48400  2  1000  0    192   120   KL_MARCH       20130328_205218   KL_MARCH 20130328_205218   pureIntegrator    20121129-142526   zero     0.17    0.1    0         0        0        0      2      0.55    5         1500   KL_MARCH        20130328_205218   300
+11.26   13336  2  1000  0     54   120   KL_MARCH       20130328_205218   KL_MARCH 20130328_205218   pureIntegrator    20121129-142526   zero     0.17    0.1    0         0        0        0      2      0.55    5          700   KL_MARCH        20130328_205218   300
+11.76    8414  2   625  0     85   120   KL_MARCH       20130328_205218   KL_MARCH 20130328_205218   pureIntegrator    20121129-142526   zero     0.17    0.1    0         0        0        0      16     10.0    50        7000   KL_MARCH        20130328_205218   300
+12.26    5309  2   625  0     34   120   KL_MARCH       20130328_205218   KL_MARCH 20130328_205218   pureIntegrator    20121129-142526   zero     0.17    0.1    0         0        0        0      16     10.0    50        7000   KL_MARCH        20130328_205218   300
+13.08    2470  2   400  0     25   120   KL_MARCH       20130328_205218   KL_MARCH 20130328_205218   pureIntegrator    20121129-142526   zero     0.17    0.1    0         0        0        0      16     10.0    50        2500   KL_MARCH        20130328_205218   300
+13.08    2470  3   400  0     57   50    KL_MARCH       20130328_234033   KL_MARCH 20130328_234033   pureIntegrator    20121204-204110   zero     0.34    0.1    0         0        0        0      16     10.0    50        2500   KL_MARCH        20130328_234033   100
+14.40     755  3   200  0     34   50    KL_MARCH       20130328_234033   KL_MARCH 20130328_234033   pureIntegrator    20121204-204110   zero     0.34    0.1    0         0        0        0      16     10.0    50        1700   KL_MARCH        20130328_234033   100
+14.40     755  4   300  0     43   28    KL_MARCH       20130329_185726   KL_MARCH 20130329_185726   pureIntegrator    20121204-214106   zero     0.34    0.1    0         0        0        0      16     10.0    50        1700   KL_MARCH        20130328_234033   100
+15.35     335  4   200  0     27   28    KL_MARCH       20130329_185726   KL_MARCH 20130329_185726   pureIntegrator    20121204-214106   zero     0.34    0.1    0         0        0        0      16     10.0    50         600   KL_MARCH        20130328_234033   100
+16.32     133  4   105  0     21   28    KL_MARCH       20130329_185726   KL_MARCH 20130329_185726   pureIntegrator    20121204-214106   zero     0.34    0.1    0         0        0        0      16     10.0    50         250   KL_MARCH        20130329_185726   100
+17.38      48  4   105  0      8   28    KL_MARCH       20130329_185726   KL_MARCH 20130329_185726   pureIntegrator    20121204-214106   zero     0.34    0.1    0         0        0        0      16     10.0    50          90   KL_MARCH        20130329_185726   100
+
+
+

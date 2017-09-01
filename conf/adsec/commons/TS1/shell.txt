@@ -1,0 +1,76 @@
+;;+& 20110101_010101 &-;;
+;===========================================================================
+; Definition of the mirror parameters for the TS1 unit.
+;
+
+mag_mass           float    2.8 ;[g] mass of one magnet+glass_puck+Al_ring (0.12 extra mass aluminum ring wrt spheric shell)
+
+glass_mass         float    2318;[g] mass of the glass (thin mirror). ?stimated from the TS3: estimated by ADS
+
+membrane_ring_mass float      0.0 ;[g] mass of the outer ring of the central membrane
+
+curv_radius        float   1955.0 ;[mm] back radius of curvature (RoC) of thin shell
+
+n_rings            int         13 ; # of actuator rings (AR)
+
+in_radius          float     27.5 ;[mm] inner radius of the mirror
+
+out_radius         float    425.35 ;[mm]stimated outer radius of the mirror
+
+vertex_thickness   float      1.6 ;[mm] thickness at the vertex
+
+n_act_ring         array          ;number of actuators per ring
+    int 13
+9
+15
+21
+27
+33
+39
+45
+51
+57
+63
+69
+75
+81    
+end
+
+angle_ring         array          ;[deg] angle between AO and AR with vertex in CoC
+    float 13
+1.2615
+2.1498
+3.0382
+3.9266
+4.8150
+5.7034
+6.5918
+7.4802
+8.3686
+9.2570
+10.1454
+11.0338
+11.9222 ;12.8105
+end
+
+angle_act0         array          ;[deg] azimuthal angle of the first act
+    float 13
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+end
+
+in_cap_radius      float   8.0                ;[mm] inner radius of capacitive sensor area
+out_cap_radius     float   12.5               ;[mm] outer radius of capacitive sensor area
+
+;==================================== End of file =======================================

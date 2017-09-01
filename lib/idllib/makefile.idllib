@@ -1,0 +1,19 @@
+# This file can be used by client applications to link
+# this library: before using "XXX_LNK" please call the
+# "xxx_compile" target.
+
+ifndef MAKEFILEIDLLLIB
+MAKEFILEIDLLIB=.
+
+# Dependencies
+include $(ADOPT_LIB)/base/makefile.base
+include $(ADOPT_LIB)/makefile.logger
+
+IDLLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/idllib,all,do_idllib) $(LOGGER_COMPILE)
+
+do_idllib: 
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/idllib all
+
+IDLLIB_LNK = $(ADOPT_LIB)/idllib/idllib.a $(THRDLIB_LNK) $(LOGGER_LNK) -L$(IDLDIR)/bin/bin.linux.x86 -lstdc++ -lidl_rpc
+
+endif

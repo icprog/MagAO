@@ -1,0 +1,26 @@
+# This file can be used by client applications to link
+# this library: before using "XXX_LNK" please call the
+# "xxx_compile" target.
+
+ifndef MAKEFILEBCULIB
+MAKEFILEBCULIB=.
+
+# Dependencies
+include $(ADOPT_LIB)/base/makefile.base
+include $(ADOPT_LIB)/makefile.logger
+
+BCULIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/BcuLib,bculib.a,do_bculib) $(LOGGER_COMPILE)
+
+do_bculib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/BcuLib bculib.a
+	
+BCUCOMMAND_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/BcuLib,bcucommand.a,do_bcucommand) $(BCULIB_COMPILE)
+
+do_bcucommand:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/BcuLib bcucommand.a
+	
+BCULIB_LNK = $(ADOPT_LIB)/BcuLib/bculib.a $(THRDLIB_LNK) $(LOGGER_LNK) -lstdc++
+
+BCUCOMMAND_LNK = $(ADOPT_LIB)/BcuLib/bcucommand.a $(BCULIB_LNK)
+
+endif

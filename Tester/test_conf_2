@@ -1,0 +1,4 @@
+#Test config file 2
+inner2	structure	test_conf_3
+#par5	uint32		4294967
+#par6   	uint64		454534

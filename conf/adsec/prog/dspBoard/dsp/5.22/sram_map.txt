@@ -1,0 +1,18 @@
+; $Id: sram_map.txt,v 1.1 2009/09/14 16:52:33 marco Exp $
+;
+; sram_map.txt
+;
+; 09 Aug 2005, A. Riccardi (AR)
+;    field wr_diagnostic_record_ptr added
+; 16 may 2006, L. Busoni (LB)
+;    bcu_diagnostic area  changed from  x0003800E to x00038019
+;    dsp_diagnostics_area changed from  x00018173 to x000181a8
+;
+
+
+; DSP SRAM memory map
+nios_fixed_area             long x00018000 ; na_dsp_nios_fixed_area_offset/4+(NIOS_INTERPRETER_SPACE+2)/4+1 = offset to who_ami
+diagnostic_record_ptr       long x000181a4 ; ptr to dsp memory to get diagnostic data
+diagnostic_record_len       long x000181a5 ; len of the fast diagnostic data
+rd_diagnostic_record_ptr    long x000181a6 ; pointer to dsp memory to read fast diagnostic data
+wr_diagnostic_record_ptr    long x000181a7 ; pointer to current diagnostic record in SDRAM

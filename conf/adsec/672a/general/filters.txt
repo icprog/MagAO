@@ -1,0 +1,44 @@
+;;+& 20110101_010101 &-;;
+;===========================================================================
+; Filter data file for P45
+;
+; Filter of position control loop (derivative plus low-pass filter by default)
+;
+default_deriv_gain            double      100   ; default derivative gain in N/(m/s) when
+                                                ; speed_loop_gain_chX contains 1.0
+
+tfl_n_s_pole                  int         2     ; poles derivative control loop number
+tfl_n_s_zero                  int         1     ; zeros derivative control loop number
+
+default_deriv_poles            array            ; poles used in derivative control [Hz]
+    double 2
+    15000 15000 
+end
+
+default_deriv_zeros            array            ; zeros used in derivative control [Hz]
+    double 1
+    0
+end
+
+;
+; Filter of the position error control loop (simple proportional by default)
+;
+default_err_gain              double      1d6   ; default position error gain in N/m when
+                                                ; err_loop_gain_chX contains 1.0
+err_n_s_pole                  int         0     ; number of poles in the position error filter
+err_n_s_zero                  int         0     ; number of zeros in the position error filter          
+default_err_poles            array            ; poles used in position error control [Hz]
+    double 1
+    -2
+end
+
+default_err_zeros            array            ; zeros used in position error control [Hz]
+    double 1
+    -2
+end
+
+
+
+; End of the time filter data
+;==========================================================================
+

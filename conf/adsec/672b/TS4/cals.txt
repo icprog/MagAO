@@ -1,0 +1,9 @@
+;;+& 20110101_010101 &-;;
+; Configuration file for init_adsec_cals
+;
+
+curr4bias_mag      array   "./conf/curr4bias_mag.txt"  ;vector of ratio between bias coil currents to balance bias magnet for
+                                                       ;ce and weight at nominal gap
+max_ngain_step     float   0.01               ;max allowed step of the normalized gain (the global factor within 0.0 and 1.0)
+max_req_delta_lin_dist float 225.0            ;[um] just for MMT compatibility
+mag_ref_efficiency     float 0.503            ;; reference magnet efficiency [Ohm/sqrt(W)] 

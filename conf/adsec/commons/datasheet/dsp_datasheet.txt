@@ -1,0 +1,44 @@
+; dsp_datasheet structure
+;
+; See read_ascii_structure for file format definition.
+;
+; DATA HISTORY:
+; creation: A. Riccardi (AR) 05 Dec 2003
+;
+; 11 Mar 2004: AR.
+;   fields added: fpga_name, data_mem_id, prog_mem_id, sdram_mem_id, sram_mem_id,
+;   flash_mem_id, sdram_mem_size, sdram_byte_per_word, sram_mem_size, sram_byte_per_word,
+;   flash_mem_size, flesh_byte_per_word
+;
+; 19 May 2004: AR
+;   fields added: fpgabuff_mem_id, fpgabuf_mem_size, fpgabuf_byte_per_word
+;
+; 15 Jul 2004: Marco Xompero (MX)
+;   fields added: fpgasig_mem_id, fpgasig_mem_size, fpgasig_byte_per_word
+
+fpga_name          string  "Altera Stratix" ; producer and name of main FPGA
+dsp_name           string  "Analog Devices ADSP-2181" ; producer and name of DSP
+
+data_mem_id          byte     0B ; ID code for DSP data memory
+prog_mem_id          byte     1B ; ID code for DSP program memory
+sdram_mem_id         byte     2B ; ID code for SDRAM memory
+sram_mem_id          byte     3B ; ID code for SRAM memory
+flash_mem_id         byte     4B ; ID code for flash memory
+fpgabuf_mem_id       byte     5B ; ID code for FPGA memory allocated for buffer conf
+fpgasig_mem_id       byte     6B ; ID code for FPGA mem allocated for timing of ADC and Capsens
+
+data_mem_size       long  x00010000 ; data RAM size [word]
+data_block_offset   long  x00080000 ; offset [blocks words]
+data_byte_per_word    int      4 ; # of byte per data word
+prog_mem_size       long      0 ; program RAM size [word]
+prog_byte_per_word    int      4 ; # of byte per program word
+sdram_mem_size      long  x01000000 ; program RAM size [word]
+sdram_byte_per_word   int      4 ; # of byte per program word
+sram_mem_size       long  x00020000 ; program RAM size [word]
+sram_byte_per_word    int      4 ; # of byte per program word
+flash_mem_size      long  x00100000 ; program RAM size [word]
+flash_byte_per_word   int      4 ; # of byte per program word
+fpgabuf_mem_size    long     136 ; program RAM size [word]
+fpgabuf_byte_per_word int      4 ; # of byte per program word
+fpgasig_mem_size        long      0 ; ADC and Capsens RAM size [word]
+fpgasig_byte_per_word    int      4 ; # number of byte

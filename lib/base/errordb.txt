@@ -1,0 +1,416 @@
+#@File: errordb.txt
+
+# Error codes support
+
+#- This file contains the common source for error codes and messages used 
+#- throughout the LBT Adaptive Optics Supervisor software
+#- This is the common source used to generate both a standard C definition
+#- file: errordb.h and a C structure definition contained in errordb.c
+#@
+
+NO_ERROR                               0   No Error
+
+# Note:
+
+# The error codes are negative numbers in the range -1 -19999
+# These values are used to signal and display errors whenever required.
+#-
+#- Each non comment line of this file defines an error with the following syntax:
+#-
+#- <symbolic name>  <value>  <text>
+#-
+#- Where: 
+#-
+#- <name>    starts at column 1 and follows usual rules for variable names 
+#-           in standard languages. Names should be limited to 40 charatcters
+#-
+#- <value>   Is a negative number in the range [-1, -50000]
+#-           It is separated from <name> by whitespace
+#-
+#- <text>    Is the textual description of the error. It is separated
+#-           from <value> by whitespace and includes all character up to
+#-           the end of line. This part is optional. The description will be
+#-           continued in the following line if the following lines begins
+#-           with any amount of whitespace.
+#-
+#- Symbolics names and values are used to create files errordb.h and errordb.c
+#- These files contain, respectively, define directives to be used by all the
+#- supervisor software and an error table associating error codes to readable
+#- messages 
+#-
+#- Lines beginning with "#" or with ";" are considered as comment and
+#- translated into C language comments in the output files, except when
+#- the '#' character is followed by '-', in which case the line is ignored
+
+NOT_FOUND                 -1  Return from search routine (item not found)
+
+########################################################################
+#  Error codes in the range -1000 - -1999  correspond to generic errors
+
+GENERIC_SYS_ERROR      -1000  Unspecified system error
+MEMORY_ALLOC_ERROR     -1001  Memory allocation error
+THREAD_CREATION_ERROR  -1002  Thread creation error
+THREAD_CANCEL_ERROR    -1003  Thread cancellation error
+MUTEX_INIT_ERROR       -1004  Mutex initialization error
+MUTEX_DESTROY_ERROR    -1005  Mutex destroy error
+MUTEX_LOCK_ERROR       -1006  Mutex lock error
+MUTEX_UNLOCK_ERROR     -1007  Mutex lock error
+NETWORK_ERROR          -1008  Generic network error
+COMMUNICATION_ERROR    -1009  Generic communication error (nobody replying or timeout)
+FILE_ERROR             -1010  File open/read/write error
+TIMER_SET_ERROR        -1011  Error setting timer
+TABLE_INCONSIST_ERROR  -1012  Internal error in table management
+VERSION_MISMATCH_ERROR -1013  msglib version and MsgDRTDB version do not match
+                              (or msg header corrupted)
+COND_WAIT_ERROR        -1014  Error on waiting for condition
+MAGIC_MISMATCH_ERROR   -1015  Mismatch in magic number. Message is corrupted
+TASK_NOT_STARTED_ERROR -1016  The generic task haven't been succesfully started
+TASK_NOT_STOPPED_ERROR -1017  The generic task haven't been succesfully stopped
+INVALID_ARGUMENT_ERROR -1018  Invalid argument in routine call
+NOT_INIT_ERROR         -1019  This operation requires previous initialization
+ALRDY_INIT_ERROR       -1020  Duplicate initialization
+UNEXPECTED_MSG_ERROR   -1021  Unexpected message
+NULL_BUFFER_ERROR      -1022  Some routine called with NULL pointer to buffer
+TRUNCATE_ERROR         -1023  A string has been truncated
+SYNTAX_ERROR           -1024  String syntax error
+BLOCK_ERROR            -1025  A message cannot be sent for network congestion.
+EXCD_BLOCK_ERROR       -1026  Block error number treshold exceeded
+NO_BUFFER_ERROR        -1027  No MSGD buffer available
+SEND_TO_DISABLED_ERROR -1028  Attempt to send message to disabled client
+
+UNMANAGED_ERROR        -1050  The error variable has not been properly initialized
+                              (internal error)
+
+NO_FEATURE_ERROR       -1998  Feature not implemented
+TBD_ERROR              -1999  Function yet to be defined
+
+#  Error codes in the range -2000 - -2999  are related to the msg library
+
+CLIENT_STATUS_ERROR           -2000 Message sent to client not ready to accept it
+NO_CLIENT_ERROR               -2001 Client does not exist
+DUPLICATE_CLIENT_ERROR        -2002 The client is already connected
+ILLEGAL_MSG_ERROR             -2003 Illegal message code
+MSG_LEN_ERROR                 -2004 Illegal message length
+MSG_SYNTAX_ERROR              -2005 Illegal message syntax
+REGISTER_REQUEST_ERROR        -2006 Improper registration request
+TOOMANY_ITEMS_ERROR           -2007 Client or Peer table overflow
+CLOSING_ERROR                 -2008 Attempting to close a socket not opened
+CANNOT_DELIVER_ERROR          -2009 Message cannot be delivered
+CLOSEDCONN_ERROR              -2010 Connection closed at the other end
+WAIT_MYSELF_ERROR             -2011 Cannot wait for myself
+MISSING_CLIENTNAME_ERROR      -2012 Missing client name
+CLIENT_NOT_CONNECTED_ERROR    -2013 The client is not connected to MsgD-RTDB
+UNSPECIFIED_LOG_MSG_ERROR     -2014 Log message string must be specified
+CLIENT_NAME_ERROR             -2015 Error in client name
+MSG_FLAG_ERROR                -2016 Illegal message flag
+WAITING_ALREADY_ERROR         -2017 Client is already registered as waiting for someone
+CLIST_MSG_ERROR               -2018 Error in sequence of messages in reply to CLNTSLIST
+ILL_CLIENT_TYPE               -2019 Illegal client type (internal error)
+UNREGISTER_ERROR              -2020 Attempting to unregister client which is not registered
+LOGFILE_OPEN_ERROR            -2021 Error opening log file
+NO_IDENTITY_ERROR             -2022 MsgD identity must be specified for peer operation
+PEER_REG_ONGOING              -2025 Peer registration ongoing
+PEER_RENDEZVOUS_ERROR         -2026 Peer rendezvous error. Other peer did not send
+                                    identification data
+TOOMANY_PEERS                 -2027 Peer table size exceeded.
+PEER_NOT_AUTH_ERROR           -2028 The peer is not in the list of authorized peers
+
+NO_REMOTE_ERROR               -2029 Operation not allowed in remote domain
+
+CVT_43_ERROR                  -2030 Error converting message to protocol 43
+                                    (dest@domain string too long)
+
+#  Error codes in the range -3000 - -3499  are related to the real time DB
+
+HASH_CREATE_ERROR             -3000 Error creating hash table
+VAR_NAME_ERROR                -3001 Variable name error
+VAR_MODE_ERROR                -3002 Variable mode error
+VAR_TYPE_ERROR                -3003 Variable type error
+VAR_SIZE_ERROR                -3004 Variable size error
+HASH_INSERT_ERROR             -3005 Error inserting variable into hash
+VAR_NOT_FOUND_ERROR           -3006 Variable not found error
+VAR_TYPE_MISMATCH_ERROR       -3007 Variable type mismatch error
+NOT_OWNER_ERROR               -3008 Operation allowed to variable owner only
+DUPL_NAME_ERROR               -3009 Duplicated variable name
+VAR_LEN_MISMATCH_ERROR        -3010 Variable length mismatch
+CLIENT_IS_IN_NTFLST_ERROR     -3011 Client is already listed in notify list
+CLIENT_NOT_IN_NTFLST_ERROR    -3012 Client is not in notify list
+VARPREFIX_ERROR               -3014 Illegal variable prefix
+VAR_DEL_ERROR                 -3015 Error in deleting a variable
+UNEXPECTED_REPLY_ERROR        -3016 Unexpected message code in reply
+VAR_TYPE_UNDEF_ERROR          -3017 Variable type code not valid (internal error)
+VAR_LOCK_ERROR                -3018 One or more variables cannot be locked/unlocked
+VAR_LOCKED_ERROR              -3019 Read/write access to locked variable
+VAR_WRITE_ERROR               -3020 Error writing to a variable
+VAR_SIDE_ERROR                -3022 Variable side error
+VAR_RANGE_ERROR               -3023 Variable range error (access outside bounds)
+VAR_CUR_MISMATCH_REQ_ERROR    -3024 CUR variable value doesn't match REQ variable value
+VAR_ACCESS_ERROR              -3025 Operation on variable not allowed
+VLIST_TRUNC_ERROR             -3026 Sequence of messages in reply to VARLIST truncated
+VLIST_MSG_ERROR               -3027 Error in sequence of messages in reply to VARLIST
+
+KEY_NOTFOUND_ERROR            -3028 Error in key management
+INDEX_RANGE_ERROR             -3029 Table index out of bounds
+NULL_CLIST_ERROR              -3030 List management routine called with invalid list pointer
+DUPL_CLIST_ERROR              -3031 Client is already listed in client list
+NOT_IN_CLIST_ERROR            -3032 Client is not in client list
+
+
+
+#  Error codes in the range -3500 - -3599  are related to the shared buffer
+
+SEM_CREATE_ERROR              -3500 Error creating semaphore
+SEM_INIT_ERROR                -3501 Error initializing semaphore
+SEM_GET_ERROR                 -3502 Error in getting semaphore
+SHM_CREATE_ERROR              -3503 Error creating shared memory segment
+SHM_GET_ERROR                 -3504 Error getting shared memory segment
+SHM_ATTACH_ERROR              -3505 Erfror attaching to shared memory segment
+SEM_LOCK_ERROR                -3506 Error locking semaphore
+SEM_UNLOCK_ERROR              -3507 Error unlocking semaphore
+SLOT_NOT_FOUND_ERROR          -3508 No shared memory access slot available
+BUF_NOT_AVAIL_ERROR           -3509 No shared memory buffer available
+BUF_NAME_ERROR                -3510 Shared memory buffer name not found
+BUF_DUPL_NAME_ERROR           -3511 Shared memory buffer name duplicated
+MAX_CONSUMERS_ERROR           -3512 Too many consumenr for given shared buffer
+SHM_POOL_NOT_INIT_ERROR       -3513 Shared memory pool initialization error
+INVALID_DATA_ERROR            -3514 Attempt to read invalid data buffer
+SEM_REMOVE_ERROR              -3515 Error removing semaphore
+SHM_REMOVE_ERROR              -3516 Error removing shared memory buffer
+BUF_TYPE_ERROR                -3517  Shared buffer misuse: read buffer used for
+                                     write or viceversa
+BUF_MODE_ERROR                -3518  Shared buffer misuse: BUFCONT buffer used 
+                                     for snapshot or BUFSNAP used without 
+                                     calling bufSnap()
+BUF_SNAPLNG_ERROR             -3519  Illegal number of buffers in s BUFSNAP request
+BUF_NOMATCH_ERROR             -3520  bufSnap request doesn't match bufRequest data
+CONS_DETACH_ERROR             -3521  Trying to detach a non attached consumer
+SHM_DETACH_ERROR              -3522  Error detaching from shared memory segment
+MSGB_UNINITIALIZED_ERROR      -3523  The message buffer was not initialized 
+                                     (internal error)
+BLIST_MSG_ERROR               -3524 Error in sequence of messages in reply to BUFLIST
+
+#  Error codes in the range -3600 - -3699  are specific of thrdlib
+
+THRD_INITIALIZE_ERROR         -3600  Wrong Initialization sequence
+
+THRD_QUEUE_OVERRUN_ERROR      -3601  Queue overrun
+THRD_TOOMANY_HNDLRS_ERROR     -3602  Too many registered handlers
+THRD_TOOMANY_IGNORE_ERROR     -3603  Too many ignore filters defined
+THRD_ILLEGAL_TTL              -3604  Illegal ttl value
+THRD_TERMINATE_SIGNAL         -3605  A terminate signal (due to a call to thCleanup)
+                                     has been received
+THRD_NOT_CONNECTED_ERROR      -3606  No connection with MsgD
+
+# Error codes in the range -3700 - -3799 are related to config file
+
+UNEXISTING_KEY_ERROR          -3701 Key not found in configuration file
+
+#  Error codes in the range -5000 - -5999  are generic
+
+NAK_RECEIVED                  -5000  Requested operation refused
+TIMEOUT_ERROR                 -5001  Timeout error
+VALUE_OUT_OF_RANGE_ERROR      -5002  Value is out of range
+OBJECT_NOT_ENABLED_ERROR      -5003  Requested object not enabled
+ROUTINE_NOT_INITIALIZED_ERROR -5004  The initialization routine has not been called
+MALFORMED_FILE_ERROR          -5005  Malformed file
+NAN_ERROR                     -5006  Not a Number error
+BAD_CONVERSION_ERROR          -5007  A conversion (i.e. string->number) failed
+INVALID_NUMBER_ERROR          -5008  Generic number is invalid
+DIVIDE_BY_ZERO_ERROR          -5009  A division by zero was attempted
+INFO_TRUNC_ERROR              -5010  Some info was truncated for lack of buffer space
+
+# Error codes in the range -6000 - -6999 are related to the BCUs
+
+MALFORMED_MSG_ERROR           -6000  Malformed message
+CMD_FAULT_ERROR               -6001
+
+# Error codes in the range -7000 - -7999 are related to the iDrive controllers
+
+OBJECT_NOT_FOUND_ERROR        -7000  i-Drive Object not found
+UNKNOWN_COMMAND               -7001  Unknown text command
+STAGE_BUSY_ERROR              -7002  Command refused because stage is still busy
+STAGE_NOT_ENABLED_ERROR	      -7003  
+COPLEY_ERROR                  -7500  Copley motion base error value
+
+# Error codes in the range -8000 - -8999 are related to the CCD controllers
+
+JOE_BASE_ERROR                   -8000  
+JOE_PARITY_ERROR                 -8001  LittleJoe parity error
+JOE_UNRECOGNIZED_COMMAND_ERROR   -8002  LittleJoe doesn't recognize command
+JOE_VALUE_FORMAT_ERROR           -8003  
+JOE_UNRECOGNIZED_CHARACTER_ERROR -8004
+JOE_OUT_OF_RANGE_ERROR           -8005  LittleJoe parameter out of range
+JOE_CHECKSUM_ERROR               -8006  LittleJoe checksum error
+
+JOE_UNKNOWN_ANSWER_ERROR         -8010  Unknown answer from LittleJoe
+JOE_UNSUPPORTED_VERSION_ERROR    -8011  Unsupported LittleJoe version
+
+# Error codes in the range -9000 - -9099 are related to the Tip-Tilt controller
+
+TT_MORE_ANSWERS                  -9000
+
+# Error codes in the range -10000 - -10999 are related to the Adaptive 
+# secondary management
+                                                                                                                
+IDL_GENERIC_ERROR           -10001  IDL Unspecified error
+IDL_TIMEOUT_ERROR           -10002  IDL operation timeout
+IDL_COMMUNICATION           -10004  IDL Unable to open communication with RTDB.
+
+IDL_MISSING_INPUT           -10012  IDL Missing input to an IDL procedure
+IDL_SC_SENDING_SLOPES       -10013  IDL Slope computer is still sending slopes and its no possible to open the loop
+IDL_INVALID_FILE            -10014  IDL File error 
+IDL_INPUT_TYPE              -10015  IDL Invalid/Uncoerent input parameters
+IDL_OUT_RANGE_ADDR          -10016  IDL Requested address out of range
+IDL_IO_LEN_NOT_VALID        -10017  IDL data IO buffer out of range
+IDL_DEC_NOT_VALID           -10018  IDL decimation value not valid
+IDL_ACC_NOT_ENDED           -10019  IDL Accumulation was not ended after the max # of attempts
+IDL_FITTING_FAIL            -10020  IDL The fitting did not converge
+IDL_CTRL_DISABLED           -10021  IDL Ctrl disabled on some/all actuators (enabled expected)
+IDL_BUFFER_TIMEOUT          -10022  IDL Timeout waiting end of acquisition
+IDL_WRITE_FAILED            -10023  IDL DSP write check failed
+IDL_COMM_TEST_FAIL          -10024  IDL Communication test failed
+IDL_SYNC_DSP_FAIL           -10025  IDL DSP syncronization failed
+IDL_CANCEL                  -10026  IDL Cancel was pressed 
+IDL_DSP_NOT_VALID           -10027  IDL Invalid DSP number
+IDL_ACT_NOT_VALID           -10028  IDL Invalid actuator number
+IDL_BUFF_NOT_VALID          -10029  IDL Invalid dataIO buffer number
+IDL_FLAT_NOT_DONE           -10030  IDL Flat operation not done
+IDL_INIT_OPT_NOT_DONE       -10031  IDL Optical loop startup failure
+IDL_FAST_LINK_ERROR         -10032  IDL FastLink connection status not suitable
+IDL_FAULT_RECOVERY_FAIL     -10033  IDL Fault recovery procedure failed
+IDL_OSCILLATING_MIRROR      -10034  IDL Mirror oscillates during a movement
+IDL_DUST_CONTAMINATION      -10035  IDL Dust detected in the mirror 
+IDL_STROKE_REQUIRED         -10036  IDL Mirror stroke requested is too large
+IDL_FORCE_REQUIRED          -10037  IDL Mirror force requested is too large
+IDL_DSP_FAIL                -10038  IDL Timeout in mode-to-act conversion
+IDL_PBS_MISMATCH            -10039  IDL Mismatch in the param selector read from DSPs
+IDL_GARBAGE                 -10040  IDL The target word is not null in at least one DSP tested
+IDL_ACC_SET_MISMATCH        -10041  IDL The accumulators have different settings in different DSPs
+IDL_OVS_NOT_RUNNING         -10042  IDL Oversampling period not set (no auto update running)
+IDL_BAD_MEM_REQ             -10043  IDL Bad DSP memory requested for the read/write operation
+IDL_UNEXP_COIL_STATUS       -10044  IDL Unexpected status of coils (probably async diagnostics or fw/hw protection occurred)
+IDL_SAFE_SKIP_ACTIVE        -10045  IDL Safe/Pending skip frame occurred. 
+IDL_SAFE_PARAMS_OOB         -10046  IDL Safe params (current absolute or rms or delta, position absolute o delta o rms) out of bounds
+IDL_FW_MISMATCH             -10047  IDL Firmware version different from expected.
+IDL_CRATEID_ERROR           -10048  IDL crate id from power backplane error
+IDL_BUF_NOT_STOP            -10049  IDL diagnostic buffer not stopped / still running
+IDL_OUT_DSP_MEM             -10050  IDL out of DSP memory request for reconstructor or filters or disturbance 
+IDL_UNEXP_ADAM_ANS          -10051  IDL unexpected answer from ADAM (usually is gonna break ...)
+IDL_RAMP_GAIN_ERROR         -10052  IDL Ramp gain error: something is not going well (mirror stuck, gain too high...)
+IDL_CLOOP_ACTIVE            -10053  IDL The actuators are still in closed loop
+IDL_CLOOP_FLAT              -10054  IDL Invalid close loop actuator list available for flat operations
+IDL_DIST_ACTIVE             -10055  IDL The disturbace triggered by SC is still running
+IDL_OVS_NOT_VALID           -10056  IDL The oversampling time requested is too large/small.
+IDL_HKPR_NOT_INIT           -10057  IDL Housekeeper is not yet fully initialized or gives bad reading...
+IDL_DEW_POINT_ERROR         -10058  IDL Dew point permanent critical reading 
+IDL_EVENT_ERROR             -10059  IDL Polling for an event was failing. No trigger occurred.
+IDL_NOT_SIDE_MASTER         -10060  IDL A write request is not allowed in a no master shell (do from IDL terminal...)
+IDL_UNKNOW_COMMAND          -10061  IDL Unknow low level command requested
+IDL_FLAT_NOT_FOUND          -10062  IDL Flat file not found
+IDL_NW_ACT                  -10063  IDL Some actuator currently used is no more working
+IDL_SYNTAX_ERROR            -10098  IDL Some procedure in the library was stopped by a syntax error (probably due to another system fault)
+IDL_COMPILE_ERROR           -10099  IDL Some procedure in the library cannot be compiled
+
+
+
+IDL_PAR_NUM_ERROR           -10100  IDL Wrong parameters number
+IDL_WRONG_DSP_ERROR         -10101  IDL Wrong dsp number specified  
+IDL_DATALENGTH_ERROR        -10102  IDL Data length mismatch
+IDL_DATATYPE_ERROR          -10103  IDL Wrong data type
+IDL_ALLOC_MEM_ERROR         -10104  IDL Memory allocate error
+
+IDL_4D_ERROR                -10201  IDL 4D interferometer generic error
+IDL_4D_NOT_INIT_ERROR		-10202	IDL Library not initialized (call idl_4D_init before)
+IDL_4D_ACQUISITION_ERROR	-10203	IDL Measurement or burst acquisition failed
+IDL_4D_POSTPROC_NOTDONE		-10204  IDL Post-processing not executed (type is NONE)
+IDL_4D_POSTPROC_ERROR		-10205	IDL Post-processing failed
+
+IDL_HISTORY_DUMP_ERROR		-10300	IDL Diagnostic history dump-to-file failed
+IDL_HISTORY_LOAD_ERROR		-10301	IDL Diagnostic history load-from-file failed
+
+IDL_NOT_AVAILABLE_ERROR         -10999  IDL Error code not available
+ 
+# Error codes in the range -11000 - -11999 are related to Python interface
+
+PYTHON_WRONG_ARGS           -11001  Wrong arguments
+CTRL_MISSING_ERROR          -11002  The hw controller doesn't exist
+CTRL_NOT_STARTED_ERROR 	    -11003  The hw controller haven't been succesfully started
+CTRL_NOT_STOPPED_ERROR 	    -11004  The hw controller haven't been succesfully stopped
+CTRL_WRONG_STATE_ERROR      -11005  The hw controller is not in the right state for the requested operation
+PYTHON_HNDLR_ERROR          -11010  Python handler error
+
+
+# Error codes in the range -12000 - -12099 are related to AOS
+
+AOS_NOT_RESPONDING_ERROR    -12000  AOS is not responding
+AOS_NOT_RUNNING_ERROR       -12001  AOS is not running
+AOS_REQUEST_DENIED          -12002  A request to AOS as been denied
+AOS_UNEXPECTED_REQUEST      -12003  AOS received an unexpected request code
+AOS_UNEXPECTED_REPLY        -12004  AOS received an unexpected reply
+AOS_HXP_ERROR               -12005  Error return from hexapod command
+
+AOS_GEN_ERROR               -12006  Generic error in AOS operation
+
+AOS_TELTYPE_ERROR           -12011  Illegal data type in aos_telemetry call
+
+AOS_NOTSTARTED              -12050  AOS Was not started (usually because MsgD is not running)
+AOS_WRONGTERM               -12051  AOS terminated in a wrong way (software error)
+AOS_SIGTERM                 -12052  AOS received a SIGTERM
+AOS_MSGDLOST                -12053  AOS lost connection with MsgD
+AOS_MSGDERR                 -12054  AOS error in communication with MsgD
+AOS_UNEXPEXCP               -12055  AOS generated unexpected exception
+AOS_MSGDTERM                -12056  AOS received a TERMINATE command
+
+# Error codes in the range -13000 - -13099 are related to AOArbitrator
+
+ARB_GENERIC_ERROR             -13000   Arbitrator generic error
+ARB_INIT_ERROR                -13001   Arbitrator failed in initialization
+ARB_MSG_SERIALIZATION_ERROR   -13002   Arbitrator failed serialization
+ARB_MSG_DESERIALIZATION_ERROR -13003   Arbitratpr failed deserialization
+ARB_CMD_GENERIC_ERROR	      -13004   Arbitrator generic command error
+ARB_COMMAND_VALID_ERROR       -13005   Arbitrator failed validating command
+ARB_COMMAND_EXEC_ERROR        -13006   Arbitrator failed executing command
+ARB_INTF_GENERIC_ERROR        -13107   Arbitrator interface generic error
+
+# Error codes in the range -14000 - -14099 are related to Logger
+# ATTENTION: Don't try to log after a LOGGER_FATAL_ERROR, since the logger is not able to log!
+
+LOGGER_GENERIC_ERROR		 -14000	Logger generic error
+LOGGER_FATAL_ERROR			 -14001 Logger fatal error 
+
+# Error codes in the range -15000 - -15099 are related to TcpConnection
+TCP_GENERIC_ERROR			-15000		TcpConnection generic error
+TCP_CREATION_ERROR			-15001		TcpConnection creation error
+TCP_SEND_ERROR				-15002		TcpConnection send error
+TCP_RECEIVE_ERROR			-15003		TcpConnection receive error
+TCP_RECEIVE_TIMEOUT			-15003		TcpConnection receive timeout
+
+# Error codes in the range -16000 - -16099 are related to UdpConnection
+UDP_GENERIC_ERROR			-16000		UdpConnection generic error
+UDP_CREATION_ERROR			-16001		UdpConnection creation error
+UDP_SEND_ERROR				-16002		UdpConnection send error
+UDP_RECEIVE_ERROR			-16003		UdpConnection receive error
+UDP_RECEIVE_TIMEOUT			-16004		UdpConnection receive timeout
+UDP_HOST_NOT_FOUND			-16005		UdpConnection host not found
+
+# Error codes in the range -17000 - -17099 are related to Adam
+ADAM_INIT_ERROR				-17000	Unable to initialize adam
+
+# Error codes in the range -18000 - -18099 are related to MasterDiagnostic Interface
+MASTDIAGN_INTF_GENERIC_ERROR -18000     MasterDiagnostic interface generic error
+
+# Error codes in the range -19000 - -19099 are related to Interferometer Ctrl e Interferometer Interface
+INTERFEROMETER_GENERIC_ERROR 		-19000		Interferometer generic error
+INTERFEROMETER_INIT_ERROR	 		-19001		InterferometerCtrl initialization error
+INTERFEROMETER_PY_INIT_ERROR 		-19002		InterferometerCtrl Python initialization error
+INTERFEROMETER_PARPORT_ERROR 		-19003		InterferometerInterface parallel port initialization error
+INTERFEROMETER_POSTPROC_NOT_DONE 	-19004		Post processing not done (type is NONE)
+
+# Error codes in the range -20000 - -21000 are related to the WFS arbitrator
+WFSARB_MISSING_CALIB               -20000       A calibration required for the operation is missing
+WFSARB_STAR_NOTFOUND               -20001       Reference star not found
+WFSARB_STAR_WRONGFLUX              -20002       Reference star flux differs from the expected one
+WFSARB_STAR_NOTCONVERGED           -20003       Reference star acquisition procedure failed to converge
+WFSARB_ARG_ERROR                   -20004       An argument is missing or invalid.
+WFSARB_AUTOGAIN_USER_STOP          -20005       Autogain stopped by user
+

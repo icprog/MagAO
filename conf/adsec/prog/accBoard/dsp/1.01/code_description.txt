@@ -1,0 +1,88 @@
+***** Note al nuovo codice come da richieste di marco nell'email del 27/01/2011 *****
+
+aggiunte le variabili:
+acc_offgain_ADC_value[8] correzzione della variabile acc_float_ADC_value con offset e gain prima di entrare nel filtro
+acc_offset[8]            offset per i canali (in float)
+acc_gain[8]              gain i canali (in float)
+l'ordine dei canali e': ch#0 - ch#2 - ch#1 - ch#3 - ch#4 - ch#6 - ch#5 - ch#7 per tutte le variabili
+
+il calcolo e' implementato nel seguente modo:
+acc_offgain_ADC_value=(acc_float_ADC_value+acc_offset_chXX)*acc_gain_chXX
+
+il filtro e' stato modificato come segue:
+4 filtri in cascata ciascuno dei quali di ordine 3 su 3 (ingresso al passo attuale +
+3 ingressi e 3 uscite in delay line)
+i coefficienti del filtro devono essere inseriti nel sequente modo:
+acc_ch03_coeff[7*4*4] e acc_ch47_coeff[7*4*4]
+input  passo i-0 ch 0   filtro 0
+input  passo i-0 ch 2   filtro 0
+input  passo i-0 ch 1   filtro 0
+input  passo i-0 ch 3   filtro 0
+input  passo i-0 ch 0-3 filtro 1
+input  passo i-0 ch 0-3 filtro 2
+input  passo i-0 ch 0-3 filtro 3
+input  passo i-3 ch 0   filtro 0
+input  passo i-3 ch 2   filtro 0
+input  passo i-3 ch 1   filtro 0
+input  passo i-3 ch 3   filtro 0
+output passo i-3 ch 0-3 filtro 0
+input  passo i-2 ch 0-3 filtro 0
+output passo i-2 ch 0-3 filtro 0
+input  passo i-1 ch 0-3 filtro 0
+output passo i-1 ch 0-3 filtro 0
+input  passo i-3 ch 0-3 filtro 1
+output passo i-3 ch 0-3 filtro 1
+input  passo i-2 ch 0-3 filtro 1
+output passo i-2 ch 0-3 filtro 1
+input  passo i-1 ch 0-3 filtro 1
+output passo i-1 ch 0-3 filtro 1
+input  passo i-3 ch 0-3 filtro 2
+output passo i-3 ch 0-3 filtro 2
+input  passo i-2 ch 0-3 filtro 2
+output passo i-2 ch 0-3 filtro 2
+input  passo i-1 ch 0-3 filtro 2
+output passo i-1 ch 0-3 filtro 2
+input  passo i-3 ch 0-3 filtro 3
+output passo i-3 ch 0-3 filtro 3
+input  passo i-2 ch 0-3 filtro 3
+output passo i-2 ch 0-3 filtro 3
+input  passo i-1 ch 0-3 filtro 3
+output passo i-1 ch 0-3 filtro 3
+
+nel vettore delay line e' possibile vedere come procede il filtro ricorsivo,
+il vettore e' organizzato nel seguente modo:
+acc_delayline_ch03[6*4*4] e acc_delayline_ch47[6*4*4]
+
+input  passo i-1 ch 0-3 filtro 0      passo i-2      passo i-3      passo i-1
+output passo i-1 ch 0-3 filtro 0      passo i-2      passo i-3      passo i-1
+input  passo i-3 ch 0-3 filtro 0      passo i-1      passo i-2      passo i-3
+output passo i-3 ch 0-3 filtro 0      passo i-1      passo i-2      passo i-3
+input  passo i-2 ch 0-3 filtro 0      passo i-3      passo i-1      passo i-2
+output passo i-2 ch 0-3 filtro 0      passo i-3      passo i-1      passo i-2
+input  passo i-1 ch 0-3 filtro 1      passo i-2      passo i-3      passo i-1
+output passo i-1 ch 0-3 filtro 1      passo i-2      passo i-3      passo i-1
+input  passo i-3 ch 0-3 filtro 1      passo i-1      passo i-2      passo i-3
+output passo i-3 ch 0-3 filtro 1      passo i-1      passo i-2      passo i-3
+input  passo i-2 ch 0-3 filtro 1      passo i-3      passo i-1      passo i-2
+output passo i-2 ch 0-3 filtro 1  =>  passo i-3  =>  passo i-1  =>  passo i-2
+input  passo i-1 ch 0-3 filtro 2  =>  passo i-2  =>  passo i-3  =>  passo i-1
+output passo i-1 ch 0-3 filtro 2      passo i-2      passo i-3      passo i-1
+input  passo i-3 ch 0-3 filtro 2      passo i-1      passo i-2      passo i-3
+output passo i-3 ch 0-3 filtro 2      passo i-1      passo i-2      passo i-3
+input  passo i-2 ch 0-3 filtro 2      passo i-3      passo i-1      passo i-2
+output passo i-2 ch 0-3 filtro 2      passo i-3      passo i-1      passo i-2
+input  passo i-1 ch 0-3 filtro 3      passo i-2      passo i-3      passo i-1
+output passo i-1 ch 0-3 filtro 3      passo i-2      passo i-3      passo i-1
+input  passo i-3 ch 0-3 filtro 3      passo i-1      passo i-2      passo i-3
+output passo i-3 ch 0-3 filtro 3      passo i-1      passo i-2      passo i-3
+input  passo i-2 ch 0-3 filtro 3      passo i-3      passo i-1      passo i-2
+output passo i-2 ch 0-3 filtro 3      passo i-3      passo i-1      passo i-2
+
+nel vettore precalc ci sono i precalcoli del filtro per il passo successivo
+il vettore e' organizzato nel seguente modo:
+acc_precal_ch03[4*4] e acc_precal_ch47[4*4]
+
+precalc ch 0-3 filtro 0
+precalc ch 0-3 filtro 1
+precalc ch 0-3 filtro 2
+precalc ch 0-3 filtro 3

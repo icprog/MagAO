@@ -1,0 +1,71 @@
+\documentclass[a4paper]{article}
+\usepackage{lbtadopt}
+
+\title{ LBT-AdOpt Message library ({\tt msglib})   \\
+        Annotated Source Code }
+\author{ Luca Fini }
+
+\pagetitle{{\tt msglib} - Annotated Source Code }
+
+\docnumber{AdOptSW.006}
+\version{1.0}
+\date{5 Dicember 2005}
+
+\newcommand{\msgl}{{\tt msglib}}
+\newcommand{\msgd}{{\tt MsgD-RTDB}}
+\newcommand{\rtdbl}{{\tt rtdblib}}
+\newcommand{\bufl}{{\tt buflib}}
+\newcommand{\thrdl}{{\tt thrdlib}}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm}
+
+\raggedbottom
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report contains full documentation of the library: \msgl,
+which provide
+basic communication services by which LBT-AO components can exchange messages
+with the \msgd.
+\end{abstract}
+
+\tableofcontents
+
+
+\newpage
+\quad
+\vspace{5cm}
+
+\section{Introduction}
+
+The LBT-AO Supervisor (AO-Sup, in the following) is built around \msgd\   a process which provides 
+basic services such as: IPC, a centralized variable repository, shared memory buffer management,
+etc. A description of \msgd\  can be found in~\cite{msgd}.
+
+In order to access to \msgd\  facilities,
+AO-Sup components are coded using API's provided by the library described 
+here\footnote{\msgl\  actually provides low level functions, most applications
+will instead use higher level libraries suc as \rtdbl~\cite{rtdbl}, for
+variable management, \bufl~\cite{bufl} for shared memory management. At an
+even more high level \thrdl~\cite{thrdl}  has been provided to allow the coding of complex threaded AO-Sup components.}.
+
+\section{The Message Library}
+
+\msgl\  allows AO-Sup components to communicate among each other by a simple message based protocol. 
+\msgl\  services are also used by other libraries to manage messages needed for their own purposes.
+
+\sourceinclude{common.h}
+\sourceinclude{msglib.h}
+
+\sourceinclude{msglib.c}
+
+\section{Library Content}
+\makelist
+
+\input commonappndx.tex
+\input commonbib.tex
+
+\end{document}

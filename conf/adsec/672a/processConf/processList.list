@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+# Process list configuration file for ADSEC Unit 672a
+#
+# Format:
+#
+#  processID        Description          Executable       Options 
+
+
+# System processes
+msgdrtdb           "MsgD-RTDB"           msgdrtdb         "-i ADSEC"
+mirrorctrl         "BCU interface"       MirrorCtrl       ""
+pinger             "Pinger"              Pinger           ""
+masterdiagnostic   "Master diagnostics"  MasterDiagnostic ""
+aos                "Hexapod Ctrl"        HexapodCtrl      ""
+
+# Adsec processes
+idlctrl            "IDL controller"      idl_ctrl         ""
+adsecarb           "Adsec Arbitrator"    AdSecArbitrator  ""
+housekeeper        "Housekeeper"         housekeeper      ""
+adamhousekeeper    "adamHousekeeper"     adamHousekeeper  ""
+fastdiagn          "Fast diagnostic"     fastdiagn        ""
+AOARB              "AO Arbitrator"       AOArbitrator     ""
+varsmonitor        "TCS Vars Monitor"    VarsMonitor      ""
+anemometermon      "Anemometer"          AnemometerMon    ""
+
+# Interfaces
+startAO          "AO interface start"        startAO.py                ""
+adseccontrol     "AdSec Control GUI"         AdSecControl              ""
+adoptcontrol     "AdOpt Control GUI"         AdOptControl              ""
+housekeepergui   "AdSec Housekeeper GUI"     Housekeeper_gui           ""
+adsecmirrorgui   "AdSec Mirror GUI"          AdSecMir_gui              ""
+sysprocesses     "System processes"          sys_processes.py          ""
+vartool          "Variables inspector"       vartool_AO.py             ""
+aoshell          "AdOpt interactive shell"   /usr/bin/xterm            "-e ./thaoshell.py"
+idlterm          "IDL terminal"              /usr/bin/xterm            "-e ./terminal"
+hexapodgui       "Hexapod GUI"               HexapodGui                ""
+
+
+
+

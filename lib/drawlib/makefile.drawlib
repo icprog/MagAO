@@ -1,0 +1,16 @@
+# This file can be used by client applications to link
+# this library: before using "XXX_LNK" please call the
+# "xxx_compile" target.
+
+ifndef MAKEFILEDRAWLIB
+MAKEFILEDRAWLIB=.
+
+# Dependencies
+include $(ADOPT_LIB)/base/makefile.base
+
+DRAWLIB_COMPILE = $(call test_uptodate,$(ADOPT_LIB)/drawlib,all,do_drawlib) 
+
+do_drawlib: 
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/drawlib all
+
+endif

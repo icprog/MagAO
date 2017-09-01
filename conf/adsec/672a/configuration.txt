@@ -1,0 +1,10 @@
+;;+& 20110101_010101 &-;;
+;
+;GENERAL PURPOSE CONFIGURATION FILE
+;
+shell             string      "TS3"
+ff_matrix         string      "ff_matrix.fits"
+pmz               string      "pmz.fits" 
+pmpos             string      "pos2modes.fits"
+pmfor             string      "curr2modes.fits"
+pmhofor           string      "pmhofor.fits"

@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+\usepackage{lbtadopt}
+
+\title{ LBT-AdOpt Diagnostic Application ({\tt DiagnApp})   \\
+        Annotated Source Code }
+
+\author{ Lorenzo Busoni }
+
+\docnumber{AdOptSW.xxx}
+\version{0.0}
+\date{8 September 2006}
+
+\newcommand{\msgl}{{\tt msglib}}
+\newcommand{\msgd}{{\tt MsgD-RTDB}}
+\newcommand{\rtdbl}{{\tt rtdblib}}
+\newcommand{\bufl}{{\tt buflib}}
+\newcommand{\thrdl}{{\tt thrdlib}}
+\newcommand{\diagnapp}{{\tt DiagnApp}}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm}
+
+\raggedbottom
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report contains full documentation of the base class \diagnapp,
+which provides basic diagnostic services for LBT-AO components.
+\end{abstract}
+
+\tableofcontents
+
+
+\newpage
+\quad
+\vspace{5cm}
+
+\section{Introduction}
+
+The \diagnapp provides the framework for devoloping LBT-AO diagnostic applications.
+
+\section{The DiagnApp object}
+Come e fatta la diagnapp.
+
+\section{Library Content}
+\makelist
+
+\end{document}

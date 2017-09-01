@@ -1,0 +1,17 @@
+#@File: vartypes.txt
+#
+# Constants to define variable types in rtdb
+#@
+
+# WARNING: DO NOT USE VALUES OUTSIDE THE RANGE 1000-2000 FOR VARIABLE
+# TYPES
+
+INT_VARIABLE      1001  Integer variable (implemented as long)
+REAL_VARIABLE     1002  Integer variable (implemented as double)
+CHAR_VARIABLE     1003  Characters variable. Strings are represented as arrays of characters
+BIT8_VARIABLE     1004  Byte variable (implemented as unsigned char)
+BIT16_VARIABLE    1005  Word variable (implemented as unsigned short)
+BIT32_VARIABLE    1006  Double word variable (implemented as unsigned long)
+BIT64_VARIABLE    1007  Quad word variable (implemented as unsigned long long)
+PICKL_VRIABLE     1008  Serialized Python object (implemented as unsigned char array)
+

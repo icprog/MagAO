@@ -1,0 +1,19 @@
+; Notes: all the values shifted  of 500ns
+desired_wave_freq          double  143194d0      ;[Hz] desired frequency of reference signal wave
+desired_wave_amp_ratio     double  0.25d0        ;desired ratio actual ptv of reference wave/wave_max_ptv (1=full range)
+desired_ADC_samp_pos       double  1.94d-6      ;2.44d-6     ;[s] desired time before the end of wave cycle at which the ADC sample starts
+desired_capsens_samp_pos   double  1.57d-6      ;2.07d-6   ;[s] desired time before the end of wave cycle at which the capsens microswitch sample starts
+desired_ADC_samp_len       double  0.56d-6     ;[s] desired temporal length of ADC sample
+desired_capsens_samp_len   double  1.31d-6  ;[s] desired temporal length of capsens microswitch sample
+wave_ADC_freq_ratio        int  2             ;wave_freq/ADC_sampling_rate ratio
+
+desired_delay_dac          double  4.97d-6     ;5.4700000d-6   ;[s] delay of start of DSP-mem-to-DAC transfert from main interrupt
+;delayofhalfwave     array
+;    long 6
+;    79, 40, 39, 39, 40, 37 
+;end
+
+delayofhalfwave     array
+    long 6
+    79, 40, 39, 39, 40, 37 
+end

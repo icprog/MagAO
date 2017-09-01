@@ -1,0 +1,13 @@
+;;+& 20110101_010101 &-;;
+; Configuration file for init_adsec_gr
+;
+;HISTORY
+; 3 Nov 2004 Daniela Zanotti(DZ)
+;
+;========================================================================================================
+x_tv        int     300             ; x-dim of position and current panel [pix]
+y_tv        int     360             ; y-dim of position and current panel [pix]
+charsize    float   0.9             ; normalized size of the chars used to label the acts
+theta_tv    float   0.0            ; [deg] angle of rotation of adsec.act_coordinates pattern 4 displaing
+x_reflect_tv    byte  0B            ; reflection (1B) or not (0B) of the rotated pattern 4 displaing
+;=========================================================================================================

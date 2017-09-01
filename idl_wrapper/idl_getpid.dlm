@@ -1,0 +1,8 @@
+# $Id: idl_getpid.dlm,v 1.1 2009/04/20 16:59:01 lbusoni Exp $
+MODULE GETPID
+DESCRIPTION Getpid() function.
+VERSION $Revision: 1.1 $
+BUILD_DATE $Date: 2009/04/20 16:59:01 $
+SOURCE S.V.H.HAUGAN
+FUNCTION GETPID 0 0
+

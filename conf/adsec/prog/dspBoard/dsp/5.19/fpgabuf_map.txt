@@ -1,0 +1,47 @@
+;$Id: fpgabuf_map.txt,v 1.1 2009/09/14 16:52:48 marco Exp $
+;
+; fpgabuf_map.txt
+;
+; FPGAbuff memory map
+;
+dataIO_start           long x00000000 ;(rd/wr) flags to manage the operations on the data IO buffers
+                                      ;bit0-1  -> buffer #0 : 00=do nothing, 01=start on trigger, 10=start now, 11=stop
+                                      ;bit2-3  -> buffer #1 : idem
+                                      ;...
+                                      ;bit14-15-> buffer #15: idem
+dataIO_process         long x00000001 ;(rd) flags giving the buffer status
+                                      ;bit0-1  -> buffer #0 : 00=off, 01=wait for trigger, 10=on storing, 11=not used
+                                      ;bit2-3  -> buffer #1 : idem
+                                      ;...
+                                      ;bit14-15-> buffer #15: idem
+dataIO_dsp_trig_val    long x00000002 ;(rd/wr)
+dataIO_irq_count       long x00000003 ;(rd) IRQ-lost counter register
+;
+; buffer #0 memory map
+;
+dataIO_IDlink0         long x00000008 ;(rd/wr)
+                                      ;bit00-21: DSP memory address whose content is compared to dataIO_Vallink for trigger
+                                      ;bit22   : 0=DSP#0 on the DSP board, 1=DSP#1 on the DSP board
+                                      ;bit30-31: 00=no trigger, 01=trig on Vallink<IDlink_content, 01=trig on Vallink>IDlink_content, 11=trig on Vallink=IDlink_content
+dataIO_trig_mask0      long x00000009 ;(rd/wr) bit mask to be applied at IDlink content before the trigger comparison
+dataIO_Vallink0        long x0000000A ;(rd/wr) value used for the trigger comparison (mask is not applied on it)
+dataIO_decfact0        long x0000000B ;(rd/wr) decimation and decimation counter for the buffer rd/wr operations.
+                                      ;bit00-15: decimation value: 0=all steps, 1=1 yes 1 no, 2=1 yes 2 no, 3=1 yes 3 no, ecc.
+                                      ;bit16-31: decimation counter: set that equal to bit00-15 befor buffer start
+dataIO_length0         long x0000000C ;(rd/wr) buffer length/counter (<= 0xFFFF)
+                                      ;bit00-15: buffer len
+                                      ;bit16-31: buffer counter. Set that equal to bit00-15 before buffer start
+dataIO_curridx0        long x0000000D ;(rd/wr) bit00-24: SDRAM buffer counter. bit25-31: not used
+dataIO_DMlink0         long x0000000E ;(rd/wr) frame len and pointer to the DSP memory address associated to the IO buffer
+                                      ;bit00-21: DSP memory address
+                                      ;bit22   : 0=DSP#0 on the DSP board, 1=DSP#1 on the DSP board
+                                      ;bit23   : not used
+                                      ;bit24-31: buffer record size to be transferd
+dataIO_SDRAMlink0      long x0000000F ;(rd/wr) flags and SDRAM memory starting address of the buffer
+                                      ;bit00-24: SDRAM memory starting address of the buffer
+                                      ;bit25-29: not used
+                                      ;bit30:    direction: 0=DSP->SDRAM, 1=SDRAM->DSP
+                                      ;bit31:    circula:   0=linear buffer, 1=circular buffer
+;
+;offset between corresponding variable addresses of buffer#n+1 and buffer#n is 0x08
+;

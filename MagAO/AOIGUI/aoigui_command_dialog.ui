@@ -1,0 +1,2023 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AOIGUICommandDialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AOIGUICommandDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>705</width>
+            <height>770</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>0</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>705</width>
+            <height>770</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>705</width>
+            <height>770</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>AOS Commands</string>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>presetFlatButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>12</x>
+                <y>67</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>PresetFlat</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>429</x>
+                <y>67</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Flat name</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>presetFlat_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>112</x>
+                <y>67</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>7</x>
+                <y>87</y>
+                <width>690</width>
+                <height>18</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string>textLabel2</string>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>7</x>
+                <y>7</y>
+                <width>690</width>
+                <height>45</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="lineWidth">
+            <number>2</number>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>pixmapLabel_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>6</x>
+                    <y>7</y>
+                    <width>31</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>pname</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>45</x>
+                    <y>7</y>
+                    <width>191</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>14</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Magellan AO</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>sideLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>245</x>
+                    <y>7</y>
+                    <width>80</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>14</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Left</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel_error</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>501</x>
+                    <y>7</y>
+                    <width>170</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>14</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Commands</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>110</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Beamsplitter:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>aoModeLabel</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>38</x>
+                <y>140</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Clio FOV:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>presetVisAOButton</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>390</x>
+                <y>135</y>
+                <width>110</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>PresetVisAO</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>wfsSpecLabel</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>420</x>
+                <y>140</y>
+                <width>83</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>WFS spec.</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>presetAO_colIndex_Edit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>630</x>
+                <y>140</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignLeft</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>colorIdLabel</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>610</x>
+                <y>140</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Color id</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>nudgeUp</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>580</x>
+                <y>160</y>
+                <width>30</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>U</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>nudgeDown</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>580</x>
+                <y>220</y>
+                <width>30</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>D</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>nudgeLeft</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>530</x>
+                <y>190</y>
+                <width>30</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>L</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>presetFlat_Edit_CBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>502</x>
+                <y>67</y>
+                <width>190</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="editable">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>setNewInstrument_Edit_CBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>110</y>
+                <width>250</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="editable">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>presetAO_ClioFOV</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>140</y>
+                <width>250</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="editable">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>nudgeRight</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>630</x>
+                <y>190</y>
+                <width>30</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>R</string>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>nudgeAmount</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>568</x>
+                <y>190</y>
+                <width>55</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="currentItem">
+            <number>0</number>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>presetAO_ra_Edit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>110</y>
+                <width>50</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="acceptDrops">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignLeft</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_2_4</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>389</x>
+                <y>110</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Ref. star:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_3_2_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>450</x>
+                <y>110</y>
+                <width>20</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>X</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>540</x>
+                <y>110</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>mm</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_3_2_3</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>580</x>
+                <y>110</y>
+                <width>20</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Y</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>presetAO_decl_Edit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>610</x>
+                <y>110</y>
+                <width>50</width>
+                <height>23</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignLeft</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>670</x>
+                <y>110</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>mm</string>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>resultText</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>650</y>
+                <width>670</width>
+                <height>110</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>AbortButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>620</y>
+                <width>110</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>Abort</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QProgressBar">
+        <property name="name">
+            <cstring>progressBar</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>152</x>
+                <y>580</y>
+                <width>530</width>
+                <height>25</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_7</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>12</x>
+                <y>580</y>
+                <width>126</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Command Timeout</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>7</x>
+                <y>316</y>
+                <width>690</width>
+                <height>18</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string>textLabel2</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pauseButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>32</x>
+                <y>407</y>
+                <width>90</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>Pause</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_4_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>490</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>mm</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>offsetXY_X_Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>70</x>
+                <y>490</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_4_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>544</x>
+                <y>487</y>
+                <width>24</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>mm</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>startAO_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>132</x>
+                <y>352</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_3_2_4_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>5</x>
+                <y>489</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>X Offset</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>offsetXY_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>112</x>
+                <y>517</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_2_2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>409</x>
+                <y>487</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Z Offset</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>offsetXY_Y_Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>238</x>
+                <y>489</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>acquireGuider_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>280</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>resumeButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>392</x>
+                <y>407</y>
+                <width>90</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>Resume</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2_2_2_2_2_2_2_3_2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>450</y>
+                <width>690</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string>textLabel2</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>startAOButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>32</x>
+                <y>347</y>
+                <width>90</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>StartAO</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>presetAO_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>140</x>
+                <y>280</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>pause_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>132</x>
+                <y>410</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_2_3_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>175</x>
+                <y>489</y>
+                <width>60</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Y Offset</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2_2_2_2_2_2_2_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>7</x>
+                <y>544</y>
+                <width>690</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string>textLabel2</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>acquireGuiderButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>340</x>
+                <y>280</y>
+                <width>160</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>Acq from Guider</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>presetAOButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>280</y>
+                <width>110</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>PresetAO</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>stopButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>390</x>
+                <y>345</y>
+                <width>90</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>StopAO</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>offsetZButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>402</x>
+                <y>517</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>OffsetZ</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>offsetZ_Z_Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>472</x>
+                <y>490</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>resume_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>492</x>
+                <y>410</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stop_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>490</x>
+                <y>350</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>offsetXYButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>12</x>
+                <y>517</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+        <property name="text">
+            <string>OffsetXY</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>140</x>
+                <y>489</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>mm</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>offsetZ_status</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>502</x>
+                <y>517</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>adcTrackingCheck</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>240</y>
+                <width>130</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>ADC Tracking</string>
+        </property>
+        <property name="checked">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>aoModeLabel_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>58</x>
+                <y>200</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Seeing:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>presetAOSeeingCombo</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>190</x>
+                <y>200</y>
+                <width>140</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="editable">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>dimmSeeing</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>200</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>0.0</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>22</x>
+                <y>170</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>Magnitude:</string>
+        </property>
+        <property name="alignment">
+            <set>AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>presetAO_slNull_Edit</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>530</x>
+                <y>110</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>LineEditPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>presetVisAO_status</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>110</y>
+                <width>170</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>85</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="alignment">
+            <set>AlignCenter</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2_2_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>537</x>
+                <y>130</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;p align="center"&gt;Pyramid  Nudger&lt;/p&gt;</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>presetAO_appMag_Edit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>170</y>
+                <width>50</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>0.0</string>
+        </property>
+        <property name="alignment">
+            <set>AlignLeft</set>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>offsetXYButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>OffestXYAction()</slot>
+    </connection>
+    <connection>
+        <sender>offsetZButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>OffsetZAction()</slot>
+    </connection>
+    <connection>
+        <sender>pauseButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>PauseAction()</slot>
+    </connection>
+    <connection>
+        <sender>presetAOButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>PresetAOAction()</slot>
+    </connection>
+    <connection>
+        <sender>presetFlatButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>PresetFlatAction()</slot>
+    </connection>
+    <connection>
+        <sender>resumeButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>ResumeAction()</slot>
+    </connection>
+    <connection>
+        <sender>setNewInstrument_Edit_CBox</sender>
+        <signal>activated(int)</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>setNewInstrument_Edit_CBox_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>startAOButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>StartAOAction()</slot>
+    </connection>
+    <connection>
+        <sender>stopButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>StopAction()</slot>
+    </connection>
+    <connection>
+        <sender>presetAOSeeingCombo</sender>
+        <signal>activated(int)</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>presetAOSeeingCombo_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>acquireGuiderButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>acquireGuiderButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>presetVisAOButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>PresetVisAOAction()</slot>
+    </connection>
+    <connection>
+        <sender>AbortButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>AbortAction()</slot>
+    </connection>
+    <connection>
+        <sender>nudgeUp</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>nudgeUp_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>nudgeDown</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>nudgeDown_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>nudgeLeft</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>nudgeLeft_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>nudgeRight</sender>
+        <signal>clicked()</signal>
+        <receiver>AOIGUICommandDialog</receiver>
+        <slot>nudgeRight_clicked()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>presetFlatButton</tabstop>
+    <tabstop>presetAOButton</tabstop>
+    <tabstop>presetAO_slNull_Edit</tabstop>
+    <tabstop>presetAO_ra_Edit</tabstop>
+    <tabstop>presetAO_decl_Edit</tabstop>
+    <tabstop>presetAO_appMag_Edit</tabstop>
+    <tabstop>presetAO_colIndex_Edit</tabstop>
+    <tabstop>offsetXYButton</tabstop>
+    <tabstop>offsetXY_X_Edit</tabstop>
+    <tabstop>offsetXY_Y_Edit</tabstop>
+    <tabstop>offsetZButton</tabstop>
+    <tabstop>offsetZ_Z_Edit</tabstop>
+    <tabstop>pauseButton</tabstop>
+    <tabstop>resumeButton</tabstop>
+    <tabstop>startAOButton</tabstop>
+    <tabstop>stopButton</tabstop>
+</tabstops>
+<includes>
+    <include location="global" impldecl="in declaration">string</include>
+    <include location="global" impldecl="in declaration">qlineedit.h</include>
+    <include location="global" impldecl="in declaration">qtimer.h</include>
+    <include location="local" impldecl="in declaration">QMagAOIClient.h</include>
+    <include location="local" impldecl="in implementation">aoigui_command_dialog.ui.h</include>
+</includes>
+<forwards>
+    <forward>using namespace std;</forward>
+</forwards>
+<variables>
+    <variable>QMagAOIClient * magaoic;</variable>
+    <variable access="private">int timeoutCounter;</variable>
+    <variable access="public">bool processing;</variable>
+    <variable access="public">int side;</variable>
+    <variable access="public">int lastUpdate;</variable>
+    <variable access="private">QTimer *timeoutTimer;</variable>
+    <variable access="private">int timeoutNSteps;</variable>
+    <variable>AOI_DD *aoi;</variable>
+    <variable>int guiderAcqDone;</variable>
+</variables>
+<slots>
+    <slot specifier="non virtual">updateValues()</slot>
+    <slot>setResult( QLabel * label, int result, std::string errMsg )</slot>
+    <slot specifier="non virtual">PresetFlatAction()</slot>
+    <slot specifier="non virtual">PresetAOAction()</slot>
+    <slot>acquireGuiderButton_clicked()</slot>
+    <slot>nudge( int xsign, int ysign )</slot>
+    <slot>nudgeUp_clicked()</slot>
+    <slot>nudgeDown_clicked()</slot>
+    <slot>nudgeLeft_clicked()</slot>
+    <slot>nudgeRight_clicked()</slot>
+    <slot>StartAOAction()</slot>
+    <slot specifier="non virtual">OffestXYAction()</slot>
+    <slot specifier="non virtual">OffsetZAction()</slot>
+    <slot specifier="non virtual">StopAction()</slot>
+    <slot specifier="non virtual">PauseAction()</slot>
+    <slot specifier="non virtual">ResumeAction()</slot>
+    <slot>AbortAction()</slot>
+    <slot access="private" specifier="non virtual">updateProgressBar()</slot>
+    <slot>PresetVisAOAction()</slot>
+    <slot>setNewInstrument_Edit_CBox_activated( int k )</slot>
+    <slot>presetAOSeeingCombo_activated( int k )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private">destroy()</function>
+    <function specifier="non virtual">setValue( QLabel * label, double result )</function>
+    <function specifier="non virtual">setValue( QLabel * label, int result )</function>
+    <function specifier="non virtual">setValue( QLabel * label, string value )</function>
+    <function specifier="non virtual">checkRunningStatus()</function>
+    <function specifier="non virtual" returnType="bool">getRunningStatus()</function>
+    <function specifier="non virtual">setRunning()</function>
+    <function access="private" specifier="non virtual">startTimer( int timeout )</function>
+    <function access="private" specifier="non virtual">stopTimer()</function>
+    <function specifier="non virtual">setSide( int cSide )</function>
+    <function>setQMagAOIClient( QMagAOIClient * qaoic )</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

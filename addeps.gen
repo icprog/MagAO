@@ -1,0 +1,63 @@
+# Default dependencies
+
+-include $(OBJECTS:.o=.d)
+
+
+#$(ADOPT_BASELIB)/msglib.a: 
+#$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) msglib.a
+
+#(ADOPT_BASELIB)/thrdlib.a: 
+#$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) thrdlib.a
+
+build_time.o: $(ADOPT_BASELIB)/build_time.c
+
+$(ADOPT_LIB)/AOApp.o: 
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/stdconfig.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/RTDBvar.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_BCULIB)/CommandSender.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BCULIB) $(@F)
+$(ADOPT_BCULIB)/Commons.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BCULIB) $(@F)
+$(ADOPT_BCULIB)/BcuMaps.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BCULIB) $(@F)
+$(ADOPT_LIB)/Utils.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/commlib.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/UdpConnection.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/AdamLib.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+$(ADOPT_LIB)/Logger.o:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) $(@F)
+
+# The following definitions allow to force the making of some
+# targets, if they are not up to date with respect to their own
+# dependencies
+
+F_ERRORDB = $(call test_uptodate,$(ADOPT_BASELIB),errordb.h,do_f_errordb)
+do_errordb:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) msgcodes.h
+
+F_MSGCODES = $(call test_uptodate,$(ADOPT_BASELIB),msgcodes.h,do_f_msgcodes)
+do_msgcodes:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) msgcodes.h
+
+F_THRDLIB = $(call test_uptodate,$(ADOPT_BASELIB),thrdlib.a,do_f_thrdlib)
+do_f_thrdlib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) thrdlib.a
+
+F_MSGLIB = $(call test_uptodate,$(ADOPT_BASELIB),msglib.a,do_f_msglib)
+do_f_msglib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_BASELIB) msglib.a
+
+F_CONFIGLIB = $(call test_uptodate,$(ADOPT_LIB),configlib.a,do_f_configlib)
+do_f_configlib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB) configlib.a
+
+F_AOSLIB = $(call test_uptodate,$(ADOPT_LIB)/aoslib,aoslib.o,do_f_aoslib)
+do_f_aoslib:
+	$(Q)$(MAKE) $(MAKEOPTS) -C $(ADOPT_LIB)/aoslib aoslib.o

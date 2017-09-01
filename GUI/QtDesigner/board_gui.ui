@@ -1,0 +1,2638 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>board_gui</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>board_gui</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>755</width>
+            <height>810</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>BoardGui</string>
+    </property>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>editStageY</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>620</x>
+                <y>650</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>128</red>
+                <green>128</green>
+                <blue>128</blue>
+            </color>
+        </property>
+        <property name="palette">
+            <palette>
+                <active>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>242</red>
+                        <green>242</green>
+                        <blue>242</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </active>
+                <disabled>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </disabled>
+                <inactive>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </inactive>
+            </palette>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>stagesFrame</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>250</x>
+                <y>610</y>
+                <width>310</width>
+                <height>170</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>0</hsizetype>
+                <vsizetype>0</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="lineWidth">
+            <number>2</number>
+        </property>
+        <property name="midLineWidth">
+            <number>2</number>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>labelStagesTarget</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>40</y>
+                    <width>18</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>166</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>14</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;X&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>kLedStagesPosition</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>40</y>
+                    <width>16</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+        </widget>
+        <widget class="Line">
+            <property name="name">
+                <cstring>line4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>10</y>
+                    <width>5</width>
+                    <height>150</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>VLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+        </widget>
+        <widget class="Line">
+            <property name="name">
+                <cstring>line3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>290</width>
+                    <height>5</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>690</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Elevatio:</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>editStageZ</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>620</x>
+                <y>680</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>128</red>
+                <green>128</green>
+                <blue>128</blue>
+            </color>
+        </property>
+        <property name="palette">
+            <palette>
+                <active>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>242</red>
+                        <green>242</green>
+                        <blue>242</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </active>
+                <disabled>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </disabled>
+                <inactive>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </inactive>
+            </palette>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelDerotator</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>620</y>
+                <width>40</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>0</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4_3_2_2_2_3_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>570</x>
+                <y>620</y>
+                <width>50</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="backgroundMode">
+            <enum>PaletteBackground</enum>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>230</red>
+                <green>230</green>
+                <blue>230</blue>
+            </color>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;X Pos:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QDial">
+        <property name="name">
+            <cstring>dialDerotator</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>110</x>
+                <y>610</y>
+                <width>51</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="wrapping">
+            <bool>true</bool>
+        </property>
+        <property name="notchesVisible">
+            <bool>true</bool>
+        </property>
+        <property name="maxValue">
+            <number>360</number>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4_3_2_2_2_3_2_2_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>570</x>
+                <y>680</y>
+                <width>50</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="backgroundMode">
+            <enum>PaletteBackground</enum>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>230</red>
+                <green>230</green>
+                <blue>230</blue>
+            </color>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Z Pos:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelAzimuth</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>670</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>0</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelElevation</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>120</x>
+                <y>690</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>0</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>editStageX</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>620</x>
+                <y>620</y>
+                <width>60</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>128</red>
+                <green>128</green>
+                <blue>128</blue>
+            </color>
+        </property>
+        <property name="palette">
+            <palette>
+                <active>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>242</red>
+                        <green>242</green>
+                        <blue>242</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </active>
+                <disabled>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>128</red>
+                        <green>128</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </disabled>
+                <inactive>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>230</red>
+                        <green>230</green>
+                        <blue>230</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>115</red>
+                        <green>115</green>
+                        <blue>115</blue>
+                    </color>
+                    <color>
+                        <red>153</red>
+                        <green>153</green>
+                        <blue>153</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>128</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                    <color>
+                        <red>255</red>
+                        <green>0</green>
+                        <blue>255</blue>
+                    </color>
+                </inactive>
+            </palette>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="font">
+            <font>
+                <bold>1</bold>
+            </font>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>buttonUnlock</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>530</y>
+                <width>80</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Unlock</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>670</y>
+                <width>71</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Azimuth:</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>590</y>
+                <width>140</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Telescope derotator</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4_3_2_2_2_3_2_2</cstring>
+        </property>
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>570</x>
+                <y>650</y>
+                <width>50</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="backgroundMode">
+            <enum>PaletteBackground</enum>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>230</red>
+                <green>230</green>
+                <blue>230</blue>
+            </color>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Y Pos:&lt;/b&gt;</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignVCenter|AlignRight</set>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>70</y>
+                <width>480</width>
+                <height>490</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundPixmap">
+            <pixmap>image0</pixmap>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>300</y>
+                    <width>121</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Tip-tilt mirror&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>270</y>
+                    <width>121</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Filterwheel 1&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>420</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;CCD 39&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_3</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>420</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;CCD 47&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2_3</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>360</y>
+                    <width>50</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Pos X:&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_3</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>340</y>
+                    <width>100</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Cameralens&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2_3_2</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>380</y>
+                    <width>50</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Pos Y:&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>180</y>
+                    <width>121</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Rerotator&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>220</y>
+                    <width>100</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Filterwheel 2&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_3_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>300</x>
+                    <y>70</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;ADC&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>1x1</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2x2</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>4x4</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>16x16</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>comboCcd47Bin</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>390</x>
+                    <y>440</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>460</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Freq:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>440</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Binning:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2_2</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>460</y>
+                    <width>46</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Freq:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_2_2</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>320</y>
+                    <width>80</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Amp (mRad):&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_2_2_</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>170</x>
+                    <y>340</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Freq (hz):&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_2_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>60</x>
+                    <y>220</y>
+                    <width>40</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;B&gt;Pos:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>1x1</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2x2</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>3x3</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>4x4</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>5x5</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>comboCcd39Bin</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>440</y>
+                    <width>51</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>checkRerotSync</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>200</y>
+                    <width>110</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>Tel. track</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>checkADCSync</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>300</x>
+                    <y>90</y>
+                    <width>90</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>Tel. track</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_3</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>320</x>
+                    <y>440</y>
+                    <width>70</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Binning:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editCcd47Freq</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>390</x>
+                    <y>460</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editADCdisp</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>110</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editFW2</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>240</y>
+                    <width>90</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editFW1</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>290</y>
+                    <width>120</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="alignment">
+                <set>AlignLeft</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editADCangle</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>130</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editTTAmpl</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>240</x>
+                    <y>320</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editTTFreq</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>240</x>
+                    <y>340</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editCLX</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>360</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editCLY</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>380</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editRerotPos</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>220</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>editCcd39Freq</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>460</y>
+                    <width>41</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2_3_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>300</x>
+                    <y>110</y>
+                    <width>45</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteBackground</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>172</red>
+                    <green>172</green>
+                    <blue>172</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Axis:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel4_3_2_2_2_2_3_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>130</y>
+                    <width>54</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteText</enum>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="paletteBackgroundPixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Disp:&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignRight</set>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>cubePix</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>400</x>
+                <y>10</y>
+                <width>60</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="lineWidth">
+            <number>3</number>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="pixmap">
+            <pixmap>image1</pixmap>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="438435">789cedbd5953225dd3367afefe8a27de3c7b63477ea2a8105fec03410515710005ddb10f328bc9a1bb45bbefbb75c7feef5faea92870444babd4ec2b6849a0a65575ad2b730db9fed7fffca7bbbffb9ffff95fff75f39b7e9f45ff894674fd9fffe9fdf9f1e3f6fff97fffefffefbffebbb852fc4f7165e13f2b0bc5ff2cfef7fff55fff0d57ff89fe030bf69fb1f934b64bc61e9e04bb606d5e0ef662d9d811057ba960ec413fd84567efc436d9df43b097edf1072bc15eb1df0f4ac15e5db2c72bc736dbefc7c12ed9efe9676cdbef87b560978b76fbc5d88eecf6ed6093fd7e80b16dbfefc5e7c7f6fbe130b67bd6ee063b5ab6db6f07bb67ed7e7cbebdbeb1f1df60f757ecf9726cdbefa3f8f803f7fd466c0fecfdf9ebeda2bb3f10caabe8ef476c2fdaef07e17e145d790f9682edcb3b9447d195df20dccfa22f9f62b05df9f4abc176e5310ae75b74d73ffa1d6c77fd1c1fcf5d3f5d06db5defa8176c7fbd95d876d75bb07649aed75edf681cec82bd3efa156c7f3dddd876d77b12ec15f7fd6a6cdbef879bc176cf57bf15dbf6f9e9ad04db974f7c3eae7c7a47c176e5d13f08b62b8fe1556cdbe725ba08b62b9f0104db3d0f3c0cb62f8f787b571e18aebfe4cbe34fb0ddfdef1f06dbddfffe7eb0972c3ffb7bc1f6d7db8e6dc7a7eb603bbe8c20b6edf5f69bc176cf03fe8d6df77d28ef922b8fc16e6c3bbe2c04db974f7c3eae3c7adbc176e531388f6dc79f787fbe7ce2f3f1e513ca2372e583ff04db3d1ff83bd8fefe86eb8fdcfdc59b607bfe87f28efcfddd09b63bdf51bc7ff77c8fce82edce17e2f3f1e7db896d77bef6fe16a4fa70cf73ef38d8ee7c87f560bbf2e241b0ddf178146c77bcde7eb0fdf1ae63db1dcfdb06f67c29b65dfd5e0eb67b7e7a9d60bbfa7cd40fb6af4f7ac1f6e57b1b6cc7378260bbfa78d00ab6af4f8e63db95f746b05d79e3766cdbe7079bc1f67c8ab777f7231ac7b6bb1ff1f57a7efd896d577e7f83edca0b8ab1edcaeb97b77d7dd35f09b62b8ffe6ab01d9fa242b0fdf3de08b67fdeff896dfb3d9782edce77b8156c77befdf87bfffc87eb0df5a33bbf5221d4ff0bc176f78fff09b6bb1f51146cc7efc1ef607bfe3682edca9f86c176e7db87607bbe52b07d7dfe33d8ae3c7933b65d79de79dbd75714b62f797fa1196cf77cf5d682edebefbfb1edfc8772b0fdf59c05db3d5fc3707dbe3e1afe09b6bf1fffc6b6bdbe5e31d8fe7ec4e7e39f9f50debefec1a5d876d7b7e1edc85ddf289477e4cf3fdc8fc8fb2385d876cfff45b0fdfda804db3d4f10aecfd7075135d8aefc6935d8befcf762db9e1fdbed17170a917b3e7027d8be7e1f06db9757fcbd3bfea0136c7ffcfdd876cfc745b07dfdb31bdbae7cfcef177dfd32fa37d8ee7ef7d782edea93fe72b0ddfdc6bd603bbe0de2ed5d79f6ce83edefff6e6cbbf26d04dbebd34d6cbbf26d07db3f0fdd607bbdfe196cf73cf4e2e3fbeb2dc4b6bd5ebaf3b6e763bf18db568f319c4ff047b683edcf3f9c9fe7636f62dbf3a3787fbe3ec360fbfac13e0f8be570bcd165b0ddf3d83b0db6db5f74176c777f7be560bbeb1f6e04db5dff30debfd79f3fc1f6e5b11edbee7cbade2ef9f3b909b63b9fd1796c3bfe87f3f5feca209caff74786d7c1f6e53508b6af7f5782edcf7731b61d5fdac1f6cf67cddb913b3ffa116cef2ff583edca87a260bbf2a17f63dbf9f35bc1f67c5c8f6d773c5b3f2e15162357fff57682ed9e7fba08b6f35786a5607bfffc2ad8eef91eae07db5f6f3bd8fe7e3462db1dbfeeec25afefbddfb16dafbfb7156c1fbfc5bf77fe125c06db953f5c07db5d7fff57b0bd9e9d06db97c74d6cbbf3f9e96dafaf340ab62b8f281cdfebd7f06f6cdbeb8f62db9d4f6f21b65d79c5b6e3f7309c7fd0b366b0fdf92ec5b6bb9f47c1f6e71fc5b63b7f575e65397f5b7e5c0cb63bffde8fd876fab51c6cafcf87c176f71be2df3bff09ce83edf5623dd8bebeae06dbfb43bf63dbe9597c3c1f7f2e04dbf3f3d6db3e5ea041b05dfd0c17c1f6f7ff28b69d3f5d0bb6afafee82ede3e3e3d876e51fefcfd72ff1fe7c796f07db3fbfd5d876f56b288fc89d6fd409b63f5e23b6ddf1c2fdf0fca49b60fbfd597d2c169622f7bcf739d8ee7ef5ef82edfdbd62b05d798c7e05db3d6f5c0fb67f3ed69c5df47c8a7ec4b6dd3f61b0bdfeadc7b6fd9efbc176c78793603b3ef4b783edeb8378fffefae3e3fbfa3a0ab62fdf787fee7c7b556f17fdf9ee05db97c756b07dfd7b1adbf6f8a361b0fdf3f92bb69ddec4b6e75f25b69d9ec5b63b9fbead0fe460be3d83d682edf521b6bd3ff037d8eef8d1bfc1f6fedf596c3b3ddd0eb6e7c3a6b7fdf31f2d04dbc767a3d876f7e777b0ddf3c0ffc6b6e5473f0ab6f75787c176e5d11b04dbb71f61b01d5fa35eb0bdffd9896d77be7d6f47ee7c87c7c176e5d38bbf77d73b380ab62bef4139d8be7e1807dbefdf9effb2710f5c7dd68a6d77bcd8f67a5509b6f72746b1ed9ec7a5607bffea20d8dedf6e06db1fbfe7ec65cf8fde52b0fdfd8f62db1e3f6a05dbdd7ff827b65d79ef06db9f4fbc7f5f1e7bc176e783c560fbf3197a7bd9f37510dbce7ff9196cef3f84e32f7b7f612bd87e7f6e7b0adb8f2e82edb61f9e07db9d7fff67b0ddf96321d87e7f236f977d7bd856b07dfb0707db3d9fd17ab0ddf309c7c1f6fc0ec72bbbf3c756b0fdf136bcddf3f5c36eb0bd7f17cea7e7db9b2ac1f6fab6176c7fbf6e62db5def6db07d7bea6ab07dfd6dfda395c570bce84f6cbbe71382edb687d8f6f1d195b3570a6efbfe79b07df98f63db95df75b01ddf87fbc1f6fcde08b6ab0fe1df60fbf6a4cd60fbfa280ab6d7c37e6c3b3d3c08b6af0f2ab1edcaa3146caf373fbcbdecafe732d8ee7ae86fb07dbc19ce77d9b7377583edefafad6f5648f6e7eac3a560fbe7f977b0fdef6bde2efbdfc7b6d7cfab607bfd8abff7e515f657f6f5773bd8eefcfaff06dbd7173bc1f6c75ff3b6bfff83cd607bffe936d8eef9e2f8f77e7b5bdeab4b2b3d7fbecd607bff6618dbae3ea907dbdf4f0eb6bf9f18db4edf6e83ed8f3776f6aa7fde7a7bc1f6cf7ffcbdbfdebb60fbe7f787b7437d530fb6bfde5eb07d3c1fb65f76cfcf60106cefdf7662db9d9f7dbe5759f6eff8fb27d8fef7dbb1ed7ebfeb6d5fdf443bc1767ce97783eddb038f62dbf9f39bc1f6f1ee72b0bd7fb71edbaefea6607bfd5c886d178ff482edfd9d78ffbefc4ebcedeba7d18f60fb78ab1a6c1f3fee05dbf3cd3e0fa5a5d59ebfbe1fc176d737fa1b6c7f3d2bc1f67cdb0ab6df5fc5d9255fbff49663dbd53f67c176fbe79fc1f6f1ef41b07dfb4023d8bebeec7b7bd9d75f85607bffb5166c7f3f6d7996587e6f8f4fff04db3f5f87c1f6d73b08b6bfbee360fbeb0bdf7bfde95f05dbc76b97c1f6ed334bc1f6f1cdcfd876f5e375b0bd7fd48e6d77bc9eb7bdde44a560fbebdd08b6e7eb6db0fdf30db1edcacf3eff6571d77c7d7f186cdf7eba14dbae7e390fb63f9fbeb3cb5e2f7a07b1ed9eff9560fbf2f8156cdffe761edb8ecfa360fbf2e060fbf228c7b6bb9f3fbdbdec8f5f0ab66f1fdb8f6de7af5f06db1d1f9ac1f6d763f5ab1c95c3f370156cdfbffa23b65d79af06dbd76fd7c1f6fa5c09b6dfffc8db65df5ed909b6d70b0cb6fb7df48fb7037f2f82eddb03c3f1fdfdeaff09b68f470ac1f6f56d3bd8fe7c2c1fa858f6fceefd0ab66fdf3f08b6fffda5b3c9f3353a0db6ef4fbd0bb6d7b7c560fbe7fd36d8bebf8262db5defc0dbbebcfb85607bff9a83ede3ebdd60fbfaf038b6ddf3e1ce2fa270bf7683edbf6f799b7c7ddd0db6f74fd662dbd59747c1f6db97bdddf7fe0705dbf3e530d8befc6cfdcb45f9de3d4fb560fbe77b39b6ddefd9d9bce8efefdf607bffb51b6c5f7e436faf787fa31f6c7f3f7e07dbfb3be560fbeb71c7ebc9f6ce1f5f0cb63f9f336f93af9f0f83edf91a7feff5f836d8fefa8e62db1d6fdddbbebcfa37c1f6cfef626cbbfdc7dffbfb7f126c5fbff562db9daf7d7ea365eefbfa9b82ed8f7fe7ec68d17f7f1d6cbffda1b77df98d6e63dbf94b27c1f6f56dd8df8ad7aba360fbfdb9e3f7c2f6230eb6fffd45b0fdef4fbd4d3ebeef05db95476f33d86efb6127d8be3c2e63dbd5f7b7deeefbfded04db9787bddede72e4cb9fabc1f6e773eeec9e7ffea2d5d876fc6805dbfffec4dbe1793b0db63f9ebdbfbdbe7cefae9f83edb75ff17678bec2effdf58eae82edf91f7feff75ff7b67f7e6039d89e2f562ffb7274df1ff24f6cbbebe906dbefafeaecfea2ff3dc6b6db7f29d8bebc0fbdbde2eb9346b0fdfd69c5b63b1fab0f7270ff3cd07eb0fdf1b7bd1deaa38360fbf25af7b63ffffe59b07df9d463dbedcfdeffc14af89ef763db7dbfe5ecc1a2ff7e1cdbee7817def6d743b5d876df5b7f6330083634bcedcff7e0b7b707c156281479857254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a14f9867254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a14f9867254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a14f9867254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a021090903112f4b08f031ccaab2f1809cef03cebf3fbae508e7e1fe0055e7a8cf007fec45f7885638b6bc10dfeb67f1dfee03ff8af7f7f65ffff857ff1563ebf8eb7b9c335acc4fbace27ad657f835a11cfd3e1045dcc04dacdd7bd5055bb88d3bc2dbadf8d5c0dd29fb273671cffeb6fec03e36711f0fb2bec2af09e5e8f7011ee2e513dfb6b03d651fe1f1cc2f3ad87d62fb3e9e647d855f13cad1ef033cc58527be2dcc70741197667e51c4e527b6efe34ad657f835a11cfd3e407aa38eaeaa8e6601e5e8f7c19b75b4a43a9a0594a3df076f8e475547338172f4fbe0591d2d4fd9aaa3398172f4fbe09978b4003865dfd35100d5d12ca01cfd3e784e476738aa3a9a132847bf0f9e89479fd551e1a8ea6806508e7e1f3caba33465dfd7d1b6ea6816508e7e1f3cd73f3ac3d1fb3a5a561dcd02cad1ef0360ac41043d411f06f26e20efdc6b0823388373ffdebd2e70377eef3ebf841ff22ed803bba79edf5f0f37f130eb2bfc9a508e7e1fc04ff805573886b1685e6ff605d7703365ff863fd3bf817fe0dffbdbc9e723f80b57700b77595fe1d78472f4fb40e2d111aec09ab0e9162ff174e6db162e4ed9f7e251a8ccc6a378860b780766a629085b351e7d172847bf0f423c0a5558870d5c834da8e109d461cb7edb9a8e361f8f47615b98be6e7ddd5bace0215ed86f351e7d27bc2f476127ebeb534c30ddae0b0dac8a47bb897f846b63d885eb198eded7d126ecc1befcf656fce503f171a7e24f6dd77d2fbc1747a12577f10fd4b2be3ec5040ff58f0a5301d771001bd08623dcc76bf88575e8e10f389678b4021d88e4d35ff279174ee0527e772abf8707f6ae3afa4e489fa3e2072d881f55903b5b87c5b7ef4f91169ee91f5dc5453844823b8f2528c6efefc44f3e11656d3fb1bdeae83b215d8e228b27f417ae849f3dd8cefada14d378a67fb404532d420fc4a3cf715475f45d901647a5a6ede32dacc0aa78438b0ff9428aacf1948e8ac75b84d2d427f7c7191d61e9b1ed5547df0f6fe72854a14ce22211115344bdacaf48f118a80f5d5c7b1834a0218de4ef99bccecd5fbaa0cb896d7ff383868f6d2fd14d17cfb2bec2af89b771140f615fb8f9937ed1158de99a6e28f32b523c06a94847365fae05fd712f330a81fed03ff46fd296d75fb99f09db8e6ab89e6c176fef21fbd60cbcef82d772946e71447738c63b5aa30a557189d669c37843b449da9a9b4b3c158f529db6667efd403c4a4fb431683cfa5e989fa3b00debd033adf4b82975eb22ed083b1bb48bcbd4a43ddac70e34a191f57529eee3a978940e683cf3eb07e251ba7962ef1a8fbe13e6e5281d62dd8cf9c41f21faa016b5e9088a744c1d284a58daa5133a9e679f8a8fc153f347e994aa33bfbeafa347f454df8deae83b615e8ec20e8c71e4467f39500b97b02bbe6e81aea142eb72271769018fb2be32c52ca00535799dcaab95f86b414b544cdaf2c932cc7eb242abd39fc4fb9117956647002bd2c1dbdb7585a3c7546664a08af0b34c6d26668e585b787306ba852edde11dfcb5a38656b106b7b0e966ab719f07d0f733d71c2e7818cf3c8bccec33f96424bf379f44f2f796eea08b1bf8070a7c4666ed17d5d177412a1c151d157fb765db75f7f95cdeeff00555f9891e734556c073f1837ab02f2cfd251cadf10fd8a53effa4f5e95684fbf128f7f8172e600576f9075f093fafcd9a4cf4072fa13acf1928e6431a1c9558b46c380a452cd298c7b4277eef225ff30d73d6d7a7780c08b025d816868da9c4bff98ff02e825bdcc40d3ec33bfe8718efecfb7dacd3390cf85ffe0b1b7cc53ff00cd7edd6da36f8014883a374ed74148ac2cb5bbea3035ec30e2ce3325794a59f035ce575e1ed3a54f1044f9190788337e14ede9fc2212cd2216c3191ae5e980152e168d3e92835b90a0dd1d24df9740b5b3c16bf774cfb595fa3e279f025cd68e283edbacad10c900a473b713cba637adab0c035045c0540302ce5f1db8ea0787f508b67fa3e85a3b3f1a838bf599fe77744ba3a4a3bee13ae0b6bbbe2e96e519db77947599a77bcb07f54753403a4198f3a1d759ff10d5f4089911b66d6136b36aa9c83f9018eded351e568164881a3a7d409edbad48a3f2d735d987a416d06894b77782deb2b553c05d5d1fc224d1de5cd0947e5f36361e981dcd782bc0eb0c53a2b22c778898ee2d16cccaaf808bc978e1a6099c68ea5b44307b40dcdacaf56f118de3e5e57f15e783f1d35e05b8945c7bccb37f2ab456e4eaf56a0c80f5ea6a3cad12c908a8e363d47f76826c718efe32aed510ddbbc4e077cc975becefa8a150f01966966b4ed833aaa63fe32403a7d2fbe5db730cb513b2ff1840f444b6fa96a584a0b3a8a378fe03116a73f795047351ecd00a9e868e5311db5dfd7e906c88c3fc28e44a78b7432eb112bb2c74bf2305079566b151f81347ddd8774d480ab5cb16dbb1dfa0d0d3ee43a3c915f4e91055ea8a39a8f3503bc9da3ccf158c0dd8739ea5aed6951fcde2a83b07457fc5fd5d25c81ea589cce43f5607edd42d6e7f91d910647a168388acb8fe9a8817c7b02cbc2d20506bbba4f51c7dae7093ce6e64c7edd8774746b9e7d2ad2410abeeea2d3515c7e381e0dc0b6f0f280af39e23602370074146f7e6074f4b93cf554561dcd02e9e9281f3ea5a3f6970d13f398f9fd72ff81d7785bb37ce607b8fabc8e2a47b3401a3a1a73f4d178d441fca96d61e698ccc8a33234b0c50d65695ef0a2f55e94a3192085b5249669d773b40dcb4fffd6b41e62d9f8bd54a59644a75bc652e401c2518d4773891474b4cb7b3e1e8d9e6fad35b34ae948d85aa30551d403aef36ed665a030785e47251e5dcdfa2cbf2352d1d182d7d18597f4a830cbef081adce0a628699d4e74146f1ef0121d658d4c32407a3aca871cbdac3f852fa9ca47d070398fa8c595e955de1559e0adeb8f2ade0b6970940a802fd75103d35b6ac6346007c0735647f1668c97e8a872340ba4a3a30c760cc30d1dbc742b61f5361d4049b4778f6a7c4437cad26c01303d27e9c178b49df5597e47a4138f1a8e8aafdb7cf9a804f174374d2e3251e136546cd68626a9c79b21b085533d670fe8e8b272340ba4e2ebee9af523c4d79d334b27aef29d707587d74d3cca6dd1521d79941984a35375e403f1a8ea68264841474bb46e74948ee6d151031e9b15856d3cbace17c6ff352dbd5997c877c5f33a0a4dd2d5f032400a3a7ac037d6d77d45b66b2861c7cc2d150db62ce52dd156d5d24cf0221dd5682403a4c15133e34c387a3caf8e1a880a2f98fa9b8f650f6ca254d4596b99005bd32af9808e56f09971648af7402a3a1a997814dbd8798d06f211d7f9d2b621999511c7dce13b84accbe5fb015bdc9eb255477382ac75d400bb54a57daa91694512966241db263e1e5880a9d55c1e8a475547b3404a3a0aafd7510389474543edc8a39244a72d2c82aefef3c17880a3aaa3b9400af347c7c24da3a3b7afd551032cd396d15000deb1fd39275a677f2c68eb591dd5783413a4a0a335e1a6c4a3f4fb2dab18ca5eee780d1ab04c375c13455da41b7c7236aa225d3cafa3bca53a9a05d2e028166dffe8efb7e8a8d5e382c97544a7e4feee085bb53feec3f07c3c8a25d5d12cf0768e22d09836dfaaa3063c766bc2708f1a66be9ac9981d564b54bc375e108faeaa8e6681747454f8d9e6eedb74d40096b1637ae95c2e50c356ae68c6ec8fc1f3f1a8ea683648271e351c7dbb8edabdb568c18e383ae475c34e20ec68c6ec8f00b6a67bbceeeb2880ea681648291eedda7834953bc8d774623c5c20aa9a1c668026e767d6e5f4f531db2bfd40bb2ea88ece0201467847253c7bbf63a4148f5a1dc594f40e9ac2fa96c9a622f1e80134688f77a8fe7e65a030785e47b1a33a3a0ba8c32dfc852b1c4384a7f02e39d9528a47b784a35b94da5931c8f300829299092ef68e99c5f61ed7af08785e47b5cffa6160049b7065805b38c0f5b4f79f1247b7a98dc5b474d4cc00e70696781f812b66268ccd987dab2c7d4f3cafa35c571d7d18e24b1e420faf2d537fc1be286a8acf6a4af168c570343d1d352c35734bc5cf3de00a376cef69cbace794de1114d37880a3aaa373014fa9cf67d6f3bd9328f5102fd2d96f1af168e0687a3a6a40075834bda5b4cf377c60b3ab8c59e7c3bc1bc46f99aa011fc86774a33afa1c600b23fce93c5f3a97f729f034af3a6aafb7e4bc2b336adff4dd41090bd3f3a714e901e01e4755475f0504303a7a273cfd8b777c02876fdb5f3ee3d178df8b1c996c756cd62f35d9edd9ac369cf6511406cfeba8c6a32f87787db7b06b78caa7bc003da8bf7e4e740af98ccc2a85a2a3c2d377b856937bd78c65c0655c326ca516dd704a7ebe2209d5d1f481ebd8e7022f8aa21620829fafdbcbdb396a7b462c47d3d7517b9d5dba31238d80a86d4720f9310e8a74f1021d8d5447e783e857939abcc445f8cbcbbcc267f01357e6dd4b2a1cbda51be14fe53d74d45e67055bb697f458d8b91ff236bcc7b1be339ed751d636a3b9000d062ad09659fb9357b9c465db92740735589ca78722251dbd793f1db547b8e3aeb92a6ed08df1eb7191aa3a8a375dbc4047d795a3f38036cd6a65dca60e548421cd08b1821b1144249eef10ca2fe5694a3ada78af78d45f6d8d6ff9ceb498094bb7ccc87d33d65eb5344d3cc051d5d157c33ca98cdcb3aba634a1286557a2ab83df1153258a706c470f765fe6f97e0e1d1596d6b165d613a61a6de1aaf8bf0d9b5d4573f1a606a969f792b6eae8eb215eee1dedba0c0550a10df17817b12d7f8f780f8a512feac3c88d4a329e2fae3cada8e9e92857f85d5b7278dfe4cb96bf2d3a3147b263ee7f2b4bd382c413aaa32941540bdd1a635012fdbab2cfedb170b48965ee62916a52be2738c47d3bdaa1003d786296743a3a6a395a7f5f8eda7e9731956dafe98d191728fec40e6d6a2ede742035ff333a4a6dcd30f53cd8ce02730ca51647d4a10a4949f21a6d008ab274691c9e59d88906b86647e38ff90c19b61fda633a3aca486645a5db77bffe9e9b53ca6cd697311e3080e6e24d07cfeba8d4c4e5accf32ef00f1ed68d7e50e91a7d4c4809b128f121d41d1c4a3f2a9d7d1788b2d60fc693ddfbff813c6f7799a523c8a5647d7debf0c6c8beeb21cf342b4b467e3d48e8e0f4c03aaa369000bc24aeb4f5297d78da2083f4ddf61531475c37efe5bbcc1daec76748b1537ca17fe422d1a26bf4b291e2d7c8c8edaa31db8165dd154eb5118966ac6ecb783f69ed751e5e853b073b36ee8d4bebf947727368f0851539414b9f1b08e4e00db58f19eef544683f4745438fa013a6a67adb5a55eaa997585c5fb3219b317454bdf386e59c1e7aaa36f01d570557860196ae250be013b7212cbb4c1e2bf9a765d6327e3d1fb802d643ac3a935ed3f9f8edabea735de32d769b2a958cf97c5d3be7efb9ebf33b0cc53993e341e9d0766e6242d90adc36891d65d44264fa651d1d0aefb8c8e3e86cf168f3ad839abe7be1feac48c13a41dda36f1a9e2b590fa5e75f4959078abc875c7d089976bb35b6ed236d93ec3a0a3587a281e7d0a69eaa85993fbc34a655ffcdb5dcbd655a923c66614afd44ffa0cbd1a2fd151e5e843e07d2cb8791fb67fb0ca75f71e176997f6b00bc5898e9a0c7df2eb8fe7e8ddc773d48c65e0c8cd25a5b1f3b279974e583366bf12cfeb28af33657d96f9038f4541b7034319b1e8def33575584a90ca743dd1511ecbd33ae738825438ba8d4b1fcfd149144a75da62dbabc4075247e928de57e1791de51be5e82ca0841d6c39651056b6c37ba3a17c6ec6f851795a47c5ff9b33264c47470d47a536f9608ecaf51f61c7f8b766e41196ddcc18001d1ff81abc4847b55d6e0a96a11d97a19d2f78dd659ab56ba0606083b0b5f37d75d41efb40fcdbb11dd35160573e352c68fec0f901a43a3a1f685f62cfaecbcece97bc8745e7c3f1051e735cbf191de583291d9db3ff233d1dcd86a366fe0b16d8ccfc3e62bb62a9cd6b7fab5a3a2fc453531d9d035c1586de3a86e21115e429b45e2e9585aded894a483cda311ccd818eaef3cdf43dfec0d2dae61d532666b53513af9bfcf6e2f3aa96ce05be7eb65d7741d7830d306371b9eb94c0c6a17e4d2279bf3ead555647db99c7a31de1684154ac9d4d7951cdcc7fb16762565b5bb4a3b24aa6ff54f172f0d1b33a1af1e53c7bfcbaa053d1a43bd783623c5b2c798656c5cb9d59f3c5c4a339d0d1062e498cdcc0cc46a14864b0053656828acba2229f8c496bfd39f0bc8e725dd7823590925ae78663a8f172c38a61464ff978d67fe31e6fcee86816f1e896d3d12cb3c8c332dd98de52d1d46df1424c369512dd689ffbcbc197cf8e33ba518efa19571dfffe9a51e250e7f15ecae7770ffc5eca311f3a2a5e78863a6a6047785cb8d907d8f26dbd9a8bf7c5a003d5d1e7219eed12d7c27bde9498ca32549ebe5d7eb00544783caba319c4a3b497bd8ebad2a0aa99772075d5b65b0b91abb4c0d56ccfeab340383aa502aaa3f7416579cefdca60d865b32e6e6829122ff7e1117eb428bf8b75d4e44ef99ef1687c26876e2416b768dbace7643db86fff64bd0c7480a5642ca53a3a0b3c92a77c2fbca742d050ae72f49097eb20cfe2fa444725026b67178f52c38d21c816d876e38c6cae27ab0352f79d90e6ca7a16c2d1d5198eaa8e268047500c7d0566c619af39dd149d44b30ae763dbd13ee3444769d1b431cd77e4f4e2d17c647684066dbad584a9cb37aead57d45573f13e8be77554eabad3accf322bd8ac9b95e0e58adfb8153454a2a9ada7e6b1d07e5247ade79b45ff284854bc273a9a8b5c0866b69a1be74165976d121a7c8e25aabf7ddf5f19cfeb68e8a7ff7ee043f16cdbbe140ccb765c49d1a9f816bf9f1e2d734f4777b3d051a8e0b128782e74d497cbd8792524e7e533406d8672553c8ce775140bdfb39e333340431c275e6e2778b6d495d8f2eeb9dcb1d3f1a8d5d10ce2512ce749470d2432df72d128345d5bafe937e53565e9e378413cbac5df306200927afec87bb966854defd9524bbcdcede7c785ab8e3e06ae72ddf5bad01e374dfd6fc6076a2edec7410734f5c4a98e1af02ead839fed63bd5cdf7e2b1a7a42bf5f927ffd817834231d35bd2ff9d15103be70f9b26dff6dc7d48360d67352257d0474c0d10c47efebe8379b4dc4bbbc1794078fa819467988364661bcee73b03ada9ed2d10cda8c8c8e0a47f7f2a4a306b82ccad0b27904ef5c8f8c89b9b2efc5cd2744471792beec03fda3df6a65666880c9a4e73594cc883e3f974ab4b0f2122fd7c1c4a366c64742471fed4b7d18a98c333a121d3d96fa2177b30b01a534c7d6cfedb8362358d65cbc0fe3791de59cd5c1ef09b332b5446f7ebc377685a19e5926f702c0cbb386191d351ccd564771d1e828ede62f2b9fe97571b3fca04455e7a91896a2ce88b987e774d4ac3594f5397e140c4345fdbcdf808b5489bddc03798e76e6f1f9658bb6c9b61574543cce2c74d4b4eb6e0a4773d8c32d2cdda13d3b769779ddb5f5f29168a9b27406f6599ae6e8948e8a7eac667d8e1f5412356e5083d95b667c51cde9a6d1d03013ede5e0f5848e9e0a5732d351decb9f8e1a480c5a70ebc11896baf8028f420e544580e168f2e99bd551793ebf4589d9756de39918d815f5d90c25c44d37a36a3ef0cd444799275ef34b91968e9a78348f3a6acfef80eb6ebe375f0a4bed6c353c22bf1e87c24175d4403cfa3d6a04b5b15e6e2dfee62464189b739f37091d6d892a67c0d1fcc6a301128d6ebb5667e166dbaf0eb94b63d5d20984a385e458bfefa8a33ce65b5a084f85f17243f630dae7e6fc5eaedf6b4247c9ac7298918e4aedb099571d35e06b1a9b3600d3a22e6566630d6ed3f8bbf5f83d0e8909966638facd74d4e6c5aa863952a62d37f672eb580cf916e6c7948eeed055363a0a4583fceaa83d4b3332c4e53fdda61bf7344213e0fb8d9d7918a2a3bb4fe9289d42c673f8dff9faeb58a2855002d6cbf57514029de0eaeb9f93a978b42afbcd80a37c2dfcec48ad93631db5e7d9763950a5bebc25bb36a2cdc5db512d35784e47b9475bf3eef3f3c0b42c8a868691f3bb092ff7403474f52deb08e5414761f933e8a801ed61c970936ad872b3172402d9b99fcbed3be2391d15bb90f539be17786cd6260c3c4c7ab9f24dc18df77ec3de6d8eb25847afe6cd159f4a3cbaf83974d49eeba69bef070df6b1bbb93f80cad2e774148fbeaa8e720b3b1207791e4a4cb411bc5c6860070b6f9d35cb37a6764be86867beed53e16857387a4d9dfceba8d34dbf7a534beace2df71976f290e7255bd0016fd213e38cbeaa8e1a86ba11a3d64a78b9bc8fadb042c49b8e70c395a978744e3d484d479bc2d14fa0a3562f3aae1f865a7ce346374049eed2371fc52bbeee353dd13f6ad660cefa1cd387e9f50c2b9fd9f9a1b1978b802d792a52c8e024f16835a9a3f3ce904c271e95bb7b2d2cfd043aeacff7c48dffe74b5a77a31bcc1a58df7b142f1d4031f944de1baf7bf8f574945b5c9ff4a988975b99f087c6611db4371fe5861ac978340b8ed2a26868f373f8bafe8c5b61b4172e879586cc8ca3efcc52d1d1ce933abafcd574144aa2a1ada4971b72e74af4b31ad6e37e3bc4d7bdc95a47a92b0c157ca67617bea6133f03fc88167cbfe93537bf6f764aa3a34fc5a3f4c5e251aa9bd543271a3a594d091a0074938697eb30a3a39579570b4b4d472b9f8ba3076e0df003f7ceade3e447f17ef9116f8f9447fde97814889b599f637a00e33fc5f9c2925e2e34b0889d349f82a48e4a7475356f968194e251aba3e95dd547c0ac2e0ce0ee1237c21824e1ebd6f764e9b3f1e8c1d7f17525aea9f376d01420d1d0f3e0e5ca33d14977b60547d33a0a95f9b64f4d47af3e9b8efaf199766ea9bc5be3a6f37ba4bedb7a492ea9af06d1d127e35120fa22e3b1b865d6b30e99145c16147f8d0d2c059f2ac5e3e54047433c9aee957d0cb015f79116e9b76769198b9fadbe793bbe8b8e9a1eb7094bc46f6a4e2c2c70257d2f8aaa131da51ddac848479b128f5e7dc6e79aeae2dbd87bc463f17fb6fc18a4e3a7f36160845fae37554a62b6cde80bc6a3a263d549bbaad43bc7618c99c9ed1ada11d38544be491dddc82c1ebda2396b87bc6092df885b74c2bbf6b306df3e3e620b2f61331a657dde69c370f4291d85cae7d751666a4c544cbcdca5447fe8efc9ccd17491d451894733d151cbd14faaa306742a0a6ab333d03e35d0b61748847a37bdaeb5bfd606fcc42f99ef9ef7ef7174ba7fb4fcd9e351ee513be4b3765eae1b6566afae15b231bfc371a3ec7554aef713eba8012ea21f8121d14a1879740060721727013bb00603f89263cb9fd35113a5677d8e6f011e89cf198fca06c2a5e0e522d8b9ddef369255f6dd9e8a4771beed53e3e806553eb3bad09168a91bc970c8377ea4606b3a176f34127e6ee07ad6e7fa4e25f04c3c8ae5cf1c8f728f31a9a1bc371949c03b522fbfe31839a91b36933a4a738e664b514737deef2a3f02bc8b45373f0948ee991b75bf28116acf7d0f753ac361d667f98ed7bf4fbb4fb6eb9e7f5e1d25b3ea7677624171c257d3dbf2bea358a90ac5643cca34dff629eae8c667d651036eb8353c4ce6ecb0f637b5e8c68ce7b50cbdfcec57f8e4d5ef8bb63c118f7e5e8e0251c3b505daeb38e0bdb00e9ae9177f4f2fd71f31a24e42472bf3d608297154a2d1cfaea32e137bf0806893b6fc7ddce17a74865b7896f5f9bd2fa8fe8c8ec2e71caf6b3474e25d9a950a2751a9d4c9edf79f0922b54027198fd29c6b72a4c6d12fa0a3b68fb412bc20dea2b1bba2e83cba882eb33eb777bf76d1d1a7e2d1cfa9a3d0e43d4c305462eed8e2ae28dc07cc79a605bace818e5684a557ef7fb5ef0f89cab67dbeec3196e42eee432bfa11fde4e6bcb59f3c11dbb09df5f5cc71e5636a27fb07bf828e32f0cd240e059c282a026ff3cdc7cc724aeaa8ed1f9d7334708a3afae9c6eb3e0ce67806788b4ea25fb846b736a7606bded94a740b9dcfd34f6338fa643c0a9f2d9f91e564dc170934d5b2bb29df7dd03cc41cc5a39fb8657e1a660d70578ed155348efc8a8dd89e6fbd2c035887fdcfc252e168e3291d45a9a5b23ec7b9aee758ea9c8b60d1b1f8bc3137f8eea334d41ead9e9b78f48be8a881c9dd438b70006bd18d784bd63fb2b9786f5fbeeea44334c0dee72897e774d4cc07cafa1ce7b89a065527ebe1dad57e435d0b7645970f5cef982b937894ca19c6a31b94bb1582df023e8e7e477fecbcb51635d8b3144b2167dccb11fd839fa2bde92be92896c33d33300c4d68e831e3c766dbc0d5443cba9b653cca7366f6cd33601b7ad1bfa1f7858fc4330aebc5b6782e3581065f477fa3dbacafe879508da3afa1a3b4c951e0815d8f7b6fa2a8e20b7da097eb80ad493c0a94a58eceaeccfe790187d0a73f54e76d97cbdef6b135fc6a6ba6b5f7d97c3408cc7c0d153a118c693dba8b723f424974b4fa64bbeef1e758c79bf6b0135828f7e17ce2e58a1fd49ed4b61f0780691dcd2e1efd2a3a8a845b68679e997504c0b684d97563fd7aa5b42fcfc023232e2566add31177b1c06675b686bcbf94bdb4a235a861ceb30f538d169e6cd73de60f7fbae78565613de894b1c4cb9df487c2c7b5e526213a7a9d031d6d7e158e0a436b38991d51e2267aaf8977b0e846dd0b0fb7712aa6a03a2e6359b8b92471d00e2762219b217297f7618baf20d7b94d9fd7d1fc7394ef84a1614d081056ac73dc16c0355e0fab737f2c44479b398847afc5d75d7afb7eb206ace34f5cc19ee014ec1349a774e3eeb3f84d5d5e73edba64f87a4107f2f7886fa98a1d4189cab478bf0f950f705522da5e5489aaf38ea6fe48c8f5553eb38ecaf9df612b5edfb72635e57a504d935f4e7cde8cdaee4447af923a3a6f0f5e7a1cfdfc3a0a2df17257ec1cb496a85e0f87b8225eee6518752d357351fcd71a3460195be2cdd66997b60171f921ef457ed5a05361708176a1285aba864bd13a5ecc7b561f76f50dfafda48ed638c7a3a68493db933521accf9bd050339a211b0db54707aa247474ee79d6aaa30e788115b88d12f30284632da8c12656a24dae1bff8416e55e3719a1881d51d43dba7928fa17561f4aadbd277e6f45d83dc625e7f9da7c83a7b2c79cf6969a9ea5a77574de35f93e0e5493736fc699fe6ac2d044ff8a4421eb1fdf5234c1ac8ecebb7d3a1c95e7f193eb285ee21addcb23060dd1d4bba816d5693dda8aa4a6e66de1dd6f17f3d82cda7e14ba44ae177c2ddef00d47a635976f457f17e900084b6e4f0026770e72b433ef38888fc1b33a9a5b8ef23e9600d8df0951d45a6885b7d76566a665da439d0f1d351cfddc3a0a3b4f65118b1ad16ed48cf6608c877c3d1999cd6d3a918874479e901b51d7253e164e2e2639487e941275cd7a38b8cc3bd17e94d3751479ed33eaa8616868cdb35ecc9678b97144210ccd54430d44472b091d9d7bee8972741ec01decc3667448ab7c2c1ed42d6fd21575a49edc7cb84d9ff685c35d3e90fb3316cf778177e497d5a88551d657f210a48679321ecd2347e9008b93f9385433e3fc265721b1c9878efa7b18f9d1519357e93b00b6e9366a4747d171d489ba746afaf667bd57dae74bd1db4d79420adc140fb9c63762b9d5651ad1090e90b3be8efbe0c667d351362b84c6eb2af1d8cc379b3094cca8fa1cac84979f78f4bb70d45f31e0192c401f6ad1a9e911359f494457c345beb519727669cce7bc8e5d3be67791eb7e9cd2a5d4fb8017a2c777595fc32c9ed3d179d7e47b6f484dd89428c33354bc5c3323346e61c76eb277344bc8f310eb68c66d465f345fde33577e829568212af00e16f098cc7a219b74e49e1b28898ada3849e2509faf517c31ab46b00d0794b351bccfe968be384a8b12ebc7758a68e89dc4a1f1f9cb3dc80943e5dc3a937854de67188fd24dd6659115602b5a8c96a262b41cad44ab93be15c090eb1e8b6e4ca159d93d1ea956c57ebefa613e938e5257a2fbed106308436f4543e34c2f3435ef256bf0c144479da6ce877438ca7bc2d14f9ec5fcedc043615d8faf70e4e675639c3b87765d0650abacb92d276ed027d151d1d06a18f365bddcbba4972b0c5dcf0f43435baed351d7c63b1f526cd77d747d94ef8568c43ff8ca66c5f09e051d8775d8b0cdb952ce69f071c8256ccff5be8ee6e4b967163f362e47de9fd6505cceba3ff4def9ee26e251501dcd03a00e239bc7d5b7faf39af379cd0ad17c6f9c447e20f168623cf1033a9a0b8e1a868a26853145752c0943e31e67ebe5e62cdb806b278a7534a378940aaaa349f05534223f829ef66977924f3b5f11e8cc593fa3a379981160563ec372bc02b719bf98e86d61ca6ee4fc13e79c0f1dbd511d4d827f4425da76fe97f8bceb2e06e55dc8f5fae0128f2694f381792f993ffd52cbb5272b1a99b563931acabd3cb5144d60e2511e671d8f5243753409e4a8cc93ec2abed6e726ce9da3f72331dd2a745f47df6775ce97834ecd9a104143797f86a117213b5cdee0722f64ada354551d4da2873d70aa63e783fb8c651c710e47174dc08d198ecee868b61c351aca8781a15493ba2fe9e51ec9b7bdd7eefb7de1722fc43a3a778edb94da758baaa34970ab47ee89c16e18bdc0ed7c7bbacfeb6872a5890f3fb74b894327bd2b0758e01b8ecf87af456173cad0907b21d6d10c39aa3a3a01347adc8b4cfb2277d88ff9e3bbd91587f3066e24731ee64947c58f5d9f7090ea86a1092ff748f89b4b2fd7614647e7d632e5e8fb002bbd1e37611997fcdcb483302e30bf981e35ff40bb6e46f9754543db93fe1404da9af272ab79d6507b86d3f168863acab96e0ff9684019f6a96c677bbb3c653b933c0179033490e1278e7afddec0fc75afde10fe60e46df9db1bf5ceacfdc1b35f255a488cbc152fb733a5a197796d299a203f3acab99bc791256087afc0e408acbbe789d7f23392eedeb96e41176ee1b677debba033b875afde25ee86f7e6853bbd1ff80bfe42ff23cf0d179333b6c51b194f8d58680943739d6dd120198f4a4d9da58e2a47a70011f5f88677b0243a05f26c6596f3ea39d85c4e5bb67f74dad79d8e476bbd9fb04ae7f081318d69719bccd1a69a68e87a627e68cbccfdcbb2e45e06ee4d74543c2bd5d1dc804abd5f50e43103b6b04b0b599fcfe340c00ac2bd787471128fc276efaa37ee5de33954e1c3ae0470927dd36ae8364793989e76a8f1582ef27cc1ad95e6d74dabaa8ee607d1a07763b25d9af5d6a8c1395e69e3391d8d86e207ffeefd310af6511c85065072dd87d938d4ac94f539187ae0d71cf53abaa03a9a1f006333f4b6f026ed657d3e8fc3eae8c5c33a2aca39c26b8c7aff8802ec1b8ed287c4a3589ecabe0986a189b65cfe3c0c3df06b77ab8ee60f7cddfbd73d65b04cdbb8cae7791d4f3fd1514ed4f178047fa0871bb06bafc6af34f1113a6a56d7498ec932eba97314d688f85c1a6acf3fa1a36e4deff990d258c02de5e82ca0d1fbcb364b3603ef88afd6ca6bfbc6241e9dac1601d5de2deef249c80a8e4055d33ffafe1ca59a284e75260e4d7ab9a7627d2286ba7894296b1de53be5e87d44b5de1d37a1445b66360694b892b7998d0eb18ed6e279007dacf5d692edbaa2a30b1fa3a3b4399553a1c6f5a95c7fa734353be733c0e82834b38e47795b397a1fd0a23f58a213b36e9ab1a92b3edb23f3bbe816eb66ad992c30894779071a38825fb029d1f462729c11d5a8fdfef1a8ed51ae2418b94f379418976bd754dfcda6945e0f1b8f56621dcdcad7dd548ede07aec001d5cd2ac1f16c8d163db08ab4f0e2007fe24966e719eb68af02a2a0b06eace9fe511ebb9ec9f7d45193390c3b9395ff4c06719af27285a1edac4ae90dd775491b588ee3d1c2bcdb2b47df0fb0ddab9ad1a5783c59f95bead49bd955d670241afaecdae0ef07a3a3b0053bbdf5de0656c29a1ad33a2ad7d17eef7854a2f6ed092311b8eeda921d68517cdeb9e75ee601261e4de8687bdeed95a3ef07bca0526f93b66dbbe42447d685a84377f21b18f7aac9f5dab2384fa8f115fee9d5f0d1bc80efada3e24bb47075d2762b65560d639d0dcca83f98bbb5251f48eaa8c4a373b7ee2b47df1338ecd5b9627ddc93498e0f51a882d30b51af1a8c9e5a0dea23003b78057fe12feee0b6f8dc75dc92d74f6cf0d0feb5766fabb7dddb91f79b304cff0ca406d8e16e829107335eee2247d0cc6bdfd5b35737158fce9f2b3e3d8ee66f3590ec810b3ddfc6c1d7b41e5a75a101e89e4818c05af6ab06e345f48ff8dba3de6eaf69fe3af4f67afb09eb807ff50eedfbb377388312b6267987a9261a7a93c8392f5e2ec36765e8bd7834431dfd9cb1c2fb02aa933547f02839b68d8fb1d46be187ce2179f42cb7e10a0a78d56bf78ee0175ea3bce057ef982ecd5ff7e2055eea75f04a1437e5b99a7675f4ce8481c6cbc54e82b1a77c83e5accbe82d48c6a3f20c284773865e77d21209241eafef57e89df44e7b03cc45f614d8926874137ff516a21e9ee08a79c162af0045f7debca847ebbd4558c4334cd5d7a5ba7814779399b5b62d779c1853245eee2457e7e7c4948e66cbd14f1ad1bf2f7a4bbde2640eb2b0b46a14024fe9bcb70c900f7d30edbad10646bd955e77d2be3c9d87e17dfa474d4b11af25cf44bcdc71220eed4a79353e37436d3c5a99e86896f1a8eae84390486e559eb3787c11209df44ad0051b6dc9139a83dc0ca17f14dbbd32ee430f4feda7efdeae4b75f16913fcb35e6e322e5da4853cafbdf152888e3673a2a3cad107000cbbd4e26698e10d8d3ef6a1ef33be539d7e4fda7bb3423c5ef79cb6a20d58832e9f44a3691d4dbf7f144ad8a2bd89469ab65c894c6386c2b2d46db5cfaea106a2a3571a8fe617740b03934f409e3eb71269b5cf7432692331f32229638f77a2a36ed57a3c835bacf7a3f7d451d1d062b2b7ceb6e56e4dbc5c58e67ab225e93323473aaaf1e883e02bab51bb86a5d8a773bce031255a2a85a5c56c73f2c4e3754547e3cfcefa1114f17292733acd78d48e5c4e78f9d6cb2d4d5ad0ccda855fa72fcfe828ed651d8f625975f43140cdf4288a8fdbebf77b2dd8369f895f7703f10a477c8985fba3783f0eb33aea3f3da24bdc84becb0398a68e52cbc4a1092f779f2b584a78b9661ec2663edabcd380e8e815df65ada3dc568e3e06ec6364fa37fa83fe70e2dd9975a827edbd7c1d5670cae40c13f168e2538947615bbeb9c61fb89e5e3c2a1a793295efc1cc4c5d9b30940d836fbf8697ebafa84a15dece3a1ee503e5e86330de2154fb2318f7cff86ee2e1418971e2e3722f3927eb63f1988eba7814413c81abfe79ff220d1d3599c2923d4ec6cb4dc69d4643bfdaa8d2691dc5b9ef728a1cd578f44140030e7b551c99888ff693d918f088a349af8c8958e983f34bfbf378201e9dee1fc593fe255df67fc0f6dbe251bee67a92a136c7c2cec4ab859268e8ddd7f172fd55570d47e37834ab39deaaa38f02cc48f438370f2c27e7790b2baa8919cdc7d8c92297fdd33aeacfad8e4b447486fdd7eba8c929cf09fe99b65c7976135e2e37932d475f05d33acadbf36eaff1e8fb0249183a350a9d5ac96c3d5816ce4e9ed2032c7dfcaa30b0051233e3a8ffb3ff0b17706447d82f444d289abfce8e56a0d8bfc22db88257b6b732d17a320f91f5721bc971ba5c99e453fa4ab0f1e84447b3e2a8eae803804634805bbc979f9e8fe824641b3039f07075c2526cf3f6476ba9f1c6e9160efbe35e64feba57ff1a8fc37bf9ee86aefbbfedfbfa6b8e61b28027194afbb49d6cbb353d50bcc35f725d2f89c19b4e47c5b75f578ee609e217aec283ed1f7c1866905aeb76b23229d5f89633cac980652c26ac234a640ee27d28bebee599693a979f6dcb4d8c21a23a986cfe5fcecbf5571fc7a35233b5338d47331fd3963788a7f86816312c7337e8a568e92db6c2138b80ab8059f43d302439cabda931f57528beb6dd99caf264ce78b9d32d4758c4d58fbfdeb4010d3c873b24f792ff0ff1d0fcdfff4357fd7ffaff12f7ffd26aff563eb7bf097fddfbc767faa7168f5e2947e701346873128dd13e3727bac2fbb495450659d3b23cb1f08813b9f55fafa368c6dd26b221da55216a53768b7e7f052f37da80083603faa3f8dd9d7074ad5fe957fbeb3cc0bdc96f92a0476b40d5d1ac60b2914de2035a4ce6bc3319903e7e554d3a4af6bdcce8e8c1eb74d4f62f25195a130d6d27bd5c2c498d9483d93fef07b9b7bb128fb6241edd67cc301e551d7d05a658da4aae766bc7f47e304b45f1a6fa47df1e8f62971a935c9c6e3e68b2dd82c7128566380af263408bbc271c2dd878745de3d1cf05333f2b31d6e892a349af0c2cd398e975fb7d1de828d93ffa761da523ae27f3944289b6a746d28fcdeaac5fc1cb7da61c8c8eae65aea31a8fbe12a29ef549264f3ee29bc95a44b443e3d95cbcef89591d7d5b3c4a65aa26cfdeae4691188b265eef2616bf6a5bee5449181dbd353a2a314cb67d2fcad157613adf2e1f52834e27df61e7e346f1a6198fd271721d2537639ba6d78ff99d3cda5786e5e84ee63aaaf1e81b203e61338c2e82069f4f3293196dc3d247cd88492f1e15bfea841371a619879bd450f172ef922337be362c47d7b28e47815447df02a089d7272ced26a3343effa8bec3b4e25193592dd952c4fbb4905ca7c578b9126b7f1386fa7834d6d1f9e7aea7c651d5d13701cbc9f91ed84a8e5c850a163e624c431af12834a0225e6dc2cba52eddf061f21772a5c5f7bf9afc60261e6dcfbbbdea683e60c700c61ce5b17882c78197765debdbf76f5d797b3c8ac0b5592f97b6934f866d296a7d1f0db5d73c1d8fce3dff5075342fb023e226734b812b533d899df7cfeff3f67894f692b1b41d39bf0089fe23a96d8eb1f31dda72a74a258e47cdbc7ed5d1cf0caa737d922350a2b82ab68365c70ebe733b28959f8a4779ef698e9a7620daa6c4ac186a4dcf75118676e85b29a82f87381ee52a2ea98e7e6e50173b9cc845262c9dac985ba7dfefbbcabcb0726a8ef7743c2a1c7de2e9b22b9f35a7e2d0d3e45a7196a15bdfcdcbf5253189472f85a3ed79b74f8da395f9eb07c57df0118d276da2e26fae27c6344c79c3ef70ec5632d7ceac8ed2fae31c85069895951271e8f4f8633b27a4cd95efc8d0a976dd9dec74940fa8091f3a6eedeb028f92798dd0649a8d79495d6ef23b8ee2a5a9f3988e47a9fd588608334f677a4c9fc98a323d73473cf56f9bef8af6f9c6c5a37804c52c7554399a16b09ccc4800c495c42a45664df07b991dd242b2c7e79e8eb61fd651de973ae5f7541cba4337335eeeb178b999e526cd1a3c9608c6eaa8d4b81dd5d1af01519d64ff28495c3ae99731ebe7f26bf6fa82e326decfc6a30feb2834689b6f93df30f3faf4b3004ddafe6e6db94950cd640cb6e38ccaaaa35f07bcc57789fed1e3a496f2259dbccf58fb7975940e24c66c24677f4a3cdd98f672e5fb6f1985264a604c63dae2a6c4a365d5d1af031e731728cecc60e659961239f47a347e8fb1f6f3c5a3f2d958bcd884429a96e8e9f67d6c7fcfb6dca93200ec60113baaa35f0d26a74862ce774b7cca646eda632cd1ab32f43d85797414c1ac2c951ca3483bb33df450f9ae6db949581d35c8341e158eaa8ea60eb332caa47d88ea549d1a11501196a69c63e4e5f128ed737dfa8ecbefd767bcdce3efdb969b848947b3d7513aa62be568faa09de43c69bb9e58cc02046e70ca99805eaaa346e3677cda45be99fe84e13bb7e526617454a2d171b6f1a8eae87b81af936b359999d213ff171a584a3717efcbe251931d77fa6e33f1de4c5b2eaa971b908f7854f330bc1fcc6c94891e518bdac95c64c2d21495f4291d653fce884d7697e9f109475498f57269fc9556277c1b92f12814e7d7b234381a8dfa1b74d5df84b9b340289e87c9cc30e98771bda589559dc6584aaf76e4c448c37bf1e882d1459b376cbaed6899d767bcdcf3ac5680cb2726f1281f66c3515cc07abfd6fbd3afe34fbc7cdbbe140f816adc9dcc80b13d8e271365b5b5744ae30393fd24b33a2abcab899a46b32d45b834ebe54ad49c7a8bf367c6241ee5ddd7c4846fe328ace31ad4a211132d501757f0076c3ebcc289e26dc0d5244bb16d18132cdec7022ebf66afb3a09bc48a6e33f12877b89a9c87637f7fcfcb9533fb76f3439fc3241e158e763e92a3786218497655743aa6a69937050db81396d6a28daccbe5ab810e002633d3ec6cd2c4985e8952b7f82285a32c24bce87b3acaf5692f57ee7a7ba675b73c3dfb45613089473f4647a3111cc018d6608cd7780735792f767f8b36fadbee73bec25ff2cd81ffddbb8dfffe6eb06b5c2762095e4bb6c28ac66dbf9d1dc9751f66e2d12a359359898c86cec656d6cbd538f41e2446187b1d6d7f0447453db7f86a16fd1de168a3bf3bfb39dcd26dd625f475206a399ef8a254c312df26c6075e7385de38bbf4311dc5ee6c3e3b68e2d2bd110bdadbf220a02171be8b470f5e331e6f6e1dddc0defd4f517cdda467147fde7f7c753fc5fcc0e5648b2994e8069a89f58d12797a5f87691d0df1282e9ab966945055b166f2db192ff7a3f2007f3e70575474fbc37474e5218e525bead9f5fb3d62c2d193accbe76b818ec4a79dc4a1a7d4a6e44a9e47a2a56fe82f7d48477199dac2d283094781a0389db545f4e14619fa38486a3f890332d4513972556af02edfeb79511d4d1fc21098f46d70956f9273be4d1eebd76be9fd7854eeade52def078e8a622e4db7ee9accfa1a873e05eed23a2d7c9c8ed29f7b6770675aade4ff7bd9255547df03dc98ac2eec575b3b9d7c8b655e7bad96cee8e831b7b9ced7f69b03979550bcdcc2ecdc16f1e34ee73bce7783e8d79e707443389a958eeec87d2a0226479239a88ebe07ec7a46c9f58d886f1223ef85c1c9d871ae3d4fc7a34dd1686f3b1dbdefe582e919ffc0b5dd3e2744470b529366168f724b62a2168d4dd6e6592f4b75f47d6032e42433044a1c1a4d46de9b9cf7d3333b5f8a291dad2533d39b7814dbb834ddff225eeecdc7adebf67921f1e89e70d4c6a3bc3befd66fd7516ae192bc8a72c7f668a6874e75f4bd40fbb49d9c0163329224b2a9ec03bc661ed24447b14c85644bbde8684162aa690d45ecbc5766a5af85848e5ecf3f6ef3edf1285fd2169d9a9c3513cf28feb5eae8bbc1cc009fea2d6df15a223399e94b2dcfbd4fafa36634021f24390a08c5690d0592a74ebddc1721118f76e6cf903c3747cfa18057389ebcfacdfe5e7fbf7fd03fecb7faede9efe4a5ad09ef06f15e3ac9510bd84ab6da519d4e704e0ef13aff8c06fda3fe71bf136d8aaf7b0aad6800a7fd6eff64660c4345bddc9723e8a8a9e9f0037414d6e00e495e87ee6fffb4bfd02f445bfd45f9bb34f9dcfc8531a63a0759310ddec552223b421d5bc991f766f4e0cb9e08a45e155ab04d85de1a2ff78bb809ddfe325d9abfd0954f56faab53631848743685f1c1df05211e15ffe48577248914e2d13157e994eb52ab2fd2cdf4771a8fbe37b09d9cf36956754aaeb646a7a2b42f18c58ba7f00baee0b65f32e3619cc7cc4476f51740dea4321f4f388acbd4b8df17ae781cb18e563e4647a7e3513ea26d683053955a74c04d98eaddd678f4fdc1c7dc4dcc005f9ece9e69fde117c41b78013db8ea9707d81fc0baddefb51dc350a375f35499dc49fe78071cbd5fa6fcaf89108f8a8e5e7fbc8ef22ed7ed98343bf3902b38cb51d5d1770602df627bc2523c0ae30e1ca88ca5e72347d8c21fb8398001899efeea55b13a60dac532dfb8674ab86a75948ec4cbbd7e6e6f8a697cb48e4e73149a7c67d60f303a2adf16602a5ba3eae847c064c84e8efdc1e5e49806db260bcf8d3c82753075eccd20128e5a0c7a54a15df677db8d8bc02eafbfe79a505f15d9c6a358342dfc2e1eb57de95373d154473f06d4c52227ee8b51bba4761a963e9d1d01075035b991acd73b862e14067d625ec608cfccf7261e159f29d296a2d78077a0488dcce2d14d139b041de52aad4ffd5a75f483402d574b0698f105c971ee124fde3daea5780263bce0c3b046b0d4c4677481ff1a3dc52b3a471a0ce40edfccdb97a370e035ea0847338947a141ebc6ab0af1282df2542f9aeae8c7812f85a5090e615922c7e49aa0dbfce87c7bbcc42be80d8666b458c06024757f09c7def33d1b9ccfff74291c784738dafe301d3de12b646468094e6109ae0717d1607049c5c1a5fcfd31f839f8657abea125bf294347fb473f0edce3e6245f0a8872622b99a18fb768f3b151bc7881bdc15574872357abe205fda02df9bb4e7dac0b47c7f413ffc0bedecfd74074b4221cfda0781457b0863fb12ef883e3c175bf617ab9fb6b3ce8afd9778dde0a14e4bbba03a877f48100a2df89ec9b632c2659892071113e3ed69e8f7b83fe086ee10057a035380b6df4d1486adf9b815554dcd7bc8ff34374b4f9713a3a0156e176f07b60a3d3c94c63beeb1ff7aaa823ad3381cd17989c5b2a512a4f65e014657df419e18619ef87a7b086d7b8dfdb4e8ecfc556ff27f485bd3dd8cafa2a3f1f4447af9c8e42913f34bfae7853ddc13f50136d5d34f3d3e010c6837f017415812cc15d4ecc4ea13a47c951dc50a2adc79e123e0e112b6c617f703ef80ba7a13d014b835b1c6ae6dcd761a2a3b44bf766593f87b7e5c0e69dc11d2ef4aa83355a1d547ad5e89f4195df989b4ef1368887bb9a1c696432932559cacc9587c7079af57c2716ed0e4c86f35be8e18ac9ae8b0cea1dbd127cebe3d10a2ecd3f46ebad1cc5b26957186cf09f818d7ca0a21ccd1a26e772b297845a128924471eb5e8e6a159657c4e093f96760db3f11c2b50606355606e05503888af6b7594365d3fc87c782b47dddad2e2ebaebbba991bcad1ecc12d2c26471bf035b593a3e069e721968a8e1612bfd90df1286c454dbac461d657f579117494ef6657437f09d2d051cbd176e028eaacc21c80afa7f3dd9aded2242bf982b66747f14eeb28ef4d3c64ee5141571c783d828ef21dafcf9fe3f4cd1c6d9bbf368fb9e528eda98ee603d89d1ec3207ed65416792ad3d6f4f332aba393f911619e9ae275e0ed2c75d4cdcea723de747794b75547f3023a128f37c1423ec656b2cd5dbe2f4d8d447a201ef5dff4a6c7782ae683d48f5e47e5ff0fd751c7515cc4257747b9a33a9a1f60997712734b1b727712398fa021dfdf4decc7e251e7eb667d2d9f19c2d18dac75141743f4a23a9a2720f056327b8ae9e74c664136e30527bda94fc6a3aaa36f001f0b47d7b3d251b623c3e8883a6efc0aafa98ee6093c9ecee2490758a0bd296ddd613f1fe68978b447edacafe433436abfcc7594ca217ae15bd5d17cc164b09919c3104d65b9dfe7ae9b99ff783c6a723b647d1d9f190c59eae8bd78744775346f80653a49664fa01d6a4cd935b4abfd3e1e8f0a472b2f3992e261e44147b11b7354753487b0f9b21371285fd042321399c9b602f4783c8a47d8c9fa1a3e332c47b38b471d3377a1a83a9a6750595898c807c7d7d3abadd122b6682b39c73b198faa8ebe0d19eba8fd4bc731475547730aa84ccf48c22e5593acb5eb0d27c73cecaa8ea685443cdac8609c9165241dd3b5ea68dec180a5644e2379724ea6c70b26f3096a3c9a1e621dddc95e47cd8c52d5d1fc82b7796b2a2fc32d7727238d705962d062c8aea2f1687a108e56ac8e36793d8331f59691bcebd68342c096ea689e11662a3920d098e376223ac2021f72c5b156e3d1f410eb68936fe69f279fae8e520d407534cfe07d2c2573a04083b6e2310ccba65dd730d5d4f51a8fa607892aae44472b34a657cc1e4a2d1eed985ad7ae82a93a9a6bc03257a6fa61f6b1e856fda623d7f7826513b76a3c9a1ea4649d8e461ccdbff59b39da32ad10c2d1a659cd40385a501dcd3b66f330d0012dd8310ccba17f94cff90e8f5547d30276859f68f38e65a1a34513bd483c5ae1031b8f165547f30fbe985e6bc2ac33c087c6cb75b69921434d8d47d382e128ed0a4fd733d1d182e1a8eae867038a5f9b6c6134bda5bc351967c4635c9acc98111d7dc12aa68ac74065e1e79e9de79d998e0a47ad8ef23e6bceb14f02c0e45c521333419113abded16e18df6975f478bebd2b92103f253f3a7ac075d5d1cf02d1cdbd29fb9c1626daca7b7c40db2ebfa0e8683bebb3fdcc301c151dcd453c4a07a4f9753f0d789f7ebb9c710e54e64dec84310da67f144a68d727c1a364c65ec5bcc8838e02a98e7e46508d9b93b9a468f21f358495d60376fda364329755e51bad79df003acd321ea5aaf18ec42bda501dfd8ca03a16c20a30b483ab669d60eedafe34df3f6afa53f9980fa10ae5fe08afa351d6e7fcf990ad8e0a275b96a357aaa39f13a292059777553cdb92cda6d2e1f3e478dd41ad7f31a84317cdaa69fbba9acffcc8361ee5c8cc9c501dfdcce06bda36de90e3a8f56f4d6fa91daf0bdbd8c3b5419f97618897cacfd721e8281532d4d1b6d3512891e6a9ff84c0652c4afd5a0bf52bed4b0cb33158e72bbc8602ae6105b6949faf878f4737f038073ada959a4275f413029ad8e2b1cbeb8917501f6c0db6073bb821ea79809ab7f38d88e3d1cdece35158a675d5d1cf0906be0510868e606457ec5ec3beae94960e7c3c2a3afa9afc8a29ea685b75f43383c783c660d7fab675fc81ebba1e707a88e3d10eddccbff59b75b46d6650b05dffd4eae8aeeae8e7035471846bfdc34193cef08c0edfbe474512128f5eb1594fa24927f36ffd668e162c470f1c47a98b4baaa39f0d687d5b3ea3bef67dbe0facafeb389a858e16983d479baaa39f13f40786d1066cbd7d4f8a87211cade0713e74d49c8beaa842310d1edb7e976c75d4c7a3d49273511d55286620fc28e643470d475547158a59083faf0d47b3e87bf13a0a5431f1a8eaa842f110ac8666a5a34d331e1b4baaa30ac5e3b07da359c5a31b7c69397aa5f1a842f118828e26b3d1bc14a971547554a178145e472bafc9819aa28e36cd9aecbca93aaa50ccc2ebe846f63a6ad6f3561d552866e1757423631dadd83ca23ace48a1b887a0a3c955985f8ad4385ae186eaa842f130628eaecebfed5b390a45ee598e36cdd1b18b4baaa30ac52c849f5796a3af60c79b7377da5ce6464703475547158a5964c9519785d5ea684b7554a17818f9d1516832aa8e2a14b3c892a32e0b6baca3656aab8e2a14b3a026556cffe82b142ce578b4ac3aaa50dc8730b492a1afbb2c67b045d7aaa30ac563703d2f82576cfb765fd7ae3b5a81a2d3515a571d552866117cdd4cda75db0c720627c251d55185e211b8918082cdf9b77db38ea2e168d0513e17ceaa8e2a143388db8c5eb12247ba3acadbb4a03aaa50ccc2664a311c3d9e7fdb1474f43ca1a3771ca98e2a14b3c8918ede51557554a19885cd0a989d8eda78148f692c7f6f5547158afbb0d9750d476bf36ffb661d6df096d151da3519cfe8b7ae11ac50dc072ef976dda3f9b77db38edef0add5d125c351b3d6e16b7a69158aaf8da0a35970941678cde828ef598e76e9467554a198457e7494b695a30ac57d64aca3b79378942ba2a8ca51856206b49e171de50ad7351e55286641ed0c75d4b611897eaeab8e2a148f811a997274cbc6a16d8d47158ac790a98e9e98d5da443f1baaa30ac563083a6a665bcf8b3773f4c670d4e928d5b0a3f1a842711fd9eaa859adcde9281d604b7554a1b88fa0a37c38ffb669ea289400341e5528ee232ff128ede3aaeaa842711fc28ecce351be313a2abeee58e351856216d8c954472bd0101dbd91d73e6d01a88e2a14b3609f171033c8af4b37d8e296c4a355da161d2d8892665e1e0a45de10ebe8cefcdbbe5d47859507760ca0e1684b7554a1b88fa0a3d49a7fdb3475942f794d7554a1b88fa0a35c9d7fdbb474d4c4a35ce535d55185e23eb0901b1dbd551d5528ee83d7b28b47b180453ac055f1b7b75547158a87c177d9e928ae620196e56f51e35185e231048e66118f02d06faed26fdad27854a1780cd9ea28ef887e3a1dbde68eeaa842711f31473388474537778c8e6281b671916baaa30ac57de44547b1cb35d55185e2e037346011cf2618ecd99180ff0ef6279fc11dbc4855d3d351aea88e2abe3384973bb0832318c1100658c73bfc85777427ef1706079ea38738a433bc835ff2dd3ef46120bfed405db6dc7a6cbfa9e9e82a80e86883f6544715df0fd11007d0c331fc15d6ede2301ac0d40a690fc7a3d106f5f9047685c757c2e63efd81fafd7da7a0a3b77c41268be78ee868035039aaf85e8053dcc76bb8b2288842eedfc7a065183a68f3d943df0ab7ddd6c2545c8b46d3fb7fb38eb66833dac592f171a35ddae4737e45cb9542f1792191e56df40f56a1fcf86b7064390a51e9e9dfc1aea8f1faf4fe5fcf51241c0c8e071dfa39e8f2a2c1e084cb83d3c1020ef015595b148acf0938949872fbe9dfb01b53df647efa77d190af10a63f7b2d47f9047fc1df4161b028581a1485a1cb8395c1eaa03458169ffc17ffc8bae4148a8f019ec2809e51251f8f369feb7b41e6abd9d6a3d772140e449979501ee21086d44783210fa3616fd84716cdee645d720ac5c7005ab8019169cb7dfc351c188e0e87c3d113bf93efe80cebb37c7f35476bb08d67bddde1d9f01cfe195e0c2f8717f00f5c0f7f0c7f8a7fbe83aaa38a6f0228f3996b33a27389271fc4f097e5e8d570fcc82f3a6e0f7c069bb37ef3ab39ba269a3c185e0f6f86bf07a7fdcaf0cff09fe1359c0dff1dfe85817ca73aaaf8269078b487e750162dbd855518e1011e4ef7bcc86fd0fabad7b438f37915d67101bad0157ed7642fa7e9c5a35033ffd3317701b0ecc719b54d3e239755497554f15d308947a10e2d18e32f51c39e78af233cc375d832afe1ade128148777ce86ba0912e537b7f08beea24134745168baf1a8f99fcad81aae0d2bc3ea707db831ac445bd8e26bfb7d2deb9253283e06743bdbae0b0de1aaf1604778271eec5fb81a6e5a5fb706056bff156ecaf77c126d4cef0b385d1d95fae378581f6e0db7873bc3461f86bbc3e6706fb88fa7aaa38aef03a3a3b3e30e1c84abd56803ead1c6d08e05eced0f0f8d0dd5d93ed0785f69eae81a0cf06ed81ab6a9cac700dca413dae4faf068780cbf60a4f1a8e2bb4038dac31533e2f6f1179fbb7874d879fa77a2bf1be9e9a86d855a1eca3f2e0fda031c0e07e36157fe9ed86faeb22e3985e2638087d0119ff66f18cf174605e215acc2a6f8b4fbb03b3cb5beee42ffdcda1db8c50debf74e01c7f2f920ad71467080a3e89f61a1ff6bb8385c1a1687cbc315f9bb3a5c359fa3eaa8e21b011ad128da305e2c9ec3020cfaa3fea857157e4654123ed6f86a58b2beeed170843f8c0d03e8c366afda1fc1a6582de7010b1e98fdf25a8e0adbeff07a581e617431827eb35f1d5e0d968757c3ab11e1b57cd7cfbadc148abc001a2e1ee55fa367c6023e84b78da937eb417185b7b86bf319dd6191efb22e0f85227ff0fda3bbf4e1ebbd98bca1dce40efdb6f98cbae67dd6a5a150e40fe0d69228c087af6d283aba4963d1cf92e5685db4b4f196bd29145f137ce0395a9a7fdb37eba8591bb8ca159ba73e12962a47158a7be0365d094717687ffe6ddfca516cd38df0f3c4ae3f7a221c3dcfba34148afc4174b462397a30ffb66fd651e0bae568d5aecb54c772d6a5a150e40fa2a3c251ecd003f98a9ec35b390a28da59370a4a27d8c11660d6a5a150e40fbc6b7c5d2cce8e217a09decc5132593b8d8e0a478b00749475692814f9031d53d37094c7f36ffbe676dd32aeca91eb12959e608936497d5d85e21ef8d071340b1de51e6d62cbc5a4dca5df7c9975692814f90376e93a2b1de52aefd06fbae11b5a975aa2f49af52c148aaf0e5c741ccd424769114bd8114fb7cd7b720645568e2a14f790a58ed2016d61513cdd062ed996dd57d4130ac55787e8a8c9b0fbaa6ddfdcaedb101535bda348bba2a6cf64025628be03601beee00e0fe02e1af4aa26a3d8281af56863d4a73be8621d0ea2a1fb1e4f67b393ddc75b392a358470d444a3c2d1aaae99a6f8be40802dbc840d2a092f7fe115feea5571014ea105a7a3011485a343f3debc7068d688c13fb80f432ae10f3884adc7d8fa768ef21d47d4e03d2ac8dfcdaccb49a1f878881ef6f80afee258fedf875da8cefe82abc2908dfb6b21891fcafc837f88b65ee10656b07f3f5a4c81a30de3e94a345aa00568665d5a0ac54703d864c7c5350393591a6af75fa3d1e84c74f4fca1efec6be8b6c77aaf9aeeba6906dc16fd2c4844bccbeb4059979742f1d178d17a2f2d89061fd0d17bfb4a312f60e2e887a6df859abc49eba8f1a8e2dbe17e7edd077e73c0f8128ea6995f77023ca28278ba1528f29ecb7fad507c273c9e5f77826c75947668178a74454dd1531d09a8f876c02aeec3c0b4e752491816ffe5abc9dfd1858d472f834d25f377fa653e93887473b6c529058e9e52dbf6cf36b9f2dc0aa80ac5d703dc611dd7e00afff019acd11f58c03e0ee4d5a33fd8337fb13ffa31fa291cfde56cf97c607f33f0ef07742edb5ee15daf0aa3f4751496b1231a2a3a0a30bb2a9442f1f561e2d16803576097ce700b6b38b06313a698e6e3d199ac99b882140d21822edc0acb19aaf82ef128947055385a111d5dd3d1ba8aef87643c0a77700a35bcc26b61de48bcd73558c40b84d1958d47d7cc7b5c8796f17761247c1ed31df6a015fcdb778a470f785b386a58baf99a6c2d0ac5e7061c3ed4ae8b67b00f63fe813f7013c7a3f1605b387a6a5798d88403fe016358b8df63130ddf4347792c1cbd16865ef12de98a868a6f87e7fa47e9507cda136ad3c6b02f1e711d9e68dd7d271dad09474d44da7cbe6559a1f87a98b4eb3ef4726db8541a5dd3c6e8e6a1df84365dd7aedb1fcd72f8ed1c1525dd118e9afe511dc1a0f886c043f15bc7d07b60edb480bfe2edfe168efe81c263bfc131d6a006e3f4d64d4b42e2d06bba128e1e675d5a0a4556c00ba88a4fbb028bf2bf89457bb8466793d7e81fe1e8bff2fedcd9b82671e908fb74ebb759796cac522a3a7a6ee698f39ee6d655281e03df08475ea562a97074d7e8282ee9685d85e23108472baf9b17968aaf5bc663b36e9b8ed655281e83d1d1ec38ca8c4bb4213cd551460ac523e088aeb2e3289478d38ed77d45ce3385e27b4038ba0195d76c990647c5db356b42bdeaf80ac5f78070b4f2bad590d2e1a8c9a784daf3a2503c0a5aa08dd7cddd4c87a3261ee5bdac4b41a1c82f4c3cfaba169b947cddb6f8baedac4b41a1c82fb82e1cc990a3a65d99b4c548a178147492b18e9edc9fbfaa502826e04ab63a4a55dac076d6a5a050e4175647f75fb3654a1c35f35775ad1785e251181d7ddd96e9c5a3eaeb2a148f033b74f5ba2dd3e32816b22e058522bfe8ff4b37afdb32255fb7201ced645d0a0ac557447a1ca57b6b4529148ab723bd7146b4fef6fd28148a59a4a4a357e2eb2e657d2d0ac557442a73d31ad4141d7d65cbb242a1780aa97074d9faba15cdaeab50a48f94387a6ce6a6c172d657a3507c3da493cfc8e46180229d667d350ac5d7431a1c8d3647bf8907dba3bf595f8d42f1f590064747b7a3bbfe9fd11daa8e2a14a9239dbe178542f15e508e2a14f9867254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a14f9867254a1c83794a30a45bea11c5528f20de5a842916f2847158a7c4339aa50e41bca518522df508e2a14f9c67ffffffffbbffe0f9c34b0d8</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="434">89504e470d0a1a0a0000000d49484452000000320000002d0806000000ecbf38ff00000179494441546881ed9ac16a833018c793a5c2c06e971db7c290be9147f111f4ae2fe0dda3a097d2631fc007a8efe0a51484dd66e93030c8b2ec9452d8869a642c4a7e3705ffdff75310f923648c3130036efe7b0155cc4664211b8031269bcde64c08e9542c34144aa9b55aad6e5dd77d00404204634cb6db6d0700006ddbbec571eca85a72e8dcbaae4f00003191eb20cff396b66d5b699a9e956e2b3077b0c84f41ead7159fdb2ba2bb00e75791a90870be894c4d80731199aa00e7221245d18be3380b8410298a62d45ba82ccb0f08e1516481fd7ecff23c7f92bd711791f57acdc2307c1409618c1d83207816bd56c5d39fcd278a11d10d23a21b4644378c886e1811dd3022ba614474c388e88611d18dd9882869e3abaa62a22d8a68034329b50e8703e4c74ada78993a676c03733d374992253fafa48d1f9b2142df5cd3c6ff35a68d970d9245591bdf75dd67966527d1205154cd85fc8781dd6ef7da34cd3b4288a85cb40fcbb2ee7cdfbf97bd71d0fcf9a019b311f90256b1440d6dcd4bff0000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>buttonUnlock</sender>
+        <signal>clicked()</signal>
+        <receiver>board_gui</receiver>
+        <slot>buttonUnlock_clicked()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>buttonUnlock_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kled.h</includehint>
+</includehints>
+</UI>

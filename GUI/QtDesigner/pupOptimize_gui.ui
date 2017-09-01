@@ -1,0 +1,270 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>pupOptimize_gui</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>pupOptimize_gui</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>544</width>
+            <height>369</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Pupil Optimization</string>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>50</y>
+                <width>450</width>
+                <height>80</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Acquire new pupils</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonAcquire</cstring>
+                </property>
+                <property name="text">
+                    <string>Acquire current pupils</string>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout10</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Saved as:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>labelTracknum</cstring>
+                        </property>
+                        <property name="text">
+                            <string>x</string>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>160</y>
+                <width>471</width>
+                <height>131</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Optimize current pupils</string>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout7</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel4</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Threshold:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>editThreshold</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout14</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel5</cstring>
+                                </property>
+                                <property name="text">
+                                    <string># subaps:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>labelNumSubaps</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>x</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout10_2</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel3_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Saved as:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>labelAcceptedTracknum</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>00000000_000000</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout7</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>buttonTest</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Test</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>checkForceReacquire</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>force re-acquire</string>
+                                </property>
+                                <property name="accel">
+                                    <string></string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>buttonAccept</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Accept</string>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer4</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>182</width>
+                                <height>21</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonAcquire</sender>
+        <signal>clicked()</signal>
+        <receiver>pupOptimize_gui</receiver>
+        <slot>buttonAcquire_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonTest</sender>
+        <signal>clicked()</signal>
+        <receiver>pupOptimize_gui</receiver>
+        <slot>buttonTest_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>buttonAccept</sender>
+        <signal>clicked()</signal>
+        <receiver>pupOptimize_gui</receiver>
+        <slot>buttonAccept_clicked()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>buttonAcquire_clicked()</slot>
+    <slot>buttonTest_clicked()</slot>
+    <slot>buttonAccept_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

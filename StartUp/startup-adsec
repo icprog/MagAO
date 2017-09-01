@@ -1,0 +1,87 @@
+#!/bin/sh
+
+cd $ADOPT_ROOT
+IDL_STARTUP=/home/labot/idl/startup_main_auto.pro 
+export IDL_STARTUP
+
+procs=$(ps -ef | grep "./msgdrtdb" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "MsgD-RTDB"
+    xterm -T "MsgdRTDB" -e "./msgdrtdb -v -v; /bin/tcsh" &
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "msgdrtrdb already up"
+fi
+
+procs=$(ps -ef | grep "./idl_ctrl" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "/home/labot/idl/adsecP45"
+    xterm -T "IDL Ctrl" -e "printenv; ./idl_ctrl; /bin/tcsh" & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "idl_ctrl already up"
+fi
+
+procs=$(ps -ef | grep "./terminal" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "IDL"
+    xterm -T "IDL Terminal" -e "./terminal; /bin/tcsh" & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "terminal already up"
+fi
+
+procs=$(ps -ef | grep "./MirrorCtrl -shared bufconfig.MirrorCtrl" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "BCUCtrl"
+    xterm -T "MirrorCtrl" -e "./MirrorCtrl -shared bufconfig.MirrorCtrl; /bin/tcsh" & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "MirrorCtrl already up"
+fi
+
+
+procs=$(ps -ef | grep "./housekeeper_old" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "MirrorDiagnostic"
+    xterm -T "SLOWDIAGNOSTIC" -bg 'black' -e "./housekeeper_old -v -d 10; /bin/tcsh " & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "housekeeper already up"
+fi
+
+
+procs=$(ps -ef | grep "./fastdiagn" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "MirrorDiagnostic"
+    xterm -T "FASTDIAGNOSTIC" -e "./fastdiagn -v -D ; /bin/tcsh" & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "fastdiagn already up"
+fi
+
+
+procs=$(ps -ef | grep "./AdSecArb.py" | grep -v grep| wc -l)
+if [ $procs -eq 0 ]
+then
+    cd "Arbitrator"
+    xterm -T "Adsec Arbitrator" -e "./AdSecArb.py ; /bin/tcsh" & 
+    cd $ADOPT_ROOT
+    sleep 2
+else
+echo "Arbitrator already up"
+fi
+
+

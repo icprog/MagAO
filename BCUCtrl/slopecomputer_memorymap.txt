@@ -1,0 +1,37 @@
+# Memory map of the slope computer DSP
+
+FramesCounter            int     0x1021
+ResetLoop                int     0x1022
+numSH                    int     0x1023
+NullSlopeCnt             int     0x1024
+SlopeSelection           int     0x1025
+SlopeConstant            int     0x1026   ; costante di divisione delle slopes
+NumSlopes                int     0x1027   ; numero di slopes diviso 4
+NumSlopesToDoPtr         int     0x1028
+SlopePixelAreaPtr        int     0x1029
+ParamSlopePixelAreaPtr   int     0x102a    
+NumConturPixel           int     0x102b   ; numero di contur pixel diviso 4
+ConturPixelAreaPtr       int     0x102c
+ParamConturPixelAreaPtr  int     0x102d
+AverageFluxAreaPtr       int     0x102e
+ParamAgerageFluxAreaPtr  int     0x102f
+SlopeLUTAreaPtr          int     0x1030
+SlopeLUTDepth            int     0x1031
+SlopeOutAreaPtr          int     0x1032
+TimeHistoryAct           int     0x1033
+TimeHistoryPtr           int     0x1034
+TimeHistoryEnd           int     0x1035
+ParamBlockSelector       int     0x1036
+RTRcommandAreaPtr        int     0x1037
+
+NumSlopesToDo_Addr          int  0x0000  
+SlopePixelArea_Addr         int  0x0000
+ParamSlopePixelArea_Addr    int  0x0000
+ConturPixelArea_Addr        int  0x0000
+ParamConturPixelArea_Addr   int  0x0000
+AverageFluxArea_Addr        int  0x0000
+ParamAverageFluxArea_Addr   int  0x0000
+SlopeLUTArea_Addr           int  0x0000
+SlopeOutArea_Addr           int  0x0000
+TimeHistory_Addr            int  0x0000
+RTRcommandArea_Addr         int  0x0000

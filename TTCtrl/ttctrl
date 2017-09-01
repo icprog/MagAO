@@ -1,0 +1,28 @@
+# --- TTCtrl Config file --- #
+
+MyName		string		TTCTRL
+ID			int			0
+Server		string		127.0.0.1
+
+#Conversion parameters
+ZV_TO_XV	double		1		# X volts on actuator_x corresponds to a translation of -1*X volts
+								# along its axis direction	
+
+ROT_ANG		double 		0 	    #Rotation af actuators axis with respect to default position
+								#Default position is actuator_1 matching Y-axis on sensor.
+						
+
+# Low-level setting ranges (for actuators)
+MAX_FREQ	double		5000
+MIN_FREQ	double		0
+MAX_VOLT	double		10
+MIN_VOLT	double		0
+
+
+# Hi-Level default settings
+DEFAULT_FREQ 		double		1000 # If 0: BCU use CCD39 frequence
+DEFAULT_AMP			double		0
+DEFAULT_OFFSET_X	double 		0
+DEFAULT_OFFSET_Y	double 		0
+
+

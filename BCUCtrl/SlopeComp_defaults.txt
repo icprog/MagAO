@@ -1,0 +1,59 @@
+#
+# Not used:
+# sc_SlopeLUTDepth
+#
+# Default values for slope computer parameters
+
+default_NumSH			        ulong	1		# num of sensors
+default_NullSlopeCnt		    ulong	0
+default_SlopeConstant		    ulong	0		# constant when ParamBlockSelector=8
+default_NumSlopes	    	    ulong	400     # total no. of slopes / 4
+default_numConturPixels         ulong   0
+default_numTotPixels            ulong   800 
+default_slopeclip               float32 10
+
+default_ParamSelector           ulong   x44
+
+default_DiagnosticFrameDec      ulong   1 
+
+
+default_NumSlopesToDoPtr    	ulong  x80000  
+default_SlopePixelAreaPtr   	ulong  x80004  
+default_ParamSlopePixelAreaPtr	ulong  x100000  
+
+default_conturpixelareaptr        ulong  x80c84
+default_notusedpixelareaptr       ulong  x80c84
+default_paramconturpixelareaptr   ulong  x103200
+default_averagefluxareaptr        ulong  x81904
+default_paramaveragefluxareaptr   ulong  x104b00
+
+default_slopelutareaptr           ulong  x104b04
+default_slopelutdepth             ulong  x447f8000
+default_slopeoutareaptr           ulong  x81908
+
+default_startrtrptr               ulong  x81f48
+#default_modesvectorptr            ulong  x81f4c
+#default_startmmptr                ulong  x81f7c
+#default_ffcommandvectorptr        ulong  x81f80
+#default_startffptr                ulong  x81fb0	
+
+default_replyvectorptr            ulong  x81fb4   # new
+
+default_timehistoryact            ulong  x1	  # 2=attivo, 1 =disabilitato	
+default_timehistoryptr            ulong  x82000	
+default_timehistoryend            ulong  x823FF	    # lunghezza qualsiasi (non solo 2^n)
+
+#default_modehistoryact       ulong  x1       # 1= disabilitato 2 =attivo
+#default_modehistoryptr       ulong  x823cc
+#default_modehistoryend       ulong  x87fab   # dev'essere multiplo di n_act
+
+
+
+default_replyreceived		      ulong  0
+default_NumActuators              ulong  x06     # num of actuators /8
+default_NumFLtimeout              ulong  x0
+default_NumCRC                    ulong  x0       # new
+
+default_Diagnostic_record_ptr	  ulong  x80000	# Variabile in SRAM
+default_Diagnostic_record_len	  ulong  x1fb4		# Variabile in SRAM
+
